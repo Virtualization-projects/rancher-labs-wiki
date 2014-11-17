@@ -2,4 +2,4 @@
 
 You need to do the following to add a new resource to the API
 
-1. [Define Database Schema](Model: Change) - Most API resources are backed by a database table.  This is not required, but it is more typical.  
+1. [[Define Database Schema|Model: Create Database Type]] - Most API resources are backed by a database table.  This is not required, but it is more typical.  
