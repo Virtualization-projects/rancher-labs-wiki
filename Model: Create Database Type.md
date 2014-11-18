@@ -36,8 +36,8 @@ Now run `cattle/resources/content/db/liquibase-dump.sh`.  This script will gener
 
 Now drop all the tables by running `cattle/resources/content/db/mysql/drop_tables.sh`.  This script will create a MySQL dump if you need to revert back.  Make sure you change `db.cattle.mysql.name` back to `cattle`.
 
-Now start Rancher again.  Rancher should now deploy the correct schema.
+Now refresh your workspace and start Rancher again.  Rancher should now deploy the correct schema.
 
 ## Generate jOOQ Model
 
-Run `cattle/code/iaas/model/codegen.sh`.  This will generate all the POJOs needed for jOOQ.  This will also create the REST API.  Start Rancher and go to /v1 and see if your new type is in the API.
+Run `cattle/code/iaas/model/codegen.sh`.  This will generate all the POJOs needed for jOOQ.  This will also create the REST API.  Refresh your workspace and start Rancher and go to /v1 and see if your new type is in the API.
