@@ -49,12 +49,12 @@ The life-cycle of a resource is made up a interconnected processes. Once you hav
 That lists all processes for all resources. You can get a resource-centric veiw at:
 * [http://localhost:8080/v1/resourcedefinitions](http://localhost:8080/v1/resourcedefinitions)
 
-Go there in the API UI and look for animal or pet. Nothing. There are no processes (and no states) associated to those resources. But go to [http://localhost:8080/v1/resourcedefinitions/1rd!instance](http://localhost:8080/v1/resourcedefinitions/1rd!instance) and click the resourceDot link. You'll see a diagram of all the processes attached to instances and how you can transition from one to the next. This is an incredibly powerful way to visualize everything that happens in the life cycle of an instance.
+Go there in the API UI and look for animal or pet. Nothing. There are no processes (and no states) associated to those resources. But go to [http://localhost:8080/v1/resourcedefinitions/1rd!instance](http://localhost:8080/v1/resourcedefinitions/1rd!instance) and click the resourceDot link. You'll see a diagram of all the processes attached to instances and how you can transition from one to the next. ***This is an incredibly powerful way to visualize everything that happens in the life cycle of an instance.***
 
 While instance is a very important resource, it also has the most complicated life cycle. Checkout the [mount resource definition](http://localhost:8080/v1/resourcedefinitions/1rd!mount/resourcedot) for a much simpler life cycle. In fact, this is the "default" life-cycle. We can get it for animal (and by extension pet) with just a few lines of spring xml configuration:
 
 1. In eclipse, open [spring-core-processes-context.xml](https://github.com/rancherio/cattle/blob/master/code/iaas/logic/src/main/resources/META-INF/cattle/core-process/spring-core-processes-context.xml)
-2. Add ```&lt;process:defaultProcesses resourceType="animal" /&gt;``` after the long list of similar defaultProcesses.
+2. Add ```<process:defaultProcesses resourceType="animal" />``` after the long list of similar defaultProcesses.
 3. Save and restart the cattle debug process
 
 Now you can go to [http://localhost:8080/v1/resourcedefinitions/1rd!animal/resourcedot](http://localhost:8080/v1/resourcedefinitions/1rd!animal/resourcedot) and see that we have a life-cycle for the animal resource.
