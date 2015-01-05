@@ -23,4 +23,7 @@ Time to write some tests for our new resources. Actually, the time was probably 
 
 > We largely rely on ***integration tests***, not unit tests. This is a philosophical approach to testing we've taken. We find integration tests to be more useful that mocked-out unit tests. We define an integration test as a test that executes against the Rancher API and thus requires, at minimum, a running Rancher API server. We also have ***validation tests*** which go a step beyond validation tests and might require multiple hosts be setup or specific production-like setups.
 
-In PyCharm, create a new python file at: ```cattletest/core/test_animal.py```. Write a basic CRUD test. Take a look at ```test_account.py``` as an example. Test creating both an animal and a pet.
+In PyCharm, create a new python file at: ```cattletest/core/test_animal.py```. Write a basic CRUD test. Take a look at ```test_account.py``` as an example. Test creating both an animal and a pet. In a single test function, you should be able to test creating an animal (and assert its species) and creating a pet (and assert its species and owner).
+
+Need help? See the test [here](https://gist.github.com/cjellick/589aea867b67f0da4f6e).
+
