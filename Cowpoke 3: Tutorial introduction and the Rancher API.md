@@ -23,4 +23,4 @@ To illustrate this point, consider the fact that when you hit the API in a brows
 
 We accomplish this by adhering to a strict REST API specification that we've worked on over the past few years. It is required reading for understanding the guiding priniciples of the Rancher API: https://github.com/rancherio/api-spec
 
-**Next:** [Cowpoke 3.1: Modifying an existing resource](Cowpoke 3.1: Modifying an existing resource)
+**Next:** [Cowpoke 3.1: Modifying an existing resource](https://github.com/rancherio/rancher/wiki/Cowpoke-3.1:-Modifying-an-existing-resource)
