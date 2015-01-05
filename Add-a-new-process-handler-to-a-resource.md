@@ -1,5 +1,6 @@
 Now that we've defined a new resource and created a set of processes for it (the default processes), we can attach logic to it.
 
+## Adding a post-activate handler
 In the cattle-iaas-logic project, create a new class: 
 
 * ```io.cattle.platform.process.animal.AnimalPostActivate``` 
@@ -32,9 +33,32 @@ public HandlerResult handle(ProcessState state, ProcessInstance process) {
   return null;
 }
 ```
-
 Here's a simple sample to base your handler off [io.cattle.platform.process.instance.InstanceStopPostAction](https://github.com/rancherio/cattle/blob/e8f6206a13a4a8590ec0d9e2a71ac17ade896b04/code/iaas/logic/src/main/java/io/cattle/platform/process/instance/InstanceStopPostAction.java)
 
 If you get that wired up correctly, you should be able to a couple of things:
 
 * If you go to [http://localhost:8080/v1/resourcedefinitions/1rd!animal/resourcedot](http://localhost:8080/v1/resourcedefinitions/1rd!animal/resourcedot), you should see *post=AnimalPostActivate* logic added to animal.activate process
+* If you add a breakpoint to the handle method, you'll hit it when you create a resource. Add the breakpoint and rerun the integration test to prove it.
+
+## Adding and testing some logic
+Let's add some logic to record the number of legs our animal has when it is activated.
+
+In the spirit of TDD, let's first write a failing test. Add this to your test:
+```
+assert animal.data['numberOfLegs'] == "4"
+```
+after you assert that it's active.
+
+Run the test and watch it fail. Then, in the handler you've written, add the following logic:
+```
+Animal animal = (Animal)state.getResource();
+DataAccessor.fromDataFieldOf(animal).withKey("numberOfLegs").set("4");
+ObjectManager objectManager = getObjectManager();
+objectManager.persist(animal);
+return null;
+```
+
+Hopefully, it should be obvious that you'll need to import the relevant classes for that to work. Once the java class is compiling, rerun the python test and it should pass.
+
+Did it work? Awesome, you just created a post-activate handler that modifies a resource.
+
