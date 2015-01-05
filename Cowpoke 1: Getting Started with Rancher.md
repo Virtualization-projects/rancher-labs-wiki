@@ -1,6 +1,3 @@
-cowpoke
-=======
-
 ```
 cow-poke
 /'kou,pōk/, IPA: /kɑʊ poʊk/
