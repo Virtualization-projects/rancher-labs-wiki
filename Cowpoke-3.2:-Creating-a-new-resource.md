@@ -100,3 +100,4 @@ To make the orchestration system actually perform real operations, you must atta
 
 Once you assign enough states and process to a resource you begin to construct a finite state machine for the resource. This is what you're viewing when you view the resourceDot graph of a resourceDefinition. 
 
+**Next:** [[Add a new process handler to a resource.|Cowpoke 3.3: Add a new process handler to a resource]]
