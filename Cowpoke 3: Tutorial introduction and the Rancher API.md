@@ -5,8 +5,8 @@ This series of articles (All starting with "Cowpoke 3") walks you through workin
 
 ## Objectives:
 1. [Explore Rancher's API.](https://github.com/rancherio/rancher/wiki/Cowpoke-3:-Tutorial-introduction-and-the-Rancher-API#explore-ranchers-api) 
-1. [Modify an existing resource.](https://github.com/rancherio/rancher/wiki/Cowpoke-3.1:-Modifying-an-existing-resource)
-1. [Create a new resource.](https://github.com/rancherio/rancher/wiki/Cowpoke-3.2:-Creating-a-new-resource)
+1. [[Modify an existing resource.|Cowpoke 3.1: Modifying an existing resource]]
+1. [[Create a new resource.|Cowpoke 3.2: Creating a new resource]]
 1. Add a new, custom process handler to a resource.
 1. Interact with a resource in an existing agent.
 1. Create an external event handler for a resource.
@@ -23,4 +23,4 @@ To illustrate this point, consider the fact that when you hit the API in a brows
 
 We accomplish this by adhering to a strict REST API specification that we've worked on over the past few years. It is required reading for understanding the guiding priniciples of the Rancher API: https://github.com/rancherio/api-spec
 
-**Next:** [Cowpoke 3.1: Modifying an existing resource](https://github.com/rancherio/rancher/wiki/Cowpoke-3.1:-Modifying-an-existing-resource)
+**Next:** [[Cowpoke 3.1: Modifying an existing resource]]
