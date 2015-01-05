@@ -7,7 +7,7 @@ This series of articles (All starting with "Cowpoke 3") walks you through workin
 1. [Explore Rancher's API.](https://github.com/rancherio/rancher/wiki/Cowpoke-3:-Tutorial-introduction-and-the-Rancher-API#explore-ranchers-api) 
 1. [[Modify an existing resource.|Cowpoke 3.1: Modifying an existing resource]]
 1. [[Create a new resource.|Cowpoke 3.2: Creating a new resource]]
-1. Add a new, custom process handler to a resource.
+1. Add a new process handler to a resource.
 1. Interact with a resource in an existing agent.
 1. Create an external event handler for a resource.
 
