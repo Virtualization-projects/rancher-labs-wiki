@@ -25,5 +25,36 @@ Time to write some tests for our new resources. Actually, the time was probably 
 
 In PyCharm, create a new python file at: ```cattletest/core/test_animal.py```. Write a basic CRUD test. Take a look at ```test_account.py``` as an example. Test creating both an animal and a pet. In a single test function, you should be able to test creating an animal (and assert its species) and creating a pet (and assert its species and owner).
 
-Need help? See the test [here](https://gist.github.com/cjellick/589aea867b67f0da4f6e).
+Need help on the test? See the test here: [test_animal_1.py](https://gist.github.com/cjellick/589aea867b67f0da4f6e#file-test_animal_1-py).
 
+Let's extend that test to walk through the life cycle of a pet. Remove the ```create_animal()``` lines so that we can focus on just the pet. Then add this:
+```
+    animal = wait_success(admin_client, animal)
+
+    assert animal.state == "active"
+
+    animal = admin_client.wait_success(animal.deactivate())
+    animal = admin_client.wait_success(animal.remove())
+    admin_client.wait_success(animal.purge())
+```
+Run the test...
+
+Uh-oh, the test failed with something like ```E AttributeError: 'dict' object has no attribute 'transitioning'```
+
+That's because we haven't defined the life cycle the animal resource yet.
+
+## Defining the life-cycle of a resource.
+The life-cycle of a resource is made up a interconnected processes. Once you have defined a resource, you can attach processes to it. Processes are what drive the orchestration logic. You can list all the defined processes at:
+* [http://localhost:8080/v1/processdefinitions](http://localhost:8080/v1/processdefinitions)
+That lists all processes for all resources. You can get a resource-centric veiw at:
+* [http://localhost:8080/v1/resourcedefinitions](http://localhost:8080/v1/resourcedefinitions)
+
+Go there in the API UI and look for animal or pet. Nothing. There are no processes (and no states) associated to those resources. But go to [http://localhost:8080/v1/resourcedefinitions/1rd!instance](http://localhost:8080/v1/resourcedefinitions/1rd!instance) and click the resourceDot link. You'll see a diagram of all the processes attached to instances and how you can transition from one to the next. This is an incredibly powerful way to visualize everything that happens in the life cycle of an instance.
+
+While instance is a very important resource, it also has the most complicated life cycle. Checkout the [mount resource definition](http://localhost:8080/v1/resourcedefinitions/1rd!mount/resourcedot) for a much simpler life cycle. In fact, this is the "default" life-cycle. We can get it for animal (and by extension pet) with just a few lines of spring xml configuration:
+
+1. In eclipse, open [spring-core-processes-context.xml](https://github.com/rancherio/cattle/blob/master/code/iaas/logic/src/main/resources/META-INF/cattle/core-process/spring-core-processes-context.xml)
+2. Add ```&lt;process:defaultProcesses resourceType="animal" /&gt;``` after the long list of similar defaultProcesses.
+3. Save and restart the cattle debug process
+
+Now you can go to [http://localhost:8080/v1/resourcedefinitions/1rd!animal/resourcedot](http://localhost:8080/v1/resourcedefinitions/1rd!animal/resourcedot) and see that we have a life-cycle for the animal resource.
