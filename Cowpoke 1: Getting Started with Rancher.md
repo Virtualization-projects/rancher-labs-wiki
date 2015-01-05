@@ -188,4 +188,6 @@ YEE-HAW PARDNER! You're an official cowpoke. Now go russle up some bugs and corr
 
 Further Reading
 ---------------
-TODO: Document how to work on an agent and have it interact with a local cattle server, ie, explain how this is used to work on the python-agent: ```-Dagent.package.python-agent.url=/path/to/local/python-agent```
+[[Cowpoke 2: Halp! (Debugging, troubleshooting, starting over)]]
+
+[[Cowpoke 3: Tutorial introduction and the Rancher API]]
