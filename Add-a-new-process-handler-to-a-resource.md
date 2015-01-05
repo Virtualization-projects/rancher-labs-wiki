@@ -33,7 +33,7 @@ public HandlerResult handle(ProcessState state, ProcessInstance process) {
   return null;
 }
 ```
-Here's a simple sample to base your handler off [io.cattle.platform.process.instance.InstanceStopPostAction](https://github.com/rancherio/cattle/blob/e8f6206a13a4a8590ec0d9e2a71ac17ade896b04/code/iaas/logic/src/main/java/io/cattle/platform/process/instance/InstanceStopPostAction.java)
+Here's a simple example that you could base your handler off of:[io.cattle.platform.process.instance.InstanceStopPostAction](https://github.com/rancherio/cattle/blob/e8f6206a13a4a8590ec0d9e2a71ac17ade896b04/code/iaas/logic/src/main/java/io/cattle/platform/process/instance/InstanceStopPostAction.java)
 
 If you get that wired up correctly, you should be able to a couple of things:
 
