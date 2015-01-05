@@ -5,7 +5,7 @@ This series of articles (All starting with "Cowpoke 3") walks you through workin
 
 ## Objectives:
 1. Explore Rancher's API. 
-1. Modify an existing resource.
+1. [Modify an existing resource.](https://github.com/rancherio/rancher/wiki/Cowpoke-3.1:-Modifying-an-existing-resource)
 1. Create a new resource.
 1. Add a new, custom process handler to a resource.
 1. Interact with a resource in an existing agent.
