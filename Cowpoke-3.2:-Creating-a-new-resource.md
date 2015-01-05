@@ -92,7 +92,7 @@ Processes are defined as having start, transitioning, and done states. All proce
 * creating
 * restoring
 
-This means that you can only kickoff the InstanceStart process of the instance is in one of those states. Once the process has been started it will update the state to the transitioning state. For a process to be completed it must move from the transitioning state to the done state. If there is not logic attached to that transition, the orchestration system will simply update the state and be done.
+This means that you can only kickoff the InstanceStart process if the instance is in one of those states. Once the process has been started it will update the state to the transitioning state. For a process to be completed it must move from the transitioning state to the done state. If there is not logic attached to that transition, the orchestration system will simply update the state and be done.
 
 Processes can have many start states, but only one done state. For InstanceStart, it is Running. This means that if an error occurs that prevents a resource from transitioning to done (for example, if an instance can't start), it will just hang and continue to retry. That said, the transitioning state can be defined as a start state for another process. So, an instance stuck in the transitioning state of ```starting``` can be moved to another state (specifically, the instance starting state is defined as a start state for instance.stop).
 
