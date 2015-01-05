@@ -15,7 +15,12 @@ It's pretty simple actually:
 1. Open ```spring-core-model-context.xml``` ($CATTLE_HOME/cattle-iaas-model/src/main/resources/META-INF/cattle/core-model/spring-core-model-context.xml)
 2. In the ```CoreTypeSet.typeNames``` property, follow the existing convention create a pet with parent of animal.
 3. Apply the lessons learned in [3.1](https://github.com/rancherio/rancher/wiki/Cowpoke-3.1:-Modifying-an-existing-resource) to add the owner field and expose it in the API.
+
 Get it working? Good. Able to create a Pet entity via the API UI? Great.
 
 ## TESTS!
-Time to write some tests for our new resources. Actually, the time was probably as soon as we created the animal resource, but this is close enough.
+Time to write some tests for our new resources. Actually, the time was probably as soon as we created the animal resource, but this is close enough. Way back in the first Cowpoke article, we setup the integration tests project in PyCharm. Open that back up.
+
+> We largely rely on ***integration tests***, not unit tests. This is a philosophical approach to testing we've taken. We find integration tests to be more useful that mocked-out unit tests. We define an integration test as a test that executes against the Rancher API and thus requires, at minimum, a running Rancher API server. We also have ***validation tests*** which go a step beyond validation tests and might require multiple hosts be setup or specific production-like setups.
+
+In PyCharm, create a new python file at: ```cattletest/core/test_animal.py```. Write a basic CRUD test. Take a look at ```test_account.py``` as an example. Test creating both an animal and a pet.
