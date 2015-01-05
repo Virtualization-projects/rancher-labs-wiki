@@ -77,3 +77,27 @@ But more to the point, why didn't that logic activate the animal? Good news: ```
 3. Restart cattle.
 
 Now, rerun that test and it should pass. YEEHAW!
+
+### What just happened?
+That was a lot to take in. What just happened? When we added that ```<process:defaultProcesses resourceType="animal" />``` line, we got a lot of stuff for free. Now would be a good time to ask questions. Ask in #rancher on freenode if you don't have more direct access to another Rancher engineer.
+
+But in short, defaultProcesses is shorthand for a set of custom processes, states, and transition logic that a typical resource could be expected to have. But what are these processes, states, and transitions? Let's take a look at one simple process, instance start:
+![](http://rancherio.github.io/rancher/instance-start.svg)
+***TODO*** Make sure imageworks 
+
+You can also see it here: [http://localhost:8080/v1/processdefinitions/1pd!instance.start/processdot](http://localhost:8080/v1/processdefinitions/1pd!instance.start/processdot)
+
+Processes are defined as having start, transitioning, and done states. All processes are modeled in this fashion. For a process to be started, it obviously must be in the start state. In the above example, there are three valid start states for the process:
+
+* stopped
+* creating
+* restoring
+
+This means that you can only kickoff the InstanceStart process of the instance is in one of those states. Once the process has been started it will update the state to the transitioning state. For a process to be completed it must move from the transitioning state to the done state. If there is not logic attached to that transition, the orchestration system will simply update the state and be done.
+
+Processes can have many start states, but only one done state. For InstanceStart, it is Running. This means that if an error occurs that prevents a resource from transitioning to done (for example, if an instance can't start), it will just hang and continue to retry. That said, the transitioning state can be defined as a start state for another process. So, an instance stuck in the transitioning state of ```starting``` can be moved to another state (specifically, the instance starting state is defined as a start state for instance.stop).
+
+To make the orchestration system actually perform real operations, you must attach some logic. In the above diagram you can see that the ```InstanceStart``` logic has been attached to this process. One can attached any logic they choose. This makes the orchestartion system very flexible and extensible. At any point in the lifecycle of the resources you can plug-in any arbitrary logic. Again, ```InstanceStart``` is a java class. It does a lot of interesting things. Take a look.
+
+Once you assign enough states and process to a resource you begin to construct a finite state machine for the resource. This is what you're viewing when you view the resourceDot graph of a resourceDefinition. 
+
