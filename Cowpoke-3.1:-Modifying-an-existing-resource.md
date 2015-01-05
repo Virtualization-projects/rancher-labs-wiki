@@ -37,7 +37,7 @@ This is only a slight variation on the above. In eclipse, open up docker.json ($
 *Why do this?* Vendor-specific plugins. Imagine we supported another container technology that required a field that docker doesn't. We could add that field to $CATTLE_HOME/cattle-**SHINY_NEW_TOY**-api/src/main/resources/schema/base/container.json.d/**arbitrary_filename**.json and that field would get picked up without polluting the base container.json configuration.
 
 ### Option 3: Database columns
-You can also add a field to a resource by creating a new database column for it. [This article](/rancherio/rancher/wiki/Model:-Create-Database-Type) explains how to create a new database-backed resource from scratch. You can adapt the instructions to modify an existing resource.
+You can also add a field to a resource by creating a new database column for it. [[This article|Create Database Type]] explains how to create a new database-backed resource from scratch. You can adapt the instructions to modify an existing resource.
 
 Take the time to try that now. Add myFoo or a similarly named property as column to a table in the cattle database and get it working in the API.
 
@@ -56,3 +56,5 @@ Looking at existing art should be useful as well. Look at what is in.
 \* Some first-class API resources are built as extensions to others. For example, there is no container DB table. It inherits all the DB fields of instance. All container specific fields are added via json.
 
 Still in doubt? Look at existing examples. Again, container is a good example (DB table is instance; Core fields are in container.json; a few supplementary fields are in cotainer.json.d/docker.json).
+
+**Next:** [[Cowpoke 3.2: Creating a new resource]]
