@@ -8,8 +8,8 @@ This series of articles (All starting with "Cowpoke 3") walks you through workin
 1. [[Modify an existing resource.|Cowpoke 3.1: Modifying an existing resource]]
 1. [[Create a new resource.|Cowpoke 3.2: Creating a new resource]]
 1. [[Add a new process handler to a resource.|Cowpoke 3.3: Add a new process handler to a resource]]
+1. [[Create an external event handler for a resource.|Cowpoke 3.4: Create an external event handler for a resource]]
 1. Interact with a resource in an existing agent.
-1. Create an external event handler for a resource.
 
 ## Pre-requisites:
 You've setup rancher according to cowpoke (link). We're going to be modifying the source code in a number of projects and running it.
