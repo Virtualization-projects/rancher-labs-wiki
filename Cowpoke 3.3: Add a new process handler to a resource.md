@@ -62,3 +62,4 @@ Hopefully, it should be obvious that you'll need to import the relevant classes 
 
 Did it work? Awesome, you just created a post-activate handler that modifies a resource.
 
+**Next:** 1. [[Create an external event handler for a resource|Cowpoke 3.4: Create an external event handler for a resource]]
