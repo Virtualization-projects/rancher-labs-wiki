@@ -20,7 +20,7 @@ Everything in Rancher is a resource in this REST API. Even most of the metadata 
 
 To illustrate this point, consider the fact that when you hit the API in a browser, you are actually interacting with a javascript/html wrapper around the API. This wrapper is a generic client capable of presenting all of the Rancher API because of the consistency and discoverability of the API.
 
-https://github.com/rancherio/api-spec
+We accomplish this by adhering to a strict REST API specification that we've worked on over the past few years. It is required reading for understanding the guiding priniciples of the Rancher API: https://github.com/rancherio/api-spec
 
 
 ## Modify an existing resource.
