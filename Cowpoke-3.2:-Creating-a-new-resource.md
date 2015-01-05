@@ -83,7 +83,6 @@ That was a lot to take in. What just happened? When we added that ```<process:de
 
 But in short, defaultProcesses is shorthand for a set of custom processes, states, and transition logic that a typical resource could be expected to have. But what are these processes, states, and transitions? Let's take a look at one simple process, instance start:
 ![](http://rancherio.github.io/rancher/instance-start.svg)
-***TODO*** Make sure imageworks 
 
 You can also see it here: [http://localhost:8080/v1/processdefinitions/1pd!instance.start/processdot](http://localhost:8080/v1/processdefinitions/1pd!instance.start/processdot)
 
