@@ -58,3 +58,22 @@ While instance is a very important resource, it also has the most complicated li
 3. Save and restart the cattle debug process
 
 Now you can go to [http://localhost:8080/v1/resourcedefinitions/1rd!animal/resourcedot](http://localhost:8080/v1/resourcedefinitions/1rd!animal/resourcedot) and see that we have a life-cycle for the animal resource.
+
+Rerun the test!...
+Darn, failed again, but this time with a message like 
+```
+>       assert animal.state == "active"
+E       assert 'inactive' == 'active'
+E         - inactive
+E         ? --
+E         + active
+```
+If you look at the resourceDot graph for animal, you'll see that it has the ```ActivateByDefault``` post create logic. What is ```ActivateByDefault```? It's a piece of logic that executes at a certain point in the resource's life cycle. In this case, it executes ***after*** the core create logic executes (hence **post**=ActivateByDefault as opposed to **pre**=ActivateByDefault). 
+
+But more to the point, why didn't that logic activate the animal? Good news: ```ActivateByDefault``` is just a java class. Open it up in eclipse and take a look. If you look closely, that class looks for a config property specific to the resource to determine if it should activate it. Let's add that. 
+
+1. In eclipse, open up [core-process/default.properties](https://github.com/rancherio/cattle/blob/master/code/iaas/logic/src/main/resources/META-INF/cattle/core-process/defaults.properties)
+2. Add ```activate.by.default.animal=true```
+3. Restart cattle.
+
+Now, rerun that test and it should pass. YEEHAW!
