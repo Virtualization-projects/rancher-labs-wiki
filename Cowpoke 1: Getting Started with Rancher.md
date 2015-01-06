@@ -46,6 +46,8 @@ brew tap caskroom/homebrew-cask
 brew install brew-cask
 brew cask install virtualbox
 brew install coreutils
+brew install liquibase
+brew install gnu-sed --default-names
 brew install boot2docker
 boot2docker init
 boot2docker up
