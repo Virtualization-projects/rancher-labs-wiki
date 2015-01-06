@@ -7,7 +7,7 @@ This article: [Model: Create Database Type](https://github.com/rancherio/rancher
 
 See if you can follow that article to create a new resource called ```Animal```. Add a field called ```species``` to it. Get it to the point where you can CRUD Animals (and the species field) in the API.
 
-## Creating a resource that extends from and existing one
+## Creating a resource that extends from an existing one
 Let's create a ```pet``` resource by extending ```animal```. We'll add the field ```owner``` to ```pet```.
 
 It's pretty simple actually:
