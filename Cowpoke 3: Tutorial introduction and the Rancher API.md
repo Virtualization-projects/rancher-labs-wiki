@@ -1,4 +1,4 @@
-This series of articles (All starting with "Cowpoke 3") walks you through working with Rancher. It seeks to accomplish the following goals and objects.
+This series of articles (All starting with "Cowpoke 3") walk you through working with Rancher. It seeks to accomplish the following goals and objects.
 ## Goals:
 1. Gain an understanding of Rancher's core Resource and Process concepts.
 2. Gain an understanding of Rancher's distributed microservice architecture.
