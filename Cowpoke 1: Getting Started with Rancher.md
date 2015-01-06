@@ -40,6 +40,7 @@ Here's the list of the core libraries/technologies/software that you'll need:
 
 If you're on a Mac and use Homebrew, you can follow these steps:
 ```bash
+touch ~/.profile # If you don't have it
 ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 brew doctor
 brew tap caskroom/homebrew-cask
@@ -47,6 +48,7 @@ brew install brew-cask
 brew cask install virtualbox
 brew install coreutils
 brew install liquibase
+echo "export LIQUIBASE_HOME=/usr/local/Cellar/liquibase/3.2.2/libexec" >> ~/.profile
 brew install gnu-sed --default-names
 brew install boot2docker
 boot2docker init
