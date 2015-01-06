@@ -95,7 +95,7 @@ Install eclipse now and then do the following:
 
 1. In Eclipse, open the marketplace and install these plugins:
  * Spring IDE. It has a ton of optional modules. You only need the "core" module; deselect the rest.
- * M2E. It should already be installed, but make sure it is.
+ * M2E (maven2eclipse). It should already be installed, but make sure it is.
 1. Make the "Plugin execution not covered by lifecycle..." error go away:
   * Preferences > Maven > Errors/Warnings > Plugin execution not covered...: Ignore
 
