@@ -7,3 +7,6 @@ There is a great example written in bash here:
 [https://github.com/rancherio/cattle/blob/master/docs/examples/handler-bash/simple_handler.sh](https://github.com/rancherio/cattle/blob/master/docs/examples/handler-bash/simple_handler.sh)
 
 Can you adapt this to interact with your animal or pet resource? Give it a shot.
+
+
+**Next:** [[Cowpoke 3.5: Interact with a resource in an existing agent|Cowpoke 3.5: Interact with a resource in an existing agent]]
