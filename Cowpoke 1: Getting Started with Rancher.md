@@ -50,7 +50,7 @@ brew install coreutils
 brew install liquibase
 # The next export command is half baked and will break on newer versions of liqubase. Adjust accordingly
 echo "export LIQUIBASE_HOME=/usr/local/Cellar/liquibase/3.2.2/libexec" >> ~/.profile
-brew install gnu-sed --default-names
+brew install gnu-sed --with-default-names
 brew install boot2docker
 boot2docker init
 boot2docker up
