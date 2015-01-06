@@ -48,7 +48,6 @@ brew install brew-cask
 brew cask install virtualbox
 brew install coreutils
 brew install liquibase
-# The next export command is half baked and will break on newer versions of liqubase. Adjust accordingly
 echo "export LIQUIBASE_HOME=$(find /usr/local/Cellar/liquibase -name libexec)" >> ~/.profile
 brew install gnu-sed --with-default-names
 brew install boot2docker
