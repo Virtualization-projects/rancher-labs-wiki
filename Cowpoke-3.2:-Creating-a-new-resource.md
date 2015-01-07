@@ -3,7 +3,7 @@ If you're following along, you should have surmised that API resources are ultim
 The notable caveat to the above rule is that if Resource Bar extends from Resource Foo, then they will both use the foo database table.
 
 ## Creating a new database backed resource
-This article: [Model: Create Database Type](https://github.com/rancherio/rancher/wiki/Model:-Create-Database-Type).
+This article: [[Model: Create Database Type|Model: Create Database Type]]
 
 See if you can follow that article to create a new resource called ```Animal```. Add a field called ```species``` to it. Get it to the point where you can CRUD Animals (and the species field) in the API.
 
