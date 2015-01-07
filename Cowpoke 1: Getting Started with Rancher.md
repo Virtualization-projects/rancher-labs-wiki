@@ -125,7 +125,7 @@ Remember that Cattle.launch we copied? That's how we launch the management serve
  2. Debug Configurations...
  3. Java Applications: Cattle (click it)
  4. The config is already there, we just need to change some arguments...Click the Arguments tab
- 5. To configure Rancher for mysql, add something like the following to ***VM arguments*** (depending on your setup):
+ 5. To configure Rancher for mysql, add something like the following to ***VM arguments*** (depending on your setup)(***DO NOT PUT IT IN THE PROGRAM ARGUMENTS***):
 
   ```
   -Ddb.cattle.database=mysql
