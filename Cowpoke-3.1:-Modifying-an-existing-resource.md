@@ -37,7 +37,7 @@ This is only a slight variation on the above. In eclipse, open up docker.json ($
 *Why do this?* Vendor-specific plugins. Imagine we supported another container technology that required a field that docker doesn't. We could add that field to $CATTLE_HOME/cattle-**SHINY_NEW_TOY**-api/src/main/resources/schema/base/container.json.d/**arbitrary_filename**.json and that field would get picked up without polluting the base container.json configuration.
 
 ### Option 3: Database columns
-You can also add a field to a resource by creating a new database column for it. [[This article|Create Database Type]] explains how to create a new database-backed resource from scratch. You can adapt the instructions to modify an existing resource.
+You can also add a field to a resource by creating a new database column for it. [[This article|Model: Create Database Type]] explains how to create a new database-backed resource from scratch. You can adapt the instructions to modify an existing resource.
 
 Take the time to try that now. Add myFoo or a similarly named property as column to a table in the cattle database and get it working in the API.
 
