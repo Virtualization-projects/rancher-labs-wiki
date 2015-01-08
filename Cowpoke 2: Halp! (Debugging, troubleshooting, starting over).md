@@ -54,7 +54,7 @@ If you're encountering some strange behaviors with liquibase such as not detecti
 ### Debugging a process on a Cattle server
 There is a way to trace a specific process execution (account.create, container.start, etc) on a cattle server. 
 First, request for processInstances [http://localhost:8080/v1/processinstances](http://localhost:8080/v1/processinstances). Locate your process by applying the filtering, get its pid.
-Then in terminal, invoke print_process.py <pid>:
+Then in terminal, invoke print_process.py and pass the pid:
 ```
 cd $CATTLE_HOME/tests/integration/cattletest/util
 
