@@ -64,7 +64,9 @@ sudo easy_install pip
 sudo pip install tox # This gets your virtualenv too
 ```   
 Install JDK 7 manually since the Homebrew install seems flaky. Just get the latest [from Oracle](http://www.oracle.com/technetwork/java/javase/downloads/index.html).
-
+```
+echo "export JAVA_HOME=$(/usr/libexec/java_home -v 1.7)" >> ~/.profile
+```
 ### Clone repos and setup projects
 Clone cattle to your workspace directory:
 ```bash
