@@ -74,3 +74,16 @@ cd $CATTLE_HOME/tests/integration/cattletest/util
   8 ms PROCESS: account.activate account:78 DONE
 ```
 The output is the list of all the processes and handlers invoked by the original process in the order of execution
+
+
+### My cattle hangs on startup (also, 'Cannot acquire lock' issues)
+
+If your cattle server hangs on startup, it is likely because not being able to acquire a lock to perform initialization operations
+
+In this case remove the database entries which hold the lock by executing the following commands
+
+```
+sh>> mysql -u root
+mysql>> use database cattle;
+mysql>> DELETE FROM DATABASECHANGELOGLOCK;
+```
