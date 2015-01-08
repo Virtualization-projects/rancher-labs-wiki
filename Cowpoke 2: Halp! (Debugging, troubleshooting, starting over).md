@@ -50,3 +50,27 @@ Then don't follow the cowpoke instructions. Follow [these instructions](https://
 
 ### Liquibase and jOOQ
 If you're encountering some strange behaviors with liquibase such as not detecting a column change or jOOQ, make sure you're running java 1.7 instead of 1.8.
+
+### Debugging a process on a Cattle server
+There is a way to trace a specific process execution (account.create, container.start, etc) on a cattle server. 
+First, request for processInstances [http://localhost:8080/v1/processinstances](http://localhost:8080/v1/processinstances). Locate your process by applying the filtering, get its pid.
+Then in terminal, do:
+```
+cd $CATTLE_HOME/tests/integration/cattletest/util
+
+./print_process.py 1pi1700
+0 seconds 1pi1700 account.create account:78 DONE DONE SUCCESS
+  43 ms PROCESS: account.create account:78 DELEGATE
+    25 ms HANDLER: AccountCreate
+      14 ms PROCESS: credential.create credential:166 DELEGATE
+        0 ms HANDLER: AgentApiKeyCreate
+        4 ms HANDLER: ApiKeyCreate
+        0 ms HANDLER: RegisterTokenCreate
+        0 ms HANDLER: SshKeyCreate
+        1 ms HANDLER: ActivateByDefault
+      5 ms PROCESS: credential.activate credential:166 DONE
+    9 ms HANDLER: RegisterTokenAccountCreate
+    1 ms HANDLER: ActivateByDefault
+  8 ms PROCESS: account.activate account:78 DONE
+```
+The output is the list of all the processes and handlers invoked by the original process in the order of execution
