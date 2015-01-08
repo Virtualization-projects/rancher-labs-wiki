@@ -1,5 +1,5 @@
 ## Agents and services in Rancher
-Outside of the [[cattle orchestration engine|https://github.com/rancherio/cattle]], there are a number of agents and other services that perform core operations in Rancher. These incldue the:
+Outside of the [[cattle orchestration engine|https://github.com/rancherio/cattle]], there are a number of agents and other services that perform core operations in Rancher. These include the:
 * [[python-agent|https://github.com/rancherio/python-agent]]
 * [[console-agent|https://github.com/rancherio/console-agent]]
 * [[node-agent|https://github.com/rancherio/node-agent]]
