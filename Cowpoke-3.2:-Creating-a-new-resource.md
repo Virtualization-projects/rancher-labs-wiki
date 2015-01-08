@@ -7,6 +7,8 @@ This article: [[Model: Create Database Type|Model: Create Database Type]]
 
 See if you can follow that article to create a new resource called ```Animal```. Add a field called ```species``` to it. Get it to the point where you can CRUD Animals (and the species field) in the API.
 
+If you see the resource in the API, but you're not able to create a new resource, make sure your new table has a primary key or at least one unique key.  For more information, see: http://www.jooq.org/javadoc/3.2.0/org/jooq/UpdatableRecord.html
+
 ## Creating a resource that extends from an existing one
 Let's create a ```pet``` resource by extending ```animal```. We'll add the field ```owner``` to ```pet```.
 
