@@ -47,3 +47,6 @@ cd <path where you cloned python agent>
 
 ### Why is setting up cattle so insanely complicated? I just need a running rancher server and host so that I can work on &lt;component foo&gt;
 Then don't follow the cowpoke instructions. Follow [these instructions](https://github.com/rancherio/rancher#management-server).
+
+### Liquibase and jOOQ
+If you're encountering some strange behaviors with liquibase such as not detecting a column change or jOOQ, make sure you're running java 1.7 instead of 1.8.
