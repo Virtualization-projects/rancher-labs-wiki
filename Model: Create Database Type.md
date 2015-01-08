@@ -34,6 +34,8 @@ Run Rancher once against a MySQL database named `cattle_base`.  Do this by setti
 
 Now run `cattle/resources/content/db/liquibase-dump.sh`.  This script will generate a change set and store it in `dump.xml`.  Rename `dump.xml` to `core-XXX.xml` and edit `changelog.xml` to point to it.
 
+If you don't see column changes check whether you're running java 1.8 instead of java 1.7.
+
 Now drop all the tables by running `cattle/resources/content/db/mysql/drop_tables.sh`.  This script will create a MySQL dump if you need to revert back.  Make sure you change `db.cattle.mysql.name` back to `cattle`.
 
 Now refresh your workspace and start Rancher again.  Rancher should now deploy the correct schema.
@@ -41,3 +43,5 @@ Now refresh your workspace and start Rancher again.  Rancher should now deploy t
 ## Generate jOOQ Model
 
 Run `cattle/code/iaas/model/codegen.sh`.  This will generate all the POJOs needed for jOOQ.  This will also create the REST API.  Refresh your workspace and start Rancher and go to /v1 and see if your new type is in the API.
+
+NOTE: Running the codegen.sh script will have problems running using java 1.8 instead of 1.7
