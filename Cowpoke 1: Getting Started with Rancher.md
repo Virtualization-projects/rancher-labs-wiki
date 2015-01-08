@@ -155,13 +155,13 @@ We'll run the python integration tests out of PyCharm. Go install the latest [Py
 Now, create a project for the integration tests via: File > Open > $CATTLE_ROOT/tests/integration
 
 Set the python interpreter as a virtual environment:
-> **Note:** You can setup the .venv from the command line if you prefer. PyCharm will automatically pick it up.
+> **Note:** You can setup the venv from the command line if you prefer. PyCharm will automatically pick it up.
 
 1. PyCharm > Preferences > Project Interpreter
 1. Click the gear box next to the Project Interpreter drop down on the right
 1. Create virtualenv. 
- * Name: .venv
- * Location: $CATTLE_ROOT/tests/integration/.venv
+ * Name: venv
+ * Location: $CATTLE_ROOT/tests/integration/venv
  * Base Interpreter: <Default OS X Python>
 
 Setup Python integrated tools:
@@ -172,7 +172,7 @@ Setup Python integrated tools:
 Darn, PyCharm only allows for specifying a single requirements file, but we have a test-requirements.txt to deal with. Need to install those dependencies from the command line:
 ```
 cd $CATTLE_ROOT/tests/integration
-. .venv/bin/activate
+. venv/bin/activate
 pip install -r test-requirements.txt
 ```
 
