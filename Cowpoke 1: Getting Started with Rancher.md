@@ -49,7 +49,7 @@ brew cask install virtualbox
 brew install coreutils
 brew install maven
 brew install liquibase
-echo "export LIQUIBASE_HOME=$(find /usr/local/Cellar/liquibase -name libexec)" >> ~/.profile
+echo 'export LIQUIBASE_HOME=$(find /usr/local/Cellar/liquibase -name libexec)' >> ~/.profile
 brew install gnu-sed --with-default-names
 brew install boot2docker
 boot2docker init
