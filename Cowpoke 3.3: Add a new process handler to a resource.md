@@ -3,7 +3,7 @@ Now that we've defined a new resource and created a set of processes for it (the
 ## Adding a post-activate handler
 In the cattle-iaas-logic project, create a new class: 
 
-* ```io.cattle.platform.process.animal.AnimalPostActivate``` 
+* ```io.cattle.platform.process.animal.AnimalPostCreate``` 
   * That extends 
     * ```io.cattle.platform.process.common.handler.AbstractObjectProcessLogic``` 
   * And implements 
