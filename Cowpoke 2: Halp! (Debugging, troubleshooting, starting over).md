@@ -84,6 +84,6 @@ In this case remove the database entries which hold the lock by executing the fo
 
 ```
 sh>> mysql -u root
-mysql>> use database cattle;
+mysql>> use cattle;
 mysql>> DELETE FROM DATABASECHANGELOGLOCK;
 ```
