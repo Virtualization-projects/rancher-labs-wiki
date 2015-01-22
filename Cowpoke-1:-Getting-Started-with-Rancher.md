@@ -89,7 +89,7 @@ mysql -uroot < resources/content/db/mysql/create_db_and_user_dev.sql
 ```
 
 ### Install and Configure Eclipse
-> ***Note:*** If you aren't working on the cattle orcehstration server with is written in java, you don't need to install, configure, and run in Eclipse. Instead, you can just run the rancher server as a container. Instructions are [in the Rancher repo README.md](https://github.com/rancherio/rancher#management-server)
+> ***Note:*** If you aren't working on the cattle orchestration server which is written in java, you don't need to install, configure, and run in Eclipse. Instead, you can just run the rancher server as a container. Instructions are [in the Rancher repo README.md](https://github.com/rancherio/rancher#management-server)
 
 For Java, we'll assume the latest version of ***[Eclipse](https://www.eclipse.org/downloads/packages/)*** (flavor: *Eclipse IDE for Java Developers*). 
 
