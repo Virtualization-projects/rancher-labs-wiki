@@ -5,7 +5,7 @@ If you've run into trouble hacking on Rancher, check here for possible solutions
 If you're environment goes sideways and you have a tight deadline looming, sometimes the easiest path forward is to clean up and start over. Stop the cattle server, blow away your database, and destroy all your containers:
 ```
 $CATTLE_HOME/resources/content/db/mysql/drop_tables.sh # Blow away your database
-docker rm -f $(docker ps -qa) # Destroy all containers
+docker rm -fv $(docker ps -qa) # Destroy all containers
 ```
 Restarting the cattle server will recreate the database. Then start up the rancher-agent container again:
 ```
