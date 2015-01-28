@@ -71,6 +71,6 @@ The data come along with the event is the serialized form of _dataResource_. The
 > event.data.volume=offering|instance|storagePools|image
 > event.data.volumeStoragePoolMap=volume[${event.data.volume}]|storagePool
 
-The serialized form would contained every information agent needs to know to perform the correct action.
+The serialized form would contained all the informations agent needs to know to perform the correct action.
 
 The reply would be in the form of Event as well, whose data would be used as a parameter of returned HandlerResult and update the resource immediately.
