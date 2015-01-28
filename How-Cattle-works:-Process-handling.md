@@ -4,7 +4,7 @@ This article described how process works in cattle.
 
 ## Process
 
-Most operation of the resources are defined in resource lifecycle. _spring-core-process-contexts.xml_ define the lifecycle for each resource. Most of resources just follow the _defaultProcess_, for example http://localhost:8080/v1/resourcedefinitions/1rd!host/resourcedot shows the _defaultProcess_ applied on *host* resource.
+Most operation of the resources are defined in resource lifecycle. _spring-core-process-contexts.xml_ define the lifecycle for each resource. Most of resources just follow the _defaultProcess_, for example [this process map](https://github.com/rancherio/rancher/wiki/How-Cattle-works:-Process-handling) shows the _defaultProcess_ applied on *host* resource.
 
 The process different from _defaultProcess_ can be defined in the file as well. _defaultProcess_ is not required for each resource. For example the following code defined lifecycle of _snapshot_:
 
