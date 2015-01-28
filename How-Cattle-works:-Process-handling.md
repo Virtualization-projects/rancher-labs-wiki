@@ -58,7 +58,7 @@ Here is a example of definition of a bean:
 + _processNames_: The process name used to identify this class, which would be called during handling this process.
 
 
-The main function of _AgentBasedProcessHandler_ is still handle(). In it's center, there are three resources:
+The main function of _AgentBasedProcessHandler_ is still handle(). There are three resources define how it works:
 + _eventResource_: The resource would be transferred in event as main resource.
 + _dataResource_: The other data resource would be come along with the event.
 + _agentResource_: The agent resource this event would be sent to.
