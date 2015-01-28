@@ -28,3 +28,18 @@ Schema validation can be defined in *resource_name.json*, for example, as you ca
 
 The full list of available options are at: [API spec](https://github.com/rancherio/api-spec)
 
+## Validation filter
+
+Obviously the schema validation won't be good enough for more complex validation requirement, so there are something can be done with code logic can help. That's we called *Validation Filter*. The filter are defined in using _spring-iaas-api-logic-context.xml_, like following:
+
+    <bean class="io.cattle.platform.iaas.api.filter.instance.InstanceImageValidationFilter" />
+    <bean class="io.cattle.platform.iaas.api.filter.instance.InstanceNetworkValidationFilter" />
+    <bean class="io.cattle.platform.iaas.api.filter.instance.InstancePortsValidationFilter" />
+
+The filter implemented should extends _AbstractResourceManagerFilter_. _AbstractDefaultResourceManagerFilter_ would set priority to Priority.DEFAULT on top of that.
+
+The main functions in the _AbstractResourceManagerFilter_ are:
+
+* public String[] getTypes(): define which type of resource(say, subtype of resource) you want to filer on.
+* public Class<?>[] getTypeClasses(): define which resource you want to filter on. Notice it wouldn't cover the subtype of this resource type.
+* create()/update()/delete(): Place to hook in filter logic.
