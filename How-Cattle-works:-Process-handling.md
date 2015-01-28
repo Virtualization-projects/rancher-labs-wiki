@@ -72,7 +72,7 @@ The data come along with the event is the serialized form of _dataResource_. The
 > event.data.imageStoragePoolMap=storagePool|image
 > event.data.instance=volumes[${event.data.volume}]|offering|image|ports|nics[${event.data.nic}]|instanceLinks[targetInstance]  
 > event.data.instanceHostMap=instance[${event.data.instance}]|host
-> event.data.nic=ipAddresses[subnet]|network[networkServiceProviders|networkServices]
+> event.data.nic=ipAddresses[subnet]|network[networkServiceProviders|networkServices]  
 > event.data.volume=offering|instance|storagePools|image  
 > event.data.volumeStoragePoolMap=volume[${event.data.volume}]|storagePool
 
