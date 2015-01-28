@@ -34,6 +34,8 @@ Welcome to the Rancher wiki!
 
 [[How Cattle works: Process handling]]
 
+[[How Cattle works: API input validation]]
+
 ## Other resources:
 
 [API spec](https://github.com/rancherio/api-spec)
