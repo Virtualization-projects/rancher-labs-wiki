@@ -19,7 +19,11 @@ Defined the process for _snapshot_, which doesn't involve defaultProcess at all.
 
 The process name defined in "spring-core-process-contexts.xml" can be used to identify the action would be taken when resource state changed. All the process handling logic is in _DefaultProcessInstanceImpl.java_. There are three places can be hooked in to process handling, which called: _Prelistener_, _Handler_ and _Postlistener_ respectively.
 
-The handler would mostly expands AbstractDefaultProcessHandler, which set process name which should match the action name. Mostly the Java class name should match the "ResourceAction.java" pattern, then process name can be set automatically.
+Most handlers should expands AbstractObjectProcessHandler. The AbstractDefaultProcessHandler adds two things on top of the AbstractObjectProcessHandler for convenient:
+
+1. Sets priority to Priority.DEFAULT. if you don't set a priority it is assumed to be Priority.SPECIFIC which runs before DEFAULT
+
+2. Automatically turns the classname in the the processname to attach to.  So the class InstanceStart becomes "instance.start" which set process name which should match the action name. Mostly the Java class name should match the "ResourceAction.java" pattern, then process name can be set automatically.
 
 The core function of handler class is:
 
@@ -28,7 +32,7 @@ The core function of handler class is:
 The state field contained resource object(getResource()).
 
 + Return: _HandlerResult_ Parameters: 
-+ _shouldContinue()_: If it's necessary to continue executing following containers.  
++ _shouldContinue()_: If it's necessary to continue executing following handlers.  
 + _Key value pair_: The key value pair would be used to update resource. It would be represented by a nested map without the top level key(resource type itself). All the children resources can be updated as well. For example, assume InstanceHostMap has: Instance, Host, Data fields, and instance has field name, the map format would be:
 { Instance: { name: "xxx" ...}, Host: { ... }, Data: { ... } }
 + _withChainProcessName()_: This option would invoke a following action immediately, thus skip the unfavorable intermediate state, prevent it from seen by user. For example, this option is used by _instance.stop_ to skip the *Stopped* state when restart is required. It would invoke _instance.start_ immediately, without leaving room for *Stopped* state.
