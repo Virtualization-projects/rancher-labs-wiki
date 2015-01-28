@@ -58,6 +58,19 @@ Here is a example of definition of a bean:
 
 
 The main function of _AgentBasedProcessHandler_ is still handle(). In it's center, there are three resources:
-+ _eventResource_
-+ _dataResource_
-+ _agentResource_
++ _eventResource_: The resource would be transferred in event as main resource.
++ _dataResource_: The other data resource would be come along with the event.
++ _agentResource_: The agent resource this event would be sent to.
+
+The data come along with the event is the serialized form of _dataResource_. The serializer is defined at _defaults.properities_, like this:
+
+> event.data.imageStoragePoolMap=storagePool|image
+> event.data.instance=volumes[${event.data.volume}]|offering|image|ports|nics[${event.data.nic}]|instanceLinks[targetInstance]  
+> event.data.instanceHostMap=instance[${event.data.instance}]|host
+> event.data.nic=ipAddresses[subnet]|network[networkServiceProviders|networkServices]
+> event.data.volume=offering|instance|storagePools|image
+> event.data.volumeStoragePoolMap=volume[${event.data.volume}]|storagePool
+
+The serialized form would contained every information agent needs to know to perform the correct action.
+
+The reply would be in the form of Event as well, whose data would be used as a parameter of returned HandlerResult and update the resource immediately.
