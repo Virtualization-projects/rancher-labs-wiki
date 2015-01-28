@@ -34,3 +34,6 @@ Welcome to the Rancher wiki!
 
 [[How Cattle works: Process handling]]
 
+## Other resources:
+
+[API spec](https://github.com/rancherio/api-spec)
