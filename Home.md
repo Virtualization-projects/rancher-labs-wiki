@@ -38,4 +38,6 @@ Welcome to the Rancher wiki!
 
 ## Other resources:
 
+[[Deploy: Pre Release Code]]
+
 [API spec](https://github.com/rancherio/api-spec)
