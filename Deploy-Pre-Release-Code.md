@@ -53,5 +53,3 @@ At this point you can add a git remote and pull in your code. Once the source yo
 The build-master container is a Docker in Docker container that performs git checkouts from configured projects, and using the [rancherio/build-tools](https://github.com/rancherio/build-tools.git) builds all of the source. The Cattle project is configured via Environment variables to use the directories local to container instead of the standard global-properties file. 
 
 The entry point of the container is `/opt/cattle/scripts/run` this script calls git-manager and build-projects scripts. 
-
-If you want to run the validation tests, it is best to create a separate container with --volumes-from.
