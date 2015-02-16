@@ -1,6 +1,6 @@
 Welcome to the Rancher wiki!
 
-## OverView:
+## Overview:
 
 [[Overview: What is Cattle]]
 
