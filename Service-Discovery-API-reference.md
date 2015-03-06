@@ -66,3 +66,35 @@ Yet to define:
 
 API Targets, Fields (* - required) and Actions
 ----------
+1) /**environment** 
+
+Fields:
+* name
+
+Actions:
+* CRUD
+* activate/deactivate
+* activateServices
+* importConfig
+
+2) /**service** 
+
+Fields:
+* name
+* healthCheck
+* loadBalancing
+* scale
+
+Actions:
+* CRUD
+* activate/deactivate
+
+3) /**launchConfig** 
+
+Fields:
+* name
+* serviceId
+* <bunch of properties defining container create/start options - imageUuid, volumes, etc>
+
+Actions:
+* CRD
