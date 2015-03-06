@@ -38,6 +38,21 @@ This use case is similar to the Use Case1, with one extra option on the step 1).
 
 User builds an environment + the services from Rancher UI omitting the config import. 
 
+Docker-compose support
+----------
+All the fields defined in docker-compose.yml are supported, with an exception for:
+
+1. **build** - as the defined Dockerfile is local to user's setup, Rancher has no ability to read/execute it
+2. **env_file** - the same reason as explained in 1.
+3. **environment** - don't support the case when only key is specified, but no value - the same reason as explained in 1.
+4. net - might add support for that before the feature goes out
+
+Extra service options added by Rancher
+----------
+1. LoadBalancer
+2. HealthCheck
+3. Scale - this might eventually make it to docker-compose as per [docker-compose PR](https://github.com/docker/compose/pull/630)
+
 User flow
 -----------
 
