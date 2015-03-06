@@ -62,16 +62,16 @@ User flow will be described from the Use Case 3 point, where everything gets def
 
 2. Add 1+ services to the environment using **service.create** API. For the service, you also have to define the launchConfig using launchConfig.create api. 
 
-3. Once you decide there are no more services to be added, the environment can be activated using **environment.activate** API. This call DOESN'T activate the services, it just updates the environment state to Active indicating that there are no more services can be added as this point. 
+3. All services in the environment can be launched using **environment.activateServices** API. The API will trigger services activation (the order is determined based on services relationship). To note: services also can be activated individually by using **service.activate** API.
 
-4. Once environment is activated, all the services in it can be launched using **environment.activateServices** API. The API will trigger services activation (the order is determined based on services relationship). To note: services also can be activated individually by using **service.activate** API.
-
-5. Service activation will consists of:
+5. Service activation consists of:
 
 * setting up the LB if specified
 * setting up the HealthCheck if specified
 * Starting container n=scale instances with options defined in launch config. If no scale option is specified, one container is started per service
 
+6. Active service can be deactivated using **service.deactivate** API
+7. If user wants to rebuild the service (say, after bumping up the scale parameter), **service.restart** should be called for the active service.
 
 API Targets, Fields (* - required) and Actions
 ----------
@@ -82,7 +82,6 @@ Fields:
 
 Actions:
 * CRUD
-* activate/deactivate
 * activateServices
 * importConfig
 
@@ -97,6 +96,7 @@ Fields:
 Actions:
 * CRUD
 * activate/deactivate
+* restart
 
 3) /**launchConfig** 
 
@@ -111,8 +111,9 @@ Actions:
 
 Yet to clear out
 -----------
-* Still not sure we need environment activate/deactivate. May be we should just let user add/remove services at any point, and make an environment active by default
-* What **service.deactivate** mean (instances stop, update for other services consuming this one, etc)
-* Modifying the active environment - whether to allow adding/removing the services once activated.
+* What **service.deactivate** should do (instances stop, DNS update, healthcheck update)
 * Service update - whether to allow parameters modifications once activated.
-* When instance launched by **service.activate** is destroyed, how to restore to the initial **scale** number of containers defined on the service. **service.restart**?
+* Introduce new API for re-activating the service to handle the scenario when something changed in its config
+* API naming: service.activate/deactivate or service.launch/kill?
+* API naming: environment.importConfig or environment.importTemplate 
+* What parameters should be allowed for update on a service: scale, lb, healthcheck? 
