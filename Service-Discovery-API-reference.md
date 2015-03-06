@@ -4,9 +4,9 @@ This doc covers API reference and V1 feature set for Rancher Service Discovery
 
 Dictionary
 ----------
-**Environment**
-**Service**
-**LaunchConfig**
+**Environment** - defines a namespace where the user application can be run. Examples: test environment, development environment, production environment.
+**Service** - set of configuration options describing user application. Example: Web service, with the LB and healthcheck support containing 3 containers created from nginx image. 
+**LaunchConfig** - a config containing container create/start options. Gets defined on per service basis to segregate options that are specific to service orchestration and monitoring (lb, healthcheck) from the container specific create/start options (imageUuid, volumes, etc).
 
 Use cases
 -----------
