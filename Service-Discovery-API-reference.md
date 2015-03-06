@@ -14,7 +14,9 @@ Example: Web service, with the LB and healthcheck support containing 3 container
 
 **LaunchConfig** - a config containing container create/start options. 
 
-Gets defined on per service basis to segregate options that are specific to service orchestration and monitoring (lb, healthcheck) from the container specific create/start options (imageUuid, volumes, etc).
+Gets defined on per service basis to segregate options that are specific to service orchestration and monitoring (lb, healthcheck, scale) from the container specific create/start options (imageUuid, volumes, etc).
+
+**LB** - local Load Balancer implemented by Cattle. Sits in front of the service's containers.
 
 Use cases
 -----------
@@ -38,6 +40,29 @@ User builds an environment + the services from Rancher UI omitting the config im
 
 User flow
 -----------
+
+User flow will be described from the Use Case 3 point, where everything gets defined via Rancher UI/API
+
+1. Create an environment using environment.create API
+
+2. Add 1+ services to the environment using service.create API. For the service, you also have to define the launchConfig using launchConfig.create api. 
+
+3. Once you decide there are no more services to be added, the environment can be activated. Once the environment is activated, no more services can be added to it.
+
+4. Once environment is activated, all the services in it can be launched using environment.activateServices API. The API will trigger services activation (the order is determined based on services relationship). To note: services also can be activated individually by using service.activate API.
+
+5. Service activation will consists of:
+
+* setting up the LB if specified
+* setting up the HealthCheck if specified
+* Starting container n=scale instances with options defined in launch config. If no scale option is specified, one container is started per service
+
+Yet to define:
+
+* What service.deactivate mean (instances stop, update for other services consuming this one, etc)
+* Environment update - whether to allow parameters modifications once activated
+* Service update - whether to allow parameters modifications once activated.
+
 
 API Targets, Fields (* - required) and Actions
 ----------
