@@ -72,14 +72,6 @@ User flow will be described from the Use Case 3 point, where everything gets def
 * setting up the HealthCheck if specified
 * Starting container n=scale instances with options defined in launch config. If no scale option is specified, one container is started per service
 
-Yet to define:
-
-* What **service.deactivate** mean (instances stop, update for other services consuming this one, etc)
-* Modifying the active environment - whether to allow adding/removing the services once activated.
-* Service update - whether to allow parameters modifications once activated.
-* When instance launched by **service.activate** is destroyed, how to restore to the initial **scale** number of containers defined on the service. **service.restart**?
-
-
 
 API Targets, Fields (* - required) and Actions
 ----------
@@ -115,3 +107,12 @@ Fields:
 
 Actions:
 * CRD
+
+
+Yet to clear out
+-----------
+* Still not sure we need environment activate/deactivate. May be we should just let user add/remove services at any point, and make an environment active by default
+* What **service.deactivate** mean (instances stop, update for other services consuming this one, etc)
+* Modifying the active environment - whether to allow adding/removing the services once activated.
+* Service update - whether to allow parameters modifications once activated.
+* When instance launched by **service.activate** is destroyed, how to restore to the initial **scale** number of containers defined on the service. **service.restart**?
