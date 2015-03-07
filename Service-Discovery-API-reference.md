@@ -22,21 +22,17 @@ Use cases
 -----------
 **Use Case #1** 
 
-From Rancher UI, user:
+From command line, user
 
-1. Creates and environment in Cattle, and imports docker-compose.yml config to it - the services get built automatically based on the config content.
+1. Executes "rancher up" - the services get built in Cattle based on the docker-compose.yml config content. Rancher client will invoke Rancher Apis to build the environment, create/activate the services
 
-2. After all the services are created, user can activate the environment and all the services in it.
-
-This scenario replicates the behavior of the scenario if user just did "docker-compose up"
+2. User can also optionally put rancher-compose.yml config as an extra parameter to "rancher up" command to enable Rancher specific config on a service - LoadBalancer, HealthCheck, Scale
 
 **Use Case #2** 
 
-This use case is similar to the Use Case1, with one extra option on the step 1). In addition to docker-compose.yml, user imports rancher-compose.yml where extra options only Rancher supports, are defined. 
+User builds an environment, creates/activates services from Rancher UI. 
 
-**Use Case #3** 
-
-User builds an environment + the services from Rancher UI omitting the config import. 
+For both use cases, all the services - once built - can be exported to docker-compose.yml/rancher-compose.yml files using Rancher UI/API.
 
 Docker-compose support
 ----------
@@ -56,7 +52,7 @@ Extra service options added by Rancher
 User flow
 -----------
 
-User flow will be described from the Use Case 3 point, where everything gets defined via Rancher UI/API
+User flow will be described from the Use Case 2 point, where everything gets defined via Rancher UI/API
 
 1. Create an environment using environment.create API
 
@@ -71,7 +67,6 @@ User flow will be described from the Use Case 3 point, where everything gets def
 * Starting container n=scale instances with options defined in launch config. If no scale option is specified, one container is started per service
 
 6. Active service can be deactivated using **service.deactivate** API
-7. If user wants to rebuild the service (say, after bumping up the scale parameter), **service.restart** should be called for the active service.
 
 API Targets, Fields (* - required) and Actions
 ----------
@@ -83,7 +78,6 @@ Fields:
 Actions:
 * CRUD
 * activateServices
-* importConfig
 
 2) /**service** 
 
@@ -96,7 +90,6 @@ Fields:
 Actions:
 * CRUD
 * activate/deactivate
-* restart
 
 3) /**launchConfig** 
 
@@ -109,11 +102,6 @@ Actions:
 * CRD
 
 
-Yet to clear out
+To support in the future:
 -----------
-* What **service.deactivate** should do (instances stop, DNS update, healthcheck update)
-* Service update - whether to allow parameters modifications once activated.
-* Introduce new API for re-activating the service to handle the scenario when something changed in its config
-* API naming: service.activate/deactivate or service.launch/kill?
-* API naming: environment.importConfig or environment.importTemplate 
-* What parameters should be allowed for update on a service: scale, lb, healthcheck? 
+* Service update
