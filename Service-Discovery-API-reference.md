@@ -96,7 +96,7 @@ Actions:
 Fields:
 * name
 * serviceId
-* <bunch of properties defining container create/start options - imageUuid, volumes, etc>
+* bunch of properties defining container create/start options - imageUuid, volumes, etc - TBD
 
 Actions:
 * CRD
