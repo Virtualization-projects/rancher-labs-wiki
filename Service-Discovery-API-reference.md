@@ -84,7 +84,7 @@ Actions:
 Fields:
 * name
 * healthCheck
-* loadBalancing
+* loadBalancer
 * scale
 
 Actions:
