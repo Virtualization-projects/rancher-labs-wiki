@@ -9,7 +9,27 @@ docker-compose.yml/fig.yml parameters to Rancher parameters translation
 ----------
 |Compose parameter|Rancher parameter|Extra logic that needs to be done on a client side|
 ---------|------|---------------|--------------------------------------------------------------------------
-|Image|Image|If image belongs to client's private repo, rancher-compose.yml file should have registryCredentialId specified|
+|image|image|If image belongs to client's private repo, rancher-compose.yml file should have registryCredentialId specified|
+|build|**Not supported**|-|
+|command|command|-|
+|links|links|We can't translate links to Rancher instanceLinks directly as link in compose means link to the entire service; the translation will be done on the server side |
+|external_links|externalLinks|Again, the translation to instanceLinks will be done on the server side|
+|ports|ports|-|
+|expose||-|
+|volumes|dataVolumes|-|
+|volumes_from|dataVolumesFrom|-|
+|environment|environment|-|
+|env_file|**Not supported**|-|
+|net|**Not supported**|-|
+|dns|dns|-|
+||||
+||||
+||||
+||||
+||||
+||||
+||||
+||||
 
 Extra parameters supported by rancher-compose.yml
 ---------
