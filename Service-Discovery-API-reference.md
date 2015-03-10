@@ -2,6 +2,10 @@ Overview
 --------
 This doc covers API reference and V1 feature set for Rancher Service Discovery
 
+References
+---------
+[Rancher-compose client to Rancher API reference](https://github.com/rancherio/rancher/wiki/Rancher-compose-client-to-Rancher-API-reference)
+
 Dictionary
 ----------
 **Environment** - defines a namespace where the user application can be run. 
