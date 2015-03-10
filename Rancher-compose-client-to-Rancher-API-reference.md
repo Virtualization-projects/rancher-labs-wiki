@@ -4,12 +4,12 @@ This doc is meant to be used by rancher-compose client for translating rancher-c
 
 Rancher-compose commands to Rancher API commands translation
 ----------
-|Compose command|Rancher API(s)|Comments|
+|Rancher-compose client command|Rancher API(s)|Comments|
 ---------|------|---------------|--------------------------------------------------------------------------
-||||
-||||
-||||
-||||
+|rancher-compose up|1. environment.create<br>2. service.create for all the services defined in the .yml file<br>3. environment.activateServices||
+|rancher-compose stop|environment.deactivateServices||
+|rancher-compose rm|environment.remove||
+
 
 docker-compose.yml/fig.yml parameters to Rancher parameters translation
 ----------
