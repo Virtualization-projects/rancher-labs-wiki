@@ -6,6 +6,7 @@ Rancher-compose commands to Rancher API commands translation
 ----------
 |Compose command|Rancher API(s)|Comments|
 ---------|------|---------------|--------------------------------------------------------------------------
+||||
 
 docker-compose.yml/fig.yml parameters to Rancher parameters translation
 ----------
