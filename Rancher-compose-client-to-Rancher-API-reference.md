@@ -30,7 +30,7 @@ docker-compose.yml/fig.yml parameters to Rancher parameters translation
 |user|user|-|
 |hostname|hostname|-|
 |domainname|domainName|-|
-|mem_limit|memory||
+|mem_limit|memory|-|
 |privileged|privileged|-|
 |restart|restartPolicy|-|
 |stdin_open|stdinOpen|-|
@@ -39,3 +39,9 @@ docker-compose.yml/fig.yml parameters to Rancher parameters translation
 
 Extra parameters supported by rancher-compose.yml
 ---------
+|Parameter name|Required|Comments|
+---------|------|------|
+|scale|false|Scale for the |
+|ha|false|Used to enable HA on the service|
+|loadBalancer|false|Used to enable LoadBalancer on the service|
+|registryCredentialId|true if "image" is located in a private repo|If "image" specified in docker-compose.yml belongs to private repo, registryCredentialId should be specified to let Rancher know the registry location|
