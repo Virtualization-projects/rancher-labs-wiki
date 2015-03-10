@@ -22,14 +22,20 @@ docker-compose.yml/fig.yml parameters to Rancher parameters translation
 |env_file|**Not supported**|-|
 |net|**Not supported**|-|
 |dns|dns|-|
-||||
-||||
-||||
-||||
-||||
-||||
-||||
-||||
+|cap_add|capAdd|-|
+|cap_drop|capDrop|-|
+|dns_search|dnsSearch|-|
+|working_dir|directory|-|
+|entrypoint|entryPoint|-|
+|user|user|-|
+|hostname|hostname|-|
+|domainname|domainName|-|
+|mem_limit|memory||
+|privileged|privileged|-|
+|restart|restartPolicy|-|
+|stdin_open|stdinOpen|-|
+|tty|tty|-|
+|cpu_shares|cpuShares|-|
 
 Extra parameters supported by rancher-compose.yml
 ---------
