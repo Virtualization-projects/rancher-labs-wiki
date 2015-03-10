@@ -4,6 +4,8 @@ This doc is meant to be used by rancher-compose client for translating rancher-c
 
 Rancher-compose commands to Rancher API commands translation
 ----------
+|Compose command|Rancher API(s)|Comments|
+---------|------|---------------|--------------------------------------------------------------------------
 
 docker-compose.yml/fig.yml parameters to Rancher parameters translation
 ----------
