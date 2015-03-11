@@ -18,7 +18,7 @@ Example: Web service, with the LB and healthcheck support containing 3 container
 
 **LaunchConfig** - a config containing container create/start options. 
 
-Gets defined on per service basis to segregate options that are specific to service orchestration and monitoring (lb, healthcheck, scale) from the container specific create/start options (imageUuid, volumes, etc).
+Gets defined on per service basis to segregate options that are specific to service orchestration and monitoring (lb, healthcheck, scale) from the container specific create/start options (imageUuid, volumes, etc). Not visible via API, internal object.
 
 **LB** - local Load Balancer implemented by Cattle. Sits in front of the service's containers.
 
@@ -60,7 +60,7 @@ User flow will be described from the Use Case 2 point, where everything gets def
 
 1. Create an environment using environment.create API
 
-2. Add 1+ services to the environment using **service.create** API. For the service, you also have to define the launchConfig using launchConfig.create api. 
+2. Add 1+ services to the environment using **service.create** API. 
 
 3. All services in the environment can be launched using **environment.activateServices** API. The API will trigger services activation (the order is determined based on services relationship). To note: services also can be activated individually by using **service.activate** API.
 
@@ -68,7 +68,7 @@ User flow will be described from the Use Case 2 point, where everything gets def
 
 * setting up the LB if specified
 * setting up the HealthCheck if specified
-* Starting container n=scale instances with options defined in launch config. If no scale option is specified, one container is started per service
+* Starting container n=scale instances with options defined in a service. If no scale option is specified, one container is started per service
 
 6. Active service can be deactivated using **service.deactivate** API
 
@@ -82,6 +82,7 @@ Fields:
 Actions:
 * CRUD
 * activateServices
+* deactivateServices
 
 2) /**service** 
 
@@ -90,20 +91,12 @@ Fields:
 * healthCheck
 * loadBalancer
 * scale
+* bunch of properties defining container create/start options - imageUuid, volumes, etc - TBD
 
 Actions:
 * CRUD
 * activate/deactivate
 
-3) /**launchConfig** 
-
-Fields:
-* name
-* serviceId
-* bunch of properties defining container create/start options - imageUuid, volumes, etc - TBD
-
-Actions:
-* CRD
 
 
 To support in the future:
