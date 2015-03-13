@@ -90,7 +90,7 @@ Fields:
 * name (*)
 * environmentId (*)
 * healthCheck
-* type: (supportedTypes=user/loadBalancer)
+* type: (supportedTypes=User/loadBalancer)
 * initialScale
 * bunch of properties defining container create/start options - imageUuid, volumes, etc - TBD
 
