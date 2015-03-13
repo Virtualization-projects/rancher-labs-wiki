@@ -98,6 +98,12 @@ Fields:
 Actions:
 * CRUD
 * activate/deactivate
+* createLink/removeLink
+
+3) /**link**
+
+Actions:
+*R
 
 
 
