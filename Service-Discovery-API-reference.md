@@ -14,7 +14,7 @@ Example: test environment, development environment, production environment.
 
 **Service** - set of configuration options describing user application.
 
-Example: Web service, with the LB and healthcheck support containing 3 containers created from nginx image. 
+Example: Web service, with the healthcheck support containing 3 containers created from nginx image. 
 
 **LaunchConfig** - a config containing container create/start options. 
 
@@ -66,7 +66,6 @@ User flow will be described from the Use Case 2 point, where everything gets def
 
 5. Service activation consists of:
 
-* setting up the LB if specified
 * setting up the HealthCheck if specified
 * Starting container n=scale instances with options defined in a service. If no scale option is specified, one container is started per service
 
