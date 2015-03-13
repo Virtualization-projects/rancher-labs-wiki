@@ -83,11 +83,13 @@ Actions:
 * CRUD
 * activateServices
 * deactivateServices
+* exportConfig
 
 2) /**service** 
 
 Fields:
-* name
+* name (*)
+* environmentId (*)
 * healthCheck
 * loadBalancer
 * scale
