@@ -97,7 +97,7 @@ Fields:
 Actions:
 * CRUD
 * activate/deactivate
-* createLink/removeLink
+* addServiceLink/removeServiceLink
 * addContainer/removeContainer
 
 3) /**link**
