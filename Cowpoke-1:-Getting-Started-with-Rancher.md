@@ -125,7 +125,7 @@ The cattle repo contains a lot of sub-projects. All the java sub-projects are ma
 
 ### Launch Rancher!
 Remember that Cattle.launch we copied? That's how we launch the management server:
- 1. Click the Debug Dropdown
+ 1. Click the Run Dropdown
  2. Debug Configurations...
  3. Java Applications: Cattle (click it)
  4. The config is already there, we just need to change some arguments...Click the Arguments tab
@@ -162,26 +162,31 @@ Set the python interpreter as a virtual environment:
 1. Create virtualenv. 
  * Name: .venv
  * Location: $CATTLE_ROOT/tests/integration/.venv
- * Base Interpreter: <Default OS X Python>
+ * Base Interpreter: Choose the Default OS X Python.
 
-Setup Python integrated tools:
- 1. PyCharm > Preferences > Python Integrated Tools
- 1. Package requirements file...click ```...``` and select requirements.txt
- 1. Default test runner: py.test
+Create your project with the virtual environment.
 
-Darn, PyCharm only allows for specifying a single requirements file, but we have a test-requirements.txt to deal with. Need to install those dependencies from the command line:
+After your project is created, setup Python integrated tools:
+1. PyCharm > Preferences > Tools > Python Integrated Tools
+1. Package requirements file...click ```...``` and select $CATTLE_ROOT/tests/integration/requirements.txt
+1. Default test runner: py.test
+1. Click Okay
+
+> **Note:** Another way to set up and activate the requirements file, open the terminal and run these commands.
 ```
 cd $CATTLE_ROOT/tests/integration
 . .venv/bin/activate
-pip install -r test-requirements.txt
+pip install -r requirements.txt
 ```
 
 We're ready to run the integration tests. There's a run configuration drop down in the tool bar. It's just an empty arrow now.
- 1. Click the run configuration drop down and the click 'Edit Configurations...'
+ 1. Click the Run dropdown. Click 'Edit Configurations...'
  1. + > Python tests > py.test
   * Name: Integration-tests
   * Target: $CATTLE_ROOT/tests/integration/cattletest
  1. Run it! It's in the drop down now. Select it and hit the green arrow.
+
+> **Note:** If you didn't activate the requirements file through the commands, the tests may not run immediately. If you get an error, open a specific test case by expanding cattletest > core and click on a test case. Try to run the test case and PyCharm should pop up a note to install requirements. Install the requirements and try to run the tests again. 
 
 Hopefully, you got the green bar.
 
