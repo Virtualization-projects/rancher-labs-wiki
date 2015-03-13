@@ -91,17 +91,19 @@ Fields:
 * environmentId (*)
 * healthCheck
 * type: (supportedTypes=user/loadBalancer)
-* scale
+* initialScale
 * bunch of properties defining container create/start options - imageUuid, volumes, etc - TBD
 
 Actions:
 * CRUD
 * activate/deactivate
 * createLink/removeLink
+* addContainer/removeContainer
 
 3) /**link**
 
 Actions:
+
 *R
 
 
