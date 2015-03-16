@@ -48,6 +48,6 @@ Extra parameters supported by rancher-compose.yml
 |Parameter name|Required|Comments|
 ---------|------|------|
 |scale|false|Number of containers exposing the service |
-|ha|false|Used to enable HA on the service|
-|loadBalancer|false|Used to enable LoadBalancer on the service|
+|healthCheck|false|Used to enable HealthCheck on the service|
+|loadBalancer fields|false|Used to enable LoadBalancer on the service|
 |registryCredentialId|true if "image" is located in a private repo|If "image" specified in docker-compose.yml belongs to private repo, registryCredentialId should be specified to let Rancher know the registry location|
