@@ -21,7 +21,7 @@ docker-compose.yml/fig.yml parameters to Rancher parameters translation
 |links|serviceLinks|-|
 |external_links|externalLinks|-|
 |ports|ports|-|
-|expose||-|
+|expose|**Not supported**|-|
 |volumes|dataVolumes|-|
 |volumes_from|dataVolumesFrom|volumes_from can be containerName or serviceName. Client has to translate it to the cattle container id|
 |environment|environment|-|
