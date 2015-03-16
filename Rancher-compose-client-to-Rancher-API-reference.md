@@ -19,7 +19,7 @@ docker-compose.yml/fig.yml parameters to Rancher parameters translation
 |build|**Not supported**|-|
 |command|command|-|
 |links|serviceLinks|-|
-|external_links|externalLinks|-|
+|external_links|instanceLinks|-|
 |ports|ports|-|
 |expose|**Not supported**|-|
 |volumes|dataVolumes|-|
