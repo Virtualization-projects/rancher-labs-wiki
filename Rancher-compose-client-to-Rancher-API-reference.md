@@ -18,7 +18,7 @@ docker-compose.yml/fig.yml parameters to Rancher parameters translation
 |image|image|If image belongs to client's private repo, rancher-compose.yml file should have registryCredentialId specified|
 |build|**Not supported**|-|
 |command|command|-|
-|links|serviceLinks|-|
+|links|Links get programmed via add/removeServiceLink Rancher APIs|-|
 |external_links|instanceLinks|-|
 |ports|ports|-|
 |expose|**Not supported**|-|
