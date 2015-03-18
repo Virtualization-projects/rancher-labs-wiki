@@ -7,8 +7,8 @@ Rancher-compose commands to Rancher API commands translation
 |Rancher-compose client command|Rancher API(s)|Comments|
 ---------|------|---------------|--------------------------------------------------------------------------
 |rancher-compose up|1. environment.create<br>2. service.create for all the services defined in the .yml file<br>3.service.addServiceLink for "links" items to create mappings to another services<br>4. environment.activateServices||
-|rancher-compose stop|environment.deactivateServices||
-|rancher-compose rm|environment.remove|Just as in compose, environment can be removed only after all services in it are deactivated|
+|rancher-compose stop|environment.deactivateServices|Deactivate all the services that are the part of the environment|
+|rancher-compose rm|environment.remove|All active services in the environment get deactivated; then all the services get removed. After that, the environment gets removed|
 
 
 docker-compose.yml/fig.yml parameters to Rancher parameters translation
