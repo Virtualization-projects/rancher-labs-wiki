@@ -5,6 +5,7 @@ This doc covers API reference and V1 feature set for Rancher Service Discovery
 References
 ---------
 [Rancher-compose client to Rancher API reference](https://github.com/rancherio/rancher/wiki/Rancher-compose-client-to-Rancher-API-reference)
+[Initial PR for API/Process logic] (https://github.com/rancherio/cattle/pull/286)
 
 Dictionary
 ----------
