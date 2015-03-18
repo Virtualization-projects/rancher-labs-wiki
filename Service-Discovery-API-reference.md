@@ -71,6 +71,8 @@ User flow will be described from the Use Case 2 point, where everything gets def
 
 6. Active service can be deactivated using **service.deactivate** API
 
+7. Services can be linked/unlinked using **service.addServiceLink**/**service.removeServiceLink**. The operation can be called on service in active/inactive state 
+
 API Targets, Fields (* - required) and Actions
 ----------
 1) /**environment** 
@@ -98,15 +100,22 @@ Actions:
 * CRUD
 * activate/deactivate
 * addServiceLink/removeServiceLink
-* addContainer/removeContainer
 
-3) /**link**
+3) /**serviceconsumemap**
+
+Links to services consumed by the service
 
 Actions:
 
 *R
 
+4) /**serviceexposemap**
 
+Links to containers exposing specific service. Or in other words, containers that are the part of the service
+
+Actions:
+
+*R
 
 To support in the future:
 -----------
