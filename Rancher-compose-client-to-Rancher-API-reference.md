@@ -15,7 +15,7 @@ docker-compose.yml/fig.yml parameters to Rancher parameters translation
 ----------
 |Compose parameter|Rancher parameter|Extra logic that needs to be done on a client side|
 ---------|------|---------------|--------------------------------------------------------------------------
-|image|image|If image belongs to client's private repo, rancher-compose.yml file should have registryCredentialId specified|
+|image|image|Prepend image with "docker:" as its used by Cattle to locate the storage driver (currently, there are 2: "docker:"/"sim:"<br>If image belongs to client's private repo, rancher-compose.yml file should have registryCredentialId specified<|
 |build|**Not supported**|-|
 |command|command|-|
 |links|Links get programmed via add/removeServiceLink Rancher APIs|-|
