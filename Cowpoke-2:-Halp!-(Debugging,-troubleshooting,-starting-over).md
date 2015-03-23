@@ -8,7 +8,7 @@ $CATTLE_HOME/resources/content/db/mysql/drop_tables.sh # Blow away your database
 docker rm -fv $(docker ps -qa) # Destroy all containers
 ```
 Restarting the cattle server will recreate the database. Then start up the rancher-agent container again by getting the command from the UI of the management server. Remember that it is under the "Add Host" UI for a Custom/Bare Metal host.
-```
+
 Additionally, sometimes, ***boot2docker*** itself can go sideways. Being out of space is a common culprit, but if you don't want to debug, you can just blow it away as well:
 ```
 boot2docker destroy
