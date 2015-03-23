@@ -140,14 +140,9 @@ Remember that Cattle.launch we copied? That's how we launch the management serve
   ```
  6. Apply. Debug. Rancher is running.
  7. Go to [http://localhost:8080](http://localhost:8080) to prove it.
- 8. We need to add a compute node so that rancher has a place to drop containers. Adding a compute node is as simple a starting the rancher compute agent:
-  
-  ```
-  docker run --rm -it -v /var/run/docker.sock:/var/run/docker.sock rancher/agent http://10.0.2.2:8080
-  ```
-That's taken from the [rancher repo's documentation](https://github.com/rancherio/rancher). We skipped the step of starting the management server container because we're running that out of eclipse. The IP address is the default gateway that is setup by virtualbox.
+ 8. We need to add a compute node so that rancher has a place to drop containers. Go to [http://localhost:8080](http://localhost:8080). Click on "Add Host" and get the command from the UI under the Custom/Bare Metal option. 
 
-> **Note:** When you start the agent, you may see an error like: *Error response from daemon: Cannot destroy container...* You can ignore that. If you want to verify that the agent is running, run: ```docker ps -a```
+That's taken from the [rancher repo's documentation](https://github.com/rancherio/rancher). We skipped the step of starting the management server container because we're running that out of eclipse. The IP address is the default gateway that is setup by virtualbox.
 
 ### Run integration tests and verify everything is working
 We'll run the python integration tests out of PyCharm. Go install the latest [PyCharm Community Edition](https://www.jetbrains.com/pycharm/download/) and open it up.
