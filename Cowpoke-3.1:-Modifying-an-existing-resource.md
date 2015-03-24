@@ -57,4 +57,8 @@ Looking at existing art should be useful as well. Look at what is in.
 
 Still in doubt? Look at existing examples. Again, container is a good example (DB table is instance; Core fields are in container.json; a few supplementary fields are in cotainer.json.d/docker.json).
 
+### References
+1. [Adding field of a custom composite type] (https://github.com/rancherio/rancher/wiki/API:-adding-resource-field-of-a-custom-type)
+
+
 **Next:** [[Cowpoke 3.2: Creating a new resource]]
