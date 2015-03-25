@@ -52,9 +52,7 @@ Option 1: On the Hosts view, go to the host that you want to add containers to. 
 Option 2: On the Containers view, click on the **Add Container** button located at the top right corner. This will display the detailed page for adding containers.
 
 ### What is the Network Agent container? I didn’t request to create it.
-The Network Agent container is a Rancher specific container that is deployed upon the creation of the first container on a host. This container is what Rancher uses to allow containers between different hosts be able to communicate with each other.
-
-> **Note:** Users should not try to stop or restart this container.
+The Network Agent container is a Rancher specific container that is deployed upon the creation of the first container on a host. This container is what Rancher uses to allow containers between different hosts be able to communicate with each other. You will not have the ability to do any commands (start/stop/restart/etc) to this container through the UI,
 
 ### What are my options with a container? 
 
