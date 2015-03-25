@@ -6,7 +6,11 @@ If you haven't set up Rancher, please refer to this [set up guide](https://githu
 Click on the **Add Host** image.  You can either add hosts using the Cloud providers that we work with following the UI. Alternatively, you can select the **Custom** option. This option allows you to connect any Linux machine that has the latest version of Docker running on it. 
 
 ### Where do I get a Digital Ocean access token? 
-You must have a Digital Ocean account in order to get a Digital Ocean access token.  If you already have an account, you can create an access token on [Applications & API page](https://cloud.digitalocean.com/settings/applications).  If you don’t have an account, [sign up using our referral](https://www.digitalocean.com/?refcode=9a390c23d815) and get $10 in credit.
+You must have a Digital Ocean account in order to get a Digital Ocean access token.  If you already have an account, you can create an access token on [Applications & API page](https://cloud.digitalocean.com/settings/applications).  
+
+If you don’t have an account, [sign up using our referral](https://www.digitalocean.com/?refcode=9a390c23d815) and get $10 in credit.
+
+> **Note:** You must provide billing details in order to activate your credit.
 
 ### What does the _Active_ on my host mean?
 It means that your host is up and running and has no issues.  When your host is in an active state, it will always show up green so that you can easily check on your hosts. In this state, you can add new containers and perform any actions on the containers. 
@@ -112,4 +116,3 @@ The command will need to be edited to include setting the CATTLE_AGENT_IP.
 sudo docker run -d --privileged -v /var/run/docker.sock:/var/run/docker.sock –e CATTLE_AGENT_IP=PRIVATE_IP rancher/agent:v0.5.2 http://MANAGEMENT_IP:8080/v1/scripts/SECURITY_TOKEN
 ```
 > **Note:** When setting the private IP address, if there are existing containers in the rancher server, those hosts will no longer to be able to ping the host with the new IP.
-
