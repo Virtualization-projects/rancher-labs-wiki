@@ -57,7 +57,7 @@ If you hover over the container, a drop down will appear on the right hand side.
 * **Delete:** The container will be deleted from the host.
 * **View in API:** This will bring up the API for the specific container. If Access Control has been enabled, you will be prompted for a username/password.
 * **Execute Shell:** You will be connected to the shell and be able to run commands in the container. Note: If you changed the IP of the host to a private IP, you will no longer be able to access this command. 
-* **View Logs:** _What are these logs from?_ 
+* **View Logs:** This will show the docker logs -f on the container.
 * **Edit:** In the Edit screen, you have the ability to update some of the settings regarding the container. 
 
 ### Why does my container still show up after I have deleted it?
