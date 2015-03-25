@@ -3,23 +3,29 @@ If you haven't set up Rancher, please refer to this [set up guide](https://githu
 ## Hosts
 
 ### How do I add a new Host?
-Click on the **Add Host** image.  You can either add hosts using the Cloud providers that we work with following the UI. Alternatively, you can select the **Custom** option. This option allows you to connect any Linux machine that has the latest version of Docker running on it. 
+Click on the **Add Host** image.  You can either add hosts using the Cloud providers that we work by following the UI. Alternatively, you can select the **Custom** option. This option allows you to connect any Linux machine that has the latest version of Docker running on it. The UI will also provide instructions on how to set up an existing Linux machine.
 
 ### Where do I get a Digital Ocean access token? 
 You must have a Digital Ocean account in order to get a Digital Ocean access token.  If you already have an account, you can create an access token on [Applications & API page](https://cloud.digitalocean.com/settings/applications).  
 
-If you don’t have an account, [sign up using our referral](https://www.digitalocean.com/?refcode=9a390c23d815) and get $10 in credit.
+If you don’t have an account, [sign up using our link](https://www.digitalocean.com/?refcode=9a390c23d815) and get $10 in credit. In order to activate the credit, you will be required to input billing details.
 
-> **Note:** You must provide billing details in order to activate your credit.
+### What are all the different states that my host can display?
+We try to provide as much detail to the user as possible so that you can understand what's going on.
 
-### What does the _Active_ on my host mean?
-It means that your host is up and running and has no issues.  When your host is in an active state, it will always show up green so that you can easily check on your hosts. In this state, you can add new containers and perform any actions on the containers. 
+* _Creating_: When adding a new host through the UI, Rancher has many steps that occur to be in touch with the cloud provider. In the host, there are many messages about the actions that are being performed. 
+* _Active_: The host is up and running and communicating with Rancher. This state will be green to allow an easy check to see if there are any issues with hosts. In this state, you can add new containers and perform any actions on the containers. 
+* _Deactivating_: While the host is being deactivated, the host will display this state until the deactivation is complete. Upon completion, the host will move to an _Inactive_ state.
+* _Inactive_: The host has been deactivated. No new containers can be deployed and you will be able to perform actions (start/stop/restart) on the existing containers. The host is still connected to the Rancher server.
+* _Activating_: From an _Inactive_ state, if the host is being activated, it will be in this state until it's back to an _Active_state.
+* _Removed_: The host has been deleted by the user. This is the state that will show up on the UI until Rancher has completed the necessary actions. 
+* _Purged_: The host is only in this state for a couple of seconds before disappearing from the UI. 
+* _Reconnecting_: The host has lost its connection with Rancher. Rancher will attempt to restart the communication.
 
 ### How do I remove a host from my Rancher server?
 In order to remove a host from the server, you will need to do a couple of step located in the host’s drop down menu. In order to view the drop down, hover over the host and a drop down icon will appear.
 
 1. Select **Deactivate**. 
- 1. Deactivating the host will put the host into an _Inactive_ state. In this state, no new containers can be deployed. Any active containers on the host will continue to be active and you will still have the ability to perform actions on these containers (start/stop/restart).  The host will still be connected to the Rancher server.
 1. When the host has completed the deactivation, the host will display an _Inactive_ state. Select **Delete**. The server will start the removal process of the host from the Rancher server instance.  
  1. Notes: All containers including the Rancher agent will continue to remain on the host.  The first state that it will display after it’s finished deleting it will be _Removed_. It will continue to finalize the removal process and move to a _Purged_ state before immediately disappearing from the UI. 
 1. Optional: Once the host ‘s status displays _Removed_, you can purge the host to remove it from the UI faster.  We have this option for the user so that if any errors occur during the removal process, it can be displayed in between the _Removed_ and _Purged_ states. 
@@ -35,7 +41,6 @@ If your host is deleted outside of Rancher, then Rancher server will continue to
 
 ### Why does my host have this weird name (e.g. 1ph7)? 
 If you didn’t enter a name during host creation, the UI will automatically assign a name. This name is displayed on the host. 
-
 
 ## Containers
 
