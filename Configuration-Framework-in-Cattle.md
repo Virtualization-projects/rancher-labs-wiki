@@ -8,6 +8,13 @@ Each configuration is represented by **configItem** having its own logic for con
 * and if the requested version is higher, request the fresh config from the Cattle server
 * cattle server will generate the fresh config upon the request, that agent will apply on the host, or - if the config 
 
+Existing examples of config-items:
+
+`dnsmasq`
+`ipsec-hosts`
+`iptables`
+`haproxy`
+
 More details on how to introduce new config item in cattle, is in the next section
 
 ## How to add a new config item to cattle
