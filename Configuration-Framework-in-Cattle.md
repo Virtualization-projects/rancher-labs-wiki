@@ -37,7 +37,9 @@ This class will be responsible for setting the values needed by *.ftl config fil
 
 5) Write the logic for config item update. Good example of that logic can be found in AgentScriptsApply.java
 
-## How to test new config item added for the network-agent
+## How to test your changes
+
+The example below is for config item added for the network-agent. Testing for the host's config item should be similar.
 
 There are 2 parts that can be tested separately:
 
@@ -51,11 +53,8 @@ To test 1), just build the config item and put in the logic to populate the conf
 
 `example: ./config.sh —force haproxy`
 
-After that, verify that the config was generated and applied correctly on the network-agent container
+After that, verify that the config file was generated and applied correctly on the network-agent container
 
 To test 2), invoke the logic generating configUpdate request, and see if the cattle.config_item_status.requested_version field was incremented by one.
 
-Then of course, test 1) and 2) in conjunction.  
-
-## How to test new config item added for the python-agent host
-TBD
+Then of course, test 1) and 2) in conjunction - ConfigUpdate request should trigger config item increment, and that in turn should trigger script apply on the network-agent.
