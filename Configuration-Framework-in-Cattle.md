@@ -1,4 +1,4 @@
-# Overview
+## Overview
 
 Configuration Framework in Cattle handles config updates for the agent's hosts and network-agent instance.
 
@@ -10,7 +10,7 @@ Each configuration is represented by **configItem** having its own logic for con
 
 More details on how to introduce new config item in cattle, is in the next section
 
-# How to add a new config item to cattle
+## How to add a new config item to cattle
 
 1) Create a folder for your new config item under:
 
@@ -37,22 +37,25 @@ This class will be responsible for setting the values needed by *.ftl config fil
 
 5) Write the logic for config item update. Good example of that logic can be found in AgentScriptsApply.java
 
-# How to test the changes
+## How to test new config item added for the network-agent
 
 There are 2 parts that can be tested separately:
 
-1) Generating the config file and applying it on the host/network-agent
+1) Generating the config file and applying it on the network-agent
 2) Config item update logic
 
-To test 1), just build the config item and put in the logic to populate the config *ftl file. Then login to the host/network-agent and execute the script:
+To test 1), just build the config item and put in the logic to populate the config *ftl file. Then login to the network-agent and execute the script:
 
 `cd /var/lib/cattle`
 `./config.sh --force <configItemName>`
 
 `example: ./config.sh —force haproxy`
 
-After that, verify that the config was generated and applied correctly on your host/agent
+After that, verify that the config was generated and applied correctly on the network-agent container
 
 To test 2), invoke the logic generating configUpdate request, and see if the cattle.config_item_status.requested_version field was incremented by one.
 
 Then of course, test 1) and 2) in conjunction.  
+
+## How to test new config item added for the python-agent host
+TBD
