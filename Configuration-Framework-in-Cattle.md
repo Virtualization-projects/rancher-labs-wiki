@@ -60,8 +60,8 @@ To test 1), just build the config item and put in the logic to populate the conf
 
 `example: ./config.sh —force haproxy`
 
-After that, verify that the config file was generated and applied correctly on the network-agent container
+After that, verify that the config file was generated and applied correctly
 
-To test 2), invoke the logic generating configUpdate request, and see if the cattle.config_item_status.requested_version field was incremented by one.
+To test 2), invoke the cattle logic generating configUpdate request, and see if the **cattle.config_item_status.requested_version** field was incremented by one.
 
 Then of course, test 1) and 2) in conjunction - ConfigUpdate request should trigger config item increment, and that in turn should trigger script apply on the network-agent.
