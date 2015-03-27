@@ -104,18 +104,61 @@ Click on **Settings** and the instructions on how to set up Access Control are s
 ### Why does it have to be a GitHub authentication? What if I don’t have a GitHub account?
 At this time, Rancher only supports GitHub authentication. If you don’t have a GitHub account, please consider signing up for one!
 
-## Miscellaneous
+## Miscellaneous 
 
-### What if my box has a private IP and public IP address? How can I set my host to use the private IP address?
+### How do I upgrade my Rancher server and save my configuration data?
+Currently, upgrades are **NOT** officially supported between releases before we hit a GA release. 
 
-In order to use the private IP address for a host, you will need to alter the registration command for the host. The CATTLE_AGENT_IP will need to be set to the private IP for the host. 
+Recently, we changed default DB backends in release v0.10.x to MySQL from H2. There is no migration plan between the two formats. You can continue to use H2 for smaller environments if you choose, but we recommend moving to MySQL.
 
-Typically, the command from the UI is:
+The procedure we follow when we upgrade is outlined below. We typically only go from one version to the next if we do upgrade.
+
+1. Stop the rancher/server container. (This container will become your DB server for ever)
+2. Back up the data. 
+  * Create another container with `--volumes-from=<name_of_old_server>`
+  * Copy the contents of /var/lib/cattle to someplace safe.
+  * if you are running >v0.10.0 also copy /var/lib/mysql
+     ** on containers >=v0.10.0 3306 is exposed and you could publish and create MySQL slaves.
+3. launch a new rancher/server container
+
+Its a good idea if you initially deployed rancher/server:latest to do a `docker pull rancher/server:latest` beforehand, or use a specific version. 
+  
+```
+# MySQL
+docker run -d --volumes-from=<name of old server> -p 8080:8080 rancher/server:<version>
+# H2
+docker run -d --volumes-from=<name of old server> -e CATTLE_DB_CATTLE_DATABASE=h2 -p 8080:8080 rancher/server:<version>
+```
+
+You can also configure an external MySQL database server by setting these environment variables on the container. This allows you to decouple the server from the DB.
+
+```
+    CATTLE_DB_CATTLE_MYSQL_HOST
+    CATTLE_DB_CATTLE_MYSQL_PORT
+    CATTLE_DB_CATTLE_USERNAME
+    CATTLE_DB_CATTLE_PASSWORD
+    CATTLE_DB_CATTLE_MYSQL_NAME
+```
+
+### How does the host determine IP address and how can I change it?
+
+When the agent connects to Rancher server, it auto detects the IP of the agent. Sometimes, the IP that is selected is not the IP that you want to use. You can override this setting and set the host IP to what you want. 
+
+In order to update the IP address for a host, you will need to alter the registration command for the host. You will need to set the CATTLE_AGENT_IP to the IP address that you want to use. 
+
+If you already have hosts running, you just need to rerun the agent registration command. If you have any containers existing on the host, please follow the upgrade instructions in order to have the containers remained on your host.
+
+> **Note:** You should not update the IP of a host to the docker0 interface on the host machine. 
+
+Typically, the registration command from the UI follows this template:
 ```bash
 sudo docker run -d --privileged -v /var/run/docker.sock:/var/run/docker.sock rancher/agent:v0.5.2 http://MANAGEMENT_IP:8080/v1/scripts/SECURITY_TOKEN
 ```
-The command will need to be edited to include setting the CATTLE_AGENT_IP.
+The command will need to be edited to include setting the CATTLE_AGENT_IP by adding the **-e CATTLE_AGENT_IP=x.x.x.x**
+
 ```bash
-sudo docker run -d --privileged -v /var/run/docker.sock:/var/run/docker.sock –e CATTLE_AGENT_IP=PRIVATE_IP rancher/agent:v0.5.2 http://MANAGEMENT_IP:8080/v1/scripts/SECURITY_TOKEN
+sudo docker run -d --privileged -v /var/run/docker.sock:/var/run/docker.sock –e CATTLE_AGENT_IP=x.x.x.x rancher/agent:v0.5.2 http://MANAGEMENT_IP:8080/v1/scripts/SECURITY_TOKEN
 ```
-> **Note:** When setting the private IP address, if there are existing containers in the rancher server, those hosts will no longer to be able to ping the host with the new IP.
+> **Note:** When override the IP address, if there are existing containers in the rancher server, those hosts will no longer to be able to ping the host with the new IP. We are working to fix this issue, but please update the IP address with caution.
+
+
