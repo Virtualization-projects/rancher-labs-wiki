@@ -107,27 +107,41 @@ At this time, Rancher only supports GitHub authentication. If you don’t have a
 ## Miscellaneous 
 
 ### How do I upgrade my Rancher server and save my configuration data?
-Currently, upgrades are **NOT** officially supported between releases before we hit a GA release. 
+Currently, upgrades are **NOT** officially supported between releases before we hit a GA release. Therefore, certain features might break in later versions as we enhance them.
 
 Recently, we changed default DB backends in release v0.10.x to MySQL from H2. There is no migration plan between the two formats. You can continue to use H2 for smaller environments if you choose, but we recommend moving to MySQL.
 
 The procedure we follow when we upgrade is outlined below. We typically only go from one version to the next if we do upgrade.
 
-1. Stop the rancher/server container. (This container will become your DB server for ever)
-2. Back up the data. 
+Use the original Rancher Server container to be your DB server forever. Any changes that are made in the upgraded version will always be saved in the original Rancher Server container.
+
+> **Note:** Do not remove the original Rancher Server container at any time! 
+
+1. Find the container name of Rancher Server.
+```
+docker ps
+````
+2. Stop the container.
+```
+docker stop <container name of old server>
+```
+3. Optional: Backup the data.
   * Create another container with `--volumes-from=<name_of_old_server>`
   * Copy the contents of /var/lib/cattle to someplace safe.
   * if you are running >v0.10.0 also copy /var/lib/mysql
      ** on containers >=v0.10.0 3306 is exposed and you could publish and create MySQL slaves.
-3. launch a new rancher/server container
 
-Its a good idea if you initially deployed rancher/server:latest to do a `docker pull rancher/server:latest` beforehand, or use a specific version. 
-  
+4. Pull the most recent image of Rancher Server. Note: If you skip this step and try to run the latest image, it will not automatically pull an updated image.
+```
+docker pull rancher/server:latest
+```
+5. Run this command to start the Rancher Server container using the data from the original Rancher Server container. 
+
 ```
 # MySQL
-docker run -d --volumes-from=<name of old server> -p 8080:8080 rancher/server:<version>
+docker run -d --volumes-from=<container name of old server> -p 8080:8080 rancher/server:<version>
 # H2
-docker run -d --volumes-from=<name of old server> -e CATTLE_DB_CATTLE_DATABASE=h2 -p 8080:8080 rancher/server:<version>
+docker run -d --volumes-from=<container name of old server> -e CATTLE_DB_CATTLE_DATABASE=h2 -p 8080:8080 rancher/server:<version>
 ```
 
 You can also configure an external MySQL database server by setting these environment variables on the container. This allows you to decouple the server from the DB.
@@ -160,5 +174,4 @@ The command will need to be edited to include setting the CATTLE_AGENT_IP by add
 sudo docker run -d --privileged -v /var/run/docker.sock:/var/run/docker.sock –e CATTLE_AGENT_IP=x.x.x.x rancher/agent:v0.5.2 http://MANAGEMENT_IP:8080/v1/scripts/SECURITY_TOKEN
 ```
 > **Note:** When override the IP address, if there are existing containers in the rancher server, those hosts will no longer to be able to ping the host with the new IP. We are working to fix this issue, but please update the IP address with caution.
-
 
