@@ -106,6 +106,15 @@ At this time, Rancher only supports GitHub authentication. If you don’t have a
 
 ## Miscellaneous 
 
+### My AWS instance is not showing the Rancher server UI, but the container is up and running! What's wrong?
+
+In AWS, you will need to check the security group that the AWS instance is associated with. In the security group, check the **Inbound** ports/protocols. 
+
+These ports need to be enabled for Rancher Server to work.
+
+From the internet to TCP: 8080. This is the port that Rancher Server uses to display the UI.
+
+
 ### How do I upgrade my Rancher server and save my configuration data?
 Currently, upgrades are **NOT** officially supported between releases before we hit a GA release. Therefore, certain features might break in later versions as we enhance them.
 
