@@ -290,4 +290,6 @@ Query OK, 1 row affected (0.01 sec)
 Rows matched: 1  Changed: 1  Warnings: 0
 ```
 
+After the subnet table has been updated, you can add hosts/containers to the Rancher server and it will use the new subnet ID for the containers.
+
 
