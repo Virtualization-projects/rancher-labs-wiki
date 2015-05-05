@@ -301,4 +301,5 @@ Rows matched: 1  Changed: 1  Warnings: 0
 
 After the subnet table has been updated, you can add hosts/containers to the Rancher server and it will use the new subnet ID for the containers.
 
-
+**How does linked containers work in Rancher?**
+In Docker, linked containers (using the --link command) shows up in the `/etc/hosts` of the container it's linked to. In Rancher, we don't edit the `/etc/hosts`. Instead we run a DNS server that makes links work across hosts. The DNS server would respond with the correct IP.
