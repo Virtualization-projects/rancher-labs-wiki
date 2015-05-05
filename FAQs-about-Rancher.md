@@ -163,6 +163,10 @@ You can also configure an external MySQL database server by setting these enviro
     CATTLE_DB_CATTLE_MYSQL_NAME
 ```
 
+### How do I upgrade my Rancher Agents (i.e. hosts connected to an existing Rancher server)?
+
+As a reminder, we currently don't **support** upgrades. Each Rancher agent version is pinned to a Rancher server version. If you upgrade Rancher server and Rancher agents require an upgrade, it should automatically upgrade the agents.
+ 
 ### How does the host determine IP address and how can I change it?
 
 When the agent connects to Rancher server, it auto detects the IP of the agent. Sometimes, the IP that is selected is not the IP that you want to use. You can override this setting and set the host IP to what you want. 
@@ -301,5 +305,6 @@ Rows matched: 1  Changed: 1  Warnings: 0
 
 After the subnet table has been updated, you can add hosts/containers to the Rancher server and it will use the new subnet ID for the containers.
 
-**How does linked containers work in Rancher?**
+### How does linked containers work in Rancher?
+
 In Docker, linked containers (using the --link command) shows up in the `/etc/hosts` of the container it's linked to. In Rancher, we don't edit the `/etc/hosts`. Instead we run a DNS server that makes links work across hosts. The DNS server would respond with the correct IP.
