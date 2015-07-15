@@ -44,6 +44,8 @@ This class will be responsible for setting the values needed by *.ftl config fil
 
 5) Write the logic for config item update. Good example of that logic can be found in AgentScriptsApply.java
 
+6) In agent-instance-default.properties specify the processes triggering config update
+
 ## How to test your changes
 
 The example below is for config item added for the network-agent. Testing for the host's config item should be similar.
