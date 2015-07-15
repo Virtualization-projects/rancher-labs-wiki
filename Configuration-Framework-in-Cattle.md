@@ -35,7 +35,7 @@ This folder will contain:
 
 This class will be responsible for setting the values needed by *.ftl config file to generate the data.
 
-3) Specify the config item in config-items-default.properties in a following format:
+3) Specify the config item in config-item-default.properties in a following format:
 
 `item.context.<configItemName>.info.items=<configItemName>`
 
