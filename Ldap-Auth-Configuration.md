@@ -21,6 +21,9 @@ In order to configure ldap you must specify the following by posting to /v1/ldap
  * **tls** (Use tls or not. (Tls not tested / implemented yet.))
  * **serviceAccountPassword** (password for the service account that has readonly access to all of ldap (All of ldap that you may need access too for authentication.))
  * **serviceAccountUsername** (username for the service account, same account as above)
+
+--------------
+
  * Search fields
      * **searchFieldUser** (Field used on ldap object to search for a user defaults to (should this be multiple fields?) **sAMAccountName**)
      * **searchFieldGroup** (field used to search for group on defaults to (should this be multiple fields) **sAMAccountName**) ***Currently hard coded***
