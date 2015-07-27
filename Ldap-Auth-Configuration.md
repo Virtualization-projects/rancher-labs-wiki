@@ -21,10 +21,11 @@ as normal except that when creating projects you use ldap users and groups not g
 These fields are used to determine who has access to rancher and who Rancher talks to ldap as when searching ldap.
  
  * **accessMode**  (restricted or unrestricted)
- * **domain** (domain with in ldap to use. ex ad.example.com)(Used when accessmode is unrestricted)
+     * **domain** (domain with in ldap to use. ex ad.example.com) (Used with unrestricted)
+     * **ous** Organizational Units that rancher will allow access when in restricted mode. This is a list of Distinguished Names.
  * **serviceAccountPassword** (password for the service account that has readonly access to all of ldap (All of ldap that you may need access too for authentication.))
  * **serviceAccountUsername** (username for the service account, same account as above)
- * **ous** Organizational Units that rancher will allow access when in restricted mode. This is a list of Distinguished Names.
+ 
 
 
 ###Ldap Schema
