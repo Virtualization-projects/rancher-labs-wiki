@@ -30,7 +30,7 @@ In order to configure ldap you must specify the following by posting to /v1/ldap
          * Ex: search on email name and/ or sAMAccountName
      * **objectTypeUser** (Value used to compare with *objectClass* to determine if an object is a user or not. Default **person**)
      * **objectTypeGroup** (Value used to compare with *objectClass* to determine if an object is a group or not. **group**)
- * **uniqueIdentifierField** (field used as the unique for ldap Objects default **distinguishedname** this is what Identities use as externalId) ***Currently hard coded***
+ * **uniqueIdentifierField** (field used as the unique identifier for ldap Objects default **distinguishedname** this is what Identities use as externalId) ***Currently hard coded***
  * **nameFieldUser** (Name field on user objects default **name**) ***Currently hard coded***
  * **nameFieldGroup** (Name field on group objects default **name**) ***Currently hard coded***
  * **memberOfField** (Field used to check for items you are a member of default **memberOf**) ***Currently hard coded***  
