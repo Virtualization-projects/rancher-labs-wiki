@@ -94,25 +94,3 @@ Rancher would then use the **name** attribute in ldap as the name for the Identi
  ***We currently only support direct membership.***
  
  **Subject to change**
- 
-##Examples
-
- Example Group and user in the ldap domain ad.rancher.io:
- 
- ![Group Ex:] (https://i.imgur.com/ybCDzyq.png)
- Given the above ldap Object for Group *Users* by default we would create the identity object:
- externalId : *CN=Users,CN=Builtin,DC=ad,DC=rancher,DC=io* grabbed from the distinguishedname field.
- name : *Users* grabbed from the name field.
- profileUrl : NONE what should we use?
- profilePicture : NONE what should we use/look for? Or make one up using the identicon api or perhaps robohash.org
- 
- ![User Ex:] (https://i.imgur.com/6BIcwLf.png)
- 
- Given the above ldap Object for User *test* by default we would create the identity object:
- externalId : *CN=Tester Testing,CN=Users,DC=ad,DC=rancher,DC=io* grabbed from the distinguishedname field.
- name : *Tester Testing* grabbed from the name field.
- profileUrl : NONE what should we use?
- profilePicture : NONE what should we use/look for? Or make one up using the identicon api or perhaps robohash.org
-  
-  
- These two objects are examples of what would be used to create a project member or grant access to the site in the rancher api.
