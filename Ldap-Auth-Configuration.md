@@ -2,9 +2,10 @@
 LDAP Authentication Integration
 ---------
 Purpose: To be able to configure [Access control](http://docs.rancher.com/rancher/configuration/access-control/) 
-to use LDAP as the backing authentication system instead of github. Add users to the site based on their LDAP username 
-or groups. Add users to an [Environment](http://docs.rancher.com/rancher/concepts/#environments)
- based on their LDAP username or groups.
+to use LDAP as the backing authentication system. 
+
+ * Add users to the site based on their LDAP username or groups.
+ * Add users to an [Environment](http://docs.rancher.com/rancher/concepts/#environments) based on their LDAP username or groups.
 
 After configuring LDAP, you are able to login to Rancher using your LDAP username and password. Then you use Rancher the same as normal except that when creating Environments you use LDAP users and groups instead of Github users, orgs, or teams. 
 
@@ -23,8 +24,8 @@ After configuring LDAP, you are able to login to Rancher using your LDAP usernam
 These fields are used to determine who has access to Rancher and who Rancher talks to LDAP as when searching LDAP.
  
  * *accessMode*  (restricted or unrestricted)
-     * **ous** [[Restricted|Glossary#restricted]] Organizational Units allowed access to Rancher. This is a list of Distinguished Names.
-     * *domain* [[Unrestricted|Glossary#unrestricted]] Domain within LDAP to use. EX: ad.example.com
+     * **ous** ([[Restricted|Glossary#restricted]]) List of OUs from LDAP based using their DNs
+     * *domain* ([[Unrestricted|Glossary#unrestricted]]) Domain within LDAP to use. EX: ad.example.com
  * *serviceAccountUsername*  Username for service account.
  * *serviceAccountPassword*  Password for the service account.
  * **uniqueIdentifierField** (field used as the unique identifier for LDAP Objects default **distinguishedname** this is what [[Identities|Identity And Authentication]] use as externalId) 
