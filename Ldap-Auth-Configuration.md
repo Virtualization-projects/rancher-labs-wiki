@@ -9,24 +9,24 @@ or groups. Add users to an [Environment](http://docs.rancher.com/rancher/concept
 After configuring Ldap, you are able to login to Rancher using your Ldap username and password. Then you use Rancher the same as normal except that when creating Environments you use Ldap users and groups instead of Github users, orgs, or teams. 
 
 ##Conecting to Ldap
- * **loginDomain** 
+ * *loginDomain* 
     * default domain to login using
     * ex User1 becomes loginDomain\User
     * ex foo\User1 stays foo\User1
- * **port** (port Ldap is listening on. defaults to **389**)
- * **server** (server ip or domain that Rancher can use to connect.)
+ * *port* (port Ldap is listening on. defaults to **389**)
+ * *server* (server ip or domain that Rancher can use to connect.)
  * **tls** (Use tls or not. (Tls not tested/implemented yet.))
- * **enabled** boolean determining if auth is enabled or not. (If set to false, Ldap will not be used.)
+ * *enabled* boolean determining if auth is enabled or not. (If set to false, Ldap will not be used.)
 
 ###<a name="LdapAccess"></a>Ldap Account Access
  
 These fields are used to determine who has access to Rancher and who Rancher talks to Ldap as when searching Ldap.
  
- * **accessMode**  (restricted or unrestricted)
+ * *accessMode*  (restricted or unrestricted)
      * **ous** [[Restricted|Glossary#restricted]] Organizational Units allowed access to Rancher. This is a list of Distinguished Names.
-     * **domain** [[Unrestricted|Glossary#unrestricted]] Domain within Ldap to use. EX: ad.example.com
- * **serviceAccountUsername**  Username for service account.
- * **serviceAccountPassword**  Password for the service account.
+     * *domain* [[Unrestricted|Glossary#unrestricted]] Domain within Ldap to use. EX: ad.example.com
+ * *serviceAccountUsername*  Username for service account.
+ * *serviceAccountPassword*  Password for the service account.
  * **uniqueIdentifierField** (field used as the unique identifier for Ldap Objects default **distinguishedname** this is what [[Identities|Identity And Authentication]] use as externalId) 
 
 ##Users
@@ -35,7 +35,7 @@ These fields are used by Rancher to determine how we identify an Ldap Object as 
  * Fields used for Authorization/ Searching
      * **searchFieldUser** Identifies the attribute in Ldap to use as the search field when searching for users. 
          * Default Value **sAMAccountName**
-     * **objectTypeUser** Identifies the balue of the attribute *objectClass* to determine that an object is a user.
+     * **objectTypeUser** Identifies the value of the attribute *objectClass* to determine that an object is a user.
          * Default value **person**
      * **userEnabledMaskBit** Specifies the bit to check to see if an account/user is enabled. 
          * Default value **514** 
@@ -101,7 +101,7 @@ Rancher would then use the **name** attribute in Ldap as the name for the [[Iden
  
 ####Questions
  
- * Do we need to support multiple levels of membership? 
+ * Do we need to support multiple levels of group membership? 
      * ex: Group A is member of Group B and User a is a member of Group B so as a result User a is a member of Group A.
  * Do we need to be able to search for users/groups on multiple fields?
  * Do we need to support multiple servers/ connecting to multiple domain controllers?
