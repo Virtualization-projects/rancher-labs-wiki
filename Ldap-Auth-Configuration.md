@@ -30,7 +30,7 @@ LDAP users and groups.
 
 ###<a name="LDAPAccess"></a>LDAP Account Access
  
-These fields are used to determine who has access to Rancher, and who specifies the service account that Rancher will
+These fields are used to determine who has access to Rancher, and specifies the service account that Rancher will
 use. A service account, with read only access,  is needed for querying LDAP so that Rancher can perform user searches.
  
  * ***accessMode***  [[Restricted|Glossary#restricted]] or [[Unrestricted|Glossary#unrestricted]]
@@ -100,7 +100,7 @@ These fields are used for defining a group based on the LDAP schema.
          object is a group or not.
          * Default value **group**
      * **memberField**
-         * Specifies the LDAP attribute used to determine members of a group. Similar to [**memberOfField**](#memberOfField)
+         * Specifies the LDAP attribute used to determine the members of a group. Similar to [**memberOfField**](#memberOfField)
          * Default value **member**
  * Group Metadata
       * **nameFieldGroup**
@@ -120,7 +120,7 @@ would result in a query to LDAP that looks like:
 
 And only use results from the specified OUs from the [LDAP Account Access](#LDAPAccess) section.
 
-The information from LDAP for a groups is used to create an [[Identity|Identity And Authentication]] for the group.
+The information from LDAP for a group is used to create an [[Identity|Identity And Authentication]] for the group.
  
  ***We currently only support one level of membership.***
  
