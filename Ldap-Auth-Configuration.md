@@ -44,10 +44,8 @@ These fields are used by Rancher to determine how we identify an Ldap Object as 
      * <a name="memberOfField"></a>**memberOfField** Identifies the attribute used to check for membership of groups to provide authorization to [Environments](http://docs.rancher.com/rancher/concepts/#environments). 
          * Default value **memberOf** 
  * User Metadata
-     * **nameFieldUser** Identifies the attribute in ldap Rancher will use as the name of a user. 
+     * **nameFieldUser** Identifies the attribute in Ldap that Rancher will use to populate the name of a user's [[Identity|Identity And Authentication]]. 
          * Default value **name** 
-         * The value of this attribute will be used for the name of the [[Identity|Identity And Authentication]] for this user.
-
 
 ###Example
 If using the defaults for all of the searching users fields a search for 
