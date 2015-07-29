@@ -1,6 +1,6 @@
 Identity API & Rancher Authentication
 ------------
-####Purpose: To provide a generic way to interact with the identity of someone within Rancher.
+####Purpose: To provide a generic way to interact with the identity of a (user/group/org/team) within Rancher.
 
 Rancher uses Identities and the Identity API as a way to allow the UI / API UX of Rancher to be consistent across Github,
  LDAP, and other authentication providers. What this means is that when you get a JWT from `/v1/token` you have a set of
