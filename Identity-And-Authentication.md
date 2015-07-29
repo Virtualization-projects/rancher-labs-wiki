@@ -2,16 +2,22 @@ Identity API & Rancher Authentication
 ------------
 ####Purpose: To provide a generic way to interact with the identity of someone within Rancher.
 
-Rancher uses identities and the identity api as a way to allow the ui / api ux of Rancher to be consistent across Github, ldap, and other authentication providers. What this means is that when you get a jwt from `/v1/token` you have a set of identities within Rancher. These identities are what Rancher uses to determine if you have access to any resource within Rancher on every request. These identities are based off of the external authentication system that you have currently configured Rancher to use.
+Rancher uses Identities and the Identity API as a way to allow the UI / API UX of Rancher to be consistent across Github,
+ LDAP, and other authentication providers. What this means is that when you get a jwt from `/v1/token` you have a set of
+ Identities within Rancher. These Identities are what Rancher uses to determine if you have access to any resource within
+ Rancher on every request.
+ 
+ See: [Access control](http://docs.rancher.com/rancher/configuration/access-control/) and [Environment](http://docs.rancher.com/rancher/concepts/#environments)
 
 ##Identity Object
 
 An Identity is composed of several fields:
 
 * **name** 
-    * This is the plain text English representation of the identity that users know and use to refer to the identity.
+    * This is the plain text English representation of the Identity that users know and use to refer to the identity.
 * **externalId**
-    * This is the unique identifier within the external system that is the backing authentication mechanism that is stored in our database and used when determining if an identity is authorized or not.
+    * This is the unique identifier within currently configured backend for [Access control](http://docs.rancher.com/rancher/configuration/access-control/).
+    externalIds are stored in our database and used when determining if an Identity is authorized to use an [Environment](http://docs.rancher.com/rancher/concepts/#environments).
 * **kind**
     * This is the type of externalId that the identity is representing. Ex: `github_org` `ldap_user`
 * **id** This is the **kind** combined with the **externalId** to provide a unique identifier for Cattle when searching/getting identities within the api as they are never stored within Cattle as a full identity; only the **kind** and **externalId** are stored.
