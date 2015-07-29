@@ -119,8 +119,6 @@ The information from LDAP for a group is used to create an [[Identity|Identity A
  
  ***We currently only support one level of membership.***
  
- **Subject to change**
- 
  [[More Examples|LDAP Examples]]
  
  
