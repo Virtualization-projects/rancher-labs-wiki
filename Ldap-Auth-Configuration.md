@@ -105,7 +105,7 @@ These fields are used for defining a group based on the LDAP schema.
 
 ###Example
 
-If using the defaults for all of the fields for a group, a search for:
+Assuming defaults for the fields above on a group, a search for:
 
 `groupA`
 
