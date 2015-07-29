@@ -46,7 +46,7 @@ The user `joesmith84` on Github might look like this:
 
 **id** `github_user:9327853`
 
-The Identities that Cattle creates/returns in its API allow the UI to easily display, search and add users to [Environments](http://docs.rancher.com/rancher/concepts/#environments) 
+The Identities that Cattle creates and returns in its API allow the UI to easily display, search and add users to [Environments](http://docs.rancher.com/rancher/concepts/#environments) 
 in a generic way without needing to know anything about LDAP, Github or any other backing authentication framework since
 it has a generic set of information that it can display and use if present. 
 
