@@ -25,26 +25,26 @@ These fields are used to determine who has access to Rancher and who Rancher tal
  * **accessMode**  (restricted or unrestricted)
      * **ous** [[Restricted|Glossary#restricted]] Organizational Units allowed access to Rancher. This is a list of Distinguished Names.
      * **domain** [[Unrestricted|Glossary#unrestricted]] Domain within Ldap to use. EX: ad.example.com
- * **serviceAccountPassword** (password for the service account that has read-only access to all of Ldap (All of Ldap that you may need access too for authentication.))
- * **serviceAccountUsername** (username for the service account, same account as above)
- * **uniqueIdentifierField** (field used as the unique identifier for Ldap Objects default **distinguishedname** this is what Identities use as externalId) 
+ * **serviceAccountUsername**  Username for service account.
+ * **serviceAccountPassword**  Password for the service account.
+ * **uniqueIdentifierField** (field used as the unique identifier for Ldap Objects default **distinguishedname** this is what [[Identities|Identity And Authentication]] use as externalId) 
 
 ##Users
-These fields are used by Rancher to determine how we identify an Ldap Object as a user as well as look for users withing Ldap.
+These fields are used by Rancher to determine how we identify an Ldap Object as a user.
 
- * Fields used for Authentication/ Searching
-     * **searchFieldUser** Attribute in Ldap to use as the search field when searching for users. 
+ * Fields used for Authorization/ Searching
+     * **searchFieldUser** Identifies the attribute in Ldap to use as the search field when searching for users. 
          * Default Value **sAMAccountName**
-     * **objectTypeUser** Value of the attribute *objectClass* to determine that an object is a user.
+     * **objectTypeUser** Identifies the balue of the attribute *objectClass* to determine that an object is a user.
          * Default value **person**
-     * **userEnabledMaskBit** Bit to check to see if an account/user is enabled. 
+     * **userEnabledMaskBit** Specifies the bit to check to see if an account/user is enabled. 
          * Default value **514** 
-     * **userEnabledAttribute** Attribute to mask with the **userEnabledMaskBit** to determine if a user is enabled.
+     * **userEnabledAttribute** Identifies the Attribute in Ldap to mask with the **userEnabledMaskBit** to determine if a user is enabled.
          * Default value **userAccountControl** 
-     * <a name="memberOfField"></a>**memberOfField** Attribute used to check for membership. 
+     * <a name="memberOfField"></a>**memberOfField** Identifies the attribute used to check for membership of groups to provide authorization to [Environments](http://docs.rancher.com/rancher/concepts/#environments). 
          * Default value **memberOf** 
- * Fields used for displaying the user.
-     * **nameFieldUser** Attribute Rancher will use as the name of a user. 
+ * User Metadata
+     * **nameFieldUser** Identifies the attribute in ldap Rancher will use as the name of a user. 
          * [[Identity|Identity And Authentication]] for a user will use the value of this attribute for the identity's name.
          * Default value **name** 
 ###Example
