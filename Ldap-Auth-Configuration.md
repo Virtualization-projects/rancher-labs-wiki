@@ -67,16 +67,15 @@ Rancher then would use the **name** attribute in Ldap as the name for the [[Iden
 ##Groups
 
 These fields are used for defining a group based on the ldap schema.
-
- * **searchFieldGroup** (field used to search for group on defaults to (should this be multiple fields) **sAMAccountName**) 
-     * Ex: search on email name and/ or sAMAccountName
-
- * **objectTypeGroup** (Value used to compare with *objectClass* to determine if an object is a group or not. **group**)
-
- * **nameFieldGroup** Attribute Rancher uses as the name of a group.
-     * Default value **name** 
- * **memberField** Attribute used to determine members on a group. Similar to [**memberOfField**](#memberOfField)
-     * Default value **member**  
+ * Fields used for Authorization/ Searching
+     * **searchFieldGroup** (field used to search for group on defaults to (should this be multiple fields) **sAMAccountName**) 
+         * Ex: search on email name and/ or sAMAccountName
+     * **objectTypeGroup** (Value used to compare with *objectClass* to determine if an object is a group or not. **group**)
+     * **memberField** Attribute used to determine members on a group. Similar to [**memberOfField**](#memberOfField)
+         * Default value **member**
+ * Group Metadata
+      * **nameFieldGroup** Attribute Rancher uses as the name of a group.
+          * Default value **name**
 
 ###Example
 
