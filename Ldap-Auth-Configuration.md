@@ -12,19 +12,19 @@ same as normal except that when creating [Environments](http://docs.rancher.com/
 LDAP users and groups. 
 
 ##Configure Connection To LDAP
- * *loginDomain* 
+ * ***loginDomain*** 
     * Specifies the default domain to login using.
     * ex User1 becomes loginDomain\User
     * ex foo\User1 stays foo\User1
- * *port*
+ * ***port***
      * Specifies the port to use when connecting to LDAP.
      * Defaults to **389**
- * *server*
+ * ***server***
      * Specifies the server ip or domain that Rancher uses to connect to ldap.
  * **tls**
      * Use TLS or not.
      * TLS is not implemented yet
- * *enabled*
+ * ***enabled***
      * Boolean that determines if auth is enabled or not.
      * If set to false, LDAP will not be used.
 
@@ -33,12 +33,12 @@ LDAP users and groups.
 These fields are used to determine who has access to Rancher, and who specifies the service account that Rancher will
 use. A service account, with read only access,  is needed for querying LDAP so that Rancher can perform user searches.
  
- * *accessMode*  [[Restricted|Glossary#restricted]] or [[Unrestricted|Glossary#unrestricted]]
+ * ***accessMode***  [[Restricted|Glossary#restricted]] or [[Unrestricted|Glossary#unrestricted]]
      * **ous** ([[Restricted|Glossary#restricted]]) List of OUs from LDAP in the form of DNs
      * *domain* ([[Unrestricted|Glossary#unrestricted]]) Domain within LDAP to use. EX: ad.example.com
- * *serviceAccountUsername*
+ * ***serviceAccountUsername***
      * Username for the service account.
- * *serviceAccountPassword*
+ * ***serviceAccountPassword***
      * Password for the service account.
  * **uniqueIdentifierField**
      * Specifies the LDAP attribute used as the unique identifier for LDAP Objects.
