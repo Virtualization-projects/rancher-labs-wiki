@@ -7,92 +7,105 @@ to use LDAP as the backing authentication system.
  * Add users to the site based on their LDAP username or groups.
  * Add users to an [Environment](http://docs.rancher.com/rancher/concepts/#environments) based on their LDAP username or groups.
 
-After configuring LDAP, you are able to login to Rancher using your LDAP username and password. Then you use Rancher the same as normal except that when creating Environments you use LDAP users and groups instead of Github users, orgs, or teams. 
+After configuring LDAP, you are able to login to Rancher using your LDAP username and password. Then you use Rancher the
+same as normal except that when creating [Environments](http://docs.rancher.com/rancher/concepts/#environments) you use
+LDAP users and groups instead of Github users, orgs, or teams. 
 
-##Conecting to LDAP
+##Configure Connection To LDAP
  * *loginDomain* 
-    * default domain to login using
+    * Specifies the default domain to login using.
     * ex User1 becomes loginDomain\User
     * ex foo\User1 stays foo\User1
- * *port* (port LDAP is listening on. defaults to **389**)
- * *server* (server ip or domain that Rancher can use to connect.)
- * **tls** (Use tls or not. (Tls not tested/implemented yet.))
- * *enabled* boolean determining if auth is enabled or not. (If set to false, LDAP will not be used.)
+ * *port* Specifies the port to use when connecting to LDAP.
+     * Defaults to **389**
+ * *server* Specifies the server ip or domain that Rancher uses to connect to ldap.
+ * **tls** Use TLS or not. (TLS is not tested and not implemented yet.)
+ * *enabled* boolean that determines if auth is enabled or not. (If set to false, LDAP will not be used.)
 
 ###<a name="LDAPAccess"></a>LDAP Account Access
  
-These fields are used to determine who has access to Rancher and who Rancher talks to LDAP as when searching LDAP.
+These fields are used to determine who has access to Rancher, and who specifies the service account that Rancher will
+use. A service account, with read only access,  is needed for querying LDAP so that Rancher can perform user searches.
  
- * *accessMode*  (restricted or unrestricted)
-     * **ous** ([[Restricted|Glossary#restricted]]) List of OUs from LDAP based using their DNs
+ * *accessMode*  [[Restricted|Glossary#restricted]] or [[Unrestricted|Glossary#unrestricted]]
+     * **ous** ([[Restricted|Glossary#restricted]]) List of OUs from LDAP in the form of DNs
      * *domain* ([[Unrestricted|Glossary#unrestricted]]) Domain within LDAP to use. EX: ad.example.com
- * *serviceAccountUsername*  Username for service account.
+ * *serviceAccountUsername*  Username for the service account.
  * *serviceAccountPassword*  Password for the service account.
- * **uniqueIdentifierField** (field used as the unique identifier for LDAP Objects default **distinguishedname** this is what [[Identities|Identity And Authentication]] use as externalId) 
+ * **uniqueIdentifierField** Specifies the LDAP attribute used as the unique identifier for LDAP Objects.
+ This is what [[Identities|Identity And Authentication]] use as an externalId.
+     * Default value **distinguishedname**  
 
 ##Users
 These fields are used by Rancher to determine how we identify an LDAP Object as a user.
 
  * Fields used for Authorization/ Searching
-     * **searchFieldUser** Identifies the attribute in LDAP to use as the search field when searching for users. 
+     * **searchFieldUser** Identifies the LDAP attribute to use as the search field when searching for users. 
          * Default Value **sAMAccountName**
-     * **objectTypeUser** Identifies the value of the attribute *objectClass* to determine that an object is a user.
+     * **objectTypeUser** Identifies the value of the LDAP attribute *objectClass* to determine that an object is a user.
          * Default value **person**
      * **userEnabledMaskBit** Specifies the bit to check to see if an account/user is enabled. 
          * Default value **514** 
-     * **userEnabledAttribute** Identifies the Attribute in LDAP to mask with the **userEnabledMaskBit** to determine if a user is enabled.
+     * **userEnabledAttribute** Identifies the LDAP attribute to mask with the **userEnabledMaskBit** to determine if
+     a user is enabled.
          * Default value **userAccountControl** 
-     * <a name="memberOfField"></a>**memberOfField** Identifies the attribute used to check for membership of groups to provide authorization to [Environments](http://docs.rancher.com/rancher/concepts/#environments). 
+     * <a name="memberOfField"></a>**memberOfField** Identifies the LDAP attribute used to check for membership of groups to
+     provide authorization to [Environments](http://docs.rancher.com/rancher/concepts/#environments). 
          * Default value **memberOf** 
  * User Metadata
-     * **nameFieldUser** Identifies the attribute in LDAP that Rancher will use to populate the name of a user's [[Identity|Identity And Authentication]]. 
+     * **nameFieldUser** Identifies the LDAP attribute that Rancher will use to populate the name of a user's
+     [[Identity|Identity And Authentication]]. 
          * Default value **name** 
 
 ###Example
-If using the defaults for all of the searching users fields a search for 
+If using the defaults for all of the fields on a user object then a search for: 
 
-`user1` 
+`user1`
 
-would result in a query to LDAP like this 
+would result in a query to LDAP that looks like this:
 
-`(&(objectClass=person)(sAMAccountName=user1))` 
+`(&(objectClass=person)(sAMAccountName=user1))`
 
 And only use results from the specified OUs from the [LDAP Account Access](#LDAPAccess) section.
 
-We would then take the value of **userAccountControl** attribute for each user and compare it with the **514** to determine if that user is enabled or disabled. We will not use disabled users. (Unless the want to be able to to use inactive and active user accounts.)
+We would then take the value of **userAccountControl** attribute for each user and compare it with **514** to determine
+if that user is enabled or disabled. We will not use disabled users. 
 
-
-Rancher then would use the **name** attribute in LDAP as the name for the [[Identity|Identity And Authentication]] within our api. The **distinguishedname** attribute would be used as its externalId which is what we store in the database for Environment/ environment membership. **distinguishedname** is the only value from LDAP that we store in our database for any user or group.
+The information from ldap for a user is used to create an [[Identity|Identity And Authentication]] for the user.
 
  
 ##Groups
 
 These fields are used for defining a group based on the LDAP schema.
+
  * Fields used for Authorization/ Searching
-     * **searchFieldGroup** (field used to search for group on defaults to (should this be multiple fields) **sAMAccountName**) 
-         * Ex: search on email name and/ or sAMAccountName
-     * **objectTypeGroup** (Value used to compare with *objectClass* to determine if an object is a group or not. **group**)
-     * **memberField** Attribute used to determine members on a group. Similar to [**memberOfField**](#memberOfField)
+     * **searchFieldGroup** Specifies the LDAP attribute used when searching for a group. 
+         * Default value **sAMAccountName**
+     * **objectTypeGroup** Specifies the value used to compare with LDAP attribute *objectClass* to determine if an
+     object is a group or not.
+         * Default value **group**
+     * **memberField** Specifies the LDAP attribute used to determine members of a group. Similar to [**memberOfField**](#memberOfField)
          * Default value **member**
  * Group Metadata
-      * **nameFieldGroup** Attribute Rancher uses as the name of a group.
+      * **nameFieldGroup** Identifies the LDAP attribute that Rancher will use to populate the name of a group's
+      [[Identity|Identity And Authentication]]. 
           * Default value **name**
 
 ###Example
 
-If using the defaults for all of the searching groups fields, a search for
+If using the defaults for all of the fields for a group, a search for:
 
 `groupA`
 
-would result in a query to LDAP like this
+would result in a query to LDAP that looks like:
 
 `(&(objectClass=group)(sAMAccountName=groupA))`
 
 And only use results from the specified OUs from the [LDAP Account Access](#LDAPAccess) section.
 
-Rancher would then use the **name** attribute in LDAP as the name for the [[Identity|Identity And Authentication]] within our api. The **distingushedname** attribute would be used as its externalId which is what we store in our database for Environment/environment membership.
+The information from LDAP for a groups is used to create an [[Identity|Identity And Authentication]] for the group.
  
- ***We currently only support direct membership.***
+ ***We currently only support one level of membership.***
  
  **Subject to change**
  
@@ -106,3 +119,6 @@ Rancher would then use the **name** attribute in LDAP as the name for the [[Iden
  * Do we need to be able to search for users/groups on multiple fields?
  * Do we need to support multiple servers/ connecting to multiple domain controllers?
  * Do we need tls?
+ * Do we need to be able to configure the use of inactive and active accounts, or is only using active accounts the only
+ desired use case?
+ * Do we need to be able to search based on multiple LDAP attributes?
