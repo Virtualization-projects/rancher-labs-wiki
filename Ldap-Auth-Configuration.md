@@ -113,7 +113,7 @@ would result in a query to LDAP that looks like:
 
 `(&(objectClass=group)(sAMAccountName=groupA))`
 
-And only use results from the specified OUs from the [LDAP Account Access](#LDAPAccess) section.
+Only returns results from the specified [OUs](#ous).
 
 The information from LDAP for a group is used to create an [[Identity|Identity And Authentication]] for the group.
  
