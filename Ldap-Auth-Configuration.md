@@ -45,7 +45,7 @@ These fields are used by Rancher to determine how we identify an Ldap Object as 
          * Default value **memberOf** ***Currently hard coded***
  * Fields used for displaying the user.
      * **nameFieldUser** Attribute Rancher will use as the name of a user. 
-         * Identity for a user will use the value of this attribute for the identity's name.
+         * [[Identity|Identity And Authentication]] for a user will use the value of this attribute for the identity's name.
          * Default value **name** ***Currently hard coded***
 ###Example
 If using the defaults for all of the searching users fields a search for 
@@ -61,7 +61,7 @@ And only use results from the specified OUS from the [Ldap Account Access](#Ldap
 We would then take the value of **userAccountControl** attribute for each user and compare it with the **514** to determine if that user is enabled or disabled. We will not use disabled users. (Unless the want to be able to to use inactive and active user accounts.)
 
 
-Rancher then would use the **name** attribute in Ldap as the name for the Identity within our api. The **distinguishedname** attribute would be used as its externalId which is what we store in the database for Environment/ environment membership. **distinguishedname** is the only value from Ldap that we store in our database for any user or group.
+Rancher then would use the **name** attribute in Ldap as the name for the [[Identity|Identity And Authentication]] within our api. The **distinguishedname** attribute would be used as its externalId which is what we store in the database for Environment/ environment membership. **distinguishedname** is the only value from Ldap that we store in our database for any user or group.
 
  
 ##Groups
@@ -90,7 +90,7 @@ would result in a query to Ldap like this
 
 And only use results from the specified OUS from the [Ldap Account Access](#LdapAccess) section.
 
-Rancher would then use the **name** attribute in Ldap as the name for the Identity within our api. The **distingushedname** attribute would be used as its externalId which is what we store in our database for Environment/environment membership.
+Rancher would then use the **name** attribute in Ldap as the name for the [[Identity|Identity And Authentication]] within our api. The **distingushedname** attribute would be used as its externalId which is what we store in our database for Environment/environment membership.
  
  ***We currently only support direct membership.***
  
