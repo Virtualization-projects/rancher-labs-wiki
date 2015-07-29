@@ -56,7 +56,7 @@ would result in a query to Ldap like this
 
 `(&(objectClass=person)(sAMAccountName=user1))` 
 
-And only use results from the specified OUS from the [Ldap Account Access](#LdapAccess) section.
+And only use results from the specified OUs from the [Ldap Account Access](#LdapAccess) section.
 
 We would then take the value of **userAccountControl** attribute for each user and compare it with the **514** to determine if that user is enabled or disabled. We will not use disabled users. (Unless the want to be able to to use inactive and active user accounts.)
 
@@ -87,7 +87,7 @@ would result in a query to Ldap like this
 
 `(&(objectClass=group)(sAMAccountName=groupA))`
 
-And only use results from the specified OUS from the [Ldap Account Access](#LdapAccess) section.
+And only use results from the specified OUs from the [Ldap Account Access](#LdapAccess) section.
 
 Rancher would then use the **name** attribute in Ldap as the name for the [[Identity|Identity And Authentication]] within our api. The **distingushedname** attribute would be used as its externalId which is what we store in our database for Environment/environment membership.
  
