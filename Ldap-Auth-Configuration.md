@@ -1,8 +1,9 @@
 
 Ldap Authentication Integration
 ---------
-Purpose: To be able to authenticate to Rancher using Ldap credentials. Add users to the site based on their Ldap username or groups.
-Add users to an [Environment](http://docs.rancher.com/rancher/concepts/#environments)
+Purpose: To be able to use configure [Access control](http://docs.rancher.com/rancher/configuration/access-control/) 
+to use Ldap as the backing authentication system instead of github. Add users to the site based on their Ldap username 
+or groups. Add users to an [Environment](http://docs.rancher.com/rancher/concepts/#environments)
  based on their Ldap username or groups.
 
 After configuring Ldap, you are able to login to Rancher using your Ldap username and password. Then you use Rancher the same as normal except that when creating Environments you use Ldap users and groups instead of Github users, orgs, or teams. 
