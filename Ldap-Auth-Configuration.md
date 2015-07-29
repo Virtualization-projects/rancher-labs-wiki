@@ -7,10 +7,6 @@ to use LDAP as the backing authentication system.
  * Authenticate users to Rancher based on LDAP OUs or a Domain.
  * Add users to an [Environment](http://docs.rancher.com/rancher/concepts/#environments) based on their LDAP username or groups.
 
-After configuring LDAP, you are able to login to Rancher using your LDAP username and password. Then you use Rancher the
-same as normal except that when creating [Environments](http://docs.rancher.com/rancher/concepts/#environments) you use
-LDAP users and groups. 
-
 ##Configure Connection To LDAP
  * ***loginDomain*** 
     * Specifies the default domain to login using.
