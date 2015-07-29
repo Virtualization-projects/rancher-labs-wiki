@@ -67,7 +67,7 @@ These fields are used by Rancher to determine how we identify an LDAP Object as 
          * Default value **name** 
 
 ###Example
-If using the defaults for all of the fields on a user object then a search for: 
+Assuming the defaults for the above fields on a user object, a search for: 
 
 `user1`
 
