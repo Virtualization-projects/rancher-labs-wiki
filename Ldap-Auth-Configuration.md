@@ -2,9 +2,9 @@
 Ldap Authentication Integration
 ---------
 Purpose: To be able to authenticate to Rancher using Ldap credentials. Add users to the site based on their Ldap username or groups.
-Add users to a project based on their Ldap username or groups.
+Add users to a Environment based on their Ldap username or groups.
 
-After configuring Ldap, you are able to login to Rancher using your Ldap username and password. Then you use Rancher the same as normal except that when creating projects you use Ldap users and groups instead of Github users, orgs, or teams. 
+After configuring Ldap, you are able to login to Rancher using your Ldap username and password. Then you use Rancher the same as normal except that when creating Environments you use Ldap users and groups instead of Github users, orgs, or teams. 
 [Environments](http://docs.rancher.com/rancher/concepts/#environments)
 
 ##Conecting to Ldap
@@ -60,7 +60,7 @@ And only use results from the specified OUS from the [Ldap Account Access](#Ldap
 We would then take the value of **userAccountControl** attribute for each user and compare it with the **514** to determine if that user is enabled or disabled. We will not use disabled users. (Unless the want to be able to to use inactive and active user accounts.)
 
 
-Rancher then would use the **name** attribute in Ldap as the name for the Identity within our api. The **distinguishedname** attribute would be used as its externalId which is what we store in the database for project/ environment membership. **distinguishedname** is the only value from Ldap that we store in our database for any user or group.
+Rancher then would use the **name** attribute in Ldap as the name for the Identity within our api. The **distinguishedname** attribute would be used as its externalId which is what we store in the database for Environment/ environment membership. **distinguishedname** is the only value from Ldap that we store in our database for any user or group.
 
  
 ##Groups
@@ -89,7 +89,7 @@ would result in a query to Ldap like this
 
 And only use results from the specified OUS from the [Ldap Account Access](#LdapAccess) section.
 
-Rancher would then use the **name** attribute in Ldap as the name for the Identity within our api. The **distingushedname** attribute would be used as its externalId which is what we store in our database for project/environment membership.
+Rancher would then use the **name** attribute in Ldap as the name for the Identity within our api. The **distingushedname** attribute would be used as its externalId which is what we store in our database for Environment/environment membership.
  
  ***We currently only support direct membership.***
  
