@@ -101,8 +101,8 @@ Rancher would then use the **name** attribute in Ldap as the name for the [[Iden
  
  ####Questions
  
- Do we need to support indirect membership? 
+ * Do we need to support transitive membership? 
      * ex: Group A is member of Group B and User a is a member of Group B so as a result User a is a member of Group A.
- Do we need to be able to search for users/groups on multiple fields?
- Do we need to support multiple servers/ connecting to multiple domain controllers?
- Do we need tls?
+ * Do we need to be able to search for users/groups on multiple fields?
+ * Do we need to support multiple servers/ connecting to multiple domain controllers?
+ * Do we need tls?
