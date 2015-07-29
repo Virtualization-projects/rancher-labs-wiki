@@ -129,6 +129,4 @@ The information from LDAP for a group is used to create an [[Identity|Identity A
  * Do we need to be able to search for users/groups on multiple fields?
  * Do we need to support multiple servers/ connecting to multiple domain controllers?
  * Do we need tls?
- * Do we need to be able to configure the use of inactive and active accounts, or is only using active accounts the only
- desired use case?
- * Do we need to be able to search based on multiple LDAP attributes?
+ * Do we need to be able to configure the use of inactive and active accounts, or is only using active accounts the only desired use case?
