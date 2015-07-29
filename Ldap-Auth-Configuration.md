@@ -32,21 +32,21 @@ These fields are used to determine who has access to Rancher and who Rancher tal
 ##Users
 These fields are used by Rancher to determine how we identify an Ldap Object as a user as well as look for users withing Ldap.
 
-
- * **searchFieldUser** Attribute in Ldap to use as the search field when searching for users. 
-     * Default Value **sAMAccountName**
- * **objectTypeUser** Value of the attribute *objectClass* to determine that an object is a user.
-     * Default value **person**
- * **nameFieldUser** Attribute Rancher will use as the name of a user. 
-     * Identity for a user will use the value of this attribute for the identity's name.
-     * Default value **name** ***Currently hard coded***
- * <a name="memberOfField"></a>**memberOfField** Attribute used to check for membership. 
-     * Default value **memberOf** ***Currently hard coded***
- * **userEnabledMaskBit** Bit to check to see if an account/user is enabled. 
-     * Default value **514** ***Currently hard coded***
- * **userEnabledAttribute** Attribute to mask with the **userEnabledMaskBit** to determine if a user is enabled.
-     * Default value **userAccountControl** ***Currently hard coded***
-     
+ * Fields used for Authentication/ Searching
+     * **searchFieldUser** Attribute in Ldap to use as the search field when searching for users. 
+         * Default Value **sAMAccountName**
+     * **objectTypeUser** Value of the attribute *objectClass* to determine that an object is a user.
+         * Default value **person**
+     * **userEnabledMaskBit** Bit to check to see if an account/user is enabled. 
+         * Default value **514** ***Currently hard coded***
+     * **userEnabledAttribute** Attribute to mask with the **userEnabledMaskBit** to determine if a user is enabled.
+         * Default value **userAccountControl** ***Currently hard coded***
+     * <a name="memberOfField"></a>**memberOfField** Attribute used to check for membership. 
+         * Default value **memberOf** ***Currently hard coded***
+ * Fields used for displaying the user.
+     * **nameFieldUser** Attribute Rancher will use as the name of a user. 
+         * Identity for a user will use the value of this attribute for the identity's name.
+         * Default value **name** ***Currently hard coded***
 ###Example
 If using the defaults for all of the searching users fields a search for 
 
@@ -66,7 +66,7 @@ Rancher then would use the **name** attribute in Ldap as the name for the Identi
  
 ##Groups
 
-
+These fields are used for defining a group based on the ldap schema.
 
  * **searchFieldGroup** (field used to search for group on defaults to (should this be multiple fields) **sAMAccountName**) ***Currently hard coded***
      * Ex: search on email name and/ or sAMAccountName
