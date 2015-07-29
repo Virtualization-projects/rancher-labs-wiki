@@ -24,13 +24,13 @@ to use LDAP as the backing authentication system.
      * Boolean that determines if auth is enabled or not.
      * If set to false, LDAP will not be used.
 
-###<a name="LDAPAccess"></a>LDAP Account Access
+###LDAP Account Access
  
 These fields are used to determine who has access to Rancher, and specifies the service account that Rancher will
 use. A service account, with read only access,  is needed for querying LDAP so that Rancher can perform user searches.
  
  * ***accessMode***  [[Restricted|Glossary#restricted]] or [[Unrestricted|Glossary#unrestricted]]
-     * **ous** ([[Restricted|Glossary#restricted]]) List of OUs from LDAP in the form of DNs
+     * <a name="ous"></a>**ous** ([[Restricted|Glossary#restricted]]) List of OUs from LDAP in the form of DNs
      * *domain* ([[Unrestricted|Glossary#unrestricted]]) Domain within LDAP to use. EX: ad.example.com
  * ***serviceAccountUsername***
      * Username for the service account.
@@ -75,10 +75,9 @@ would result in a query to LDAP that looks like this:
 
 `(&(objectClass=person)(sAMAccountName=user1))`
 
-And only use results from the specified OUs from the [LDAP Account Access](#LDAPAccess) section.
+Only results from the specified [OUs](#ous) are returned as configured.
 
-We would then take the value of **userAccountControl** attribute for each user and compare it with **514** to determine
-if that user is enabled or disabled. We will not use disabled users. 
+We would then take the value of **userAccountControl** attribute for each user and compare it with **514** to determine if that user is enabled or disabled. We will not use disabled users. 
 
 The information from ldap for a user is used to create an [[Identity|Identity And Authentication]] for the user.
 
