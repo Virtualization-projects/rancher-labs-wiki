@@ -16,7 +16,7 @@ to use LDAP as the backing authentication system.
      * Specifies the port to use when connecting to LDAP.
      * Defaults to **389**
  * ***server***
-     * Specifies the server ip or domain that Rancher uses to connect to ldap.
+     * Specifies the server ip or hostname that Rancher uses to connect to ldap.
  * **tls**
      * Use TLS or not.
      * TLS is not implemented yet
