@@ -8,6 +8,9 @@ to use LDAP as the backing authentication system.
  * Add users to an [Environment](http://docs.rancher.com/rancher/concepts/#environments) based on their LDAP username or groups.
 
 ##Configure Connection To LDAP
+ * ***userLoginField***
+    * Specifies the LDAP attribute used to when searching for a user's record upon login.
+    * Defaults to **sAMAccountName**
  * ***loginDomain*** 
     * Specifies the default domain to login using.
     * ex User1 becomes loginDomain\User
