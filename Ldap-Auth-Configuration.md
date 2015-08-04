@@ -49,10 +49,10 @@ use. A service account, with read only access,  is needed for querying LDAP so t
 These fields are used by Rancher to determine how we identify an LDAP Object as a user.
 
  * Fields used for Authorization/ Searching
-     * **searchFieldUser**
+     * **userSearchField**
          * Identifies the LDAP attribute to use as the search field when searching for users. 
          * Default Value **sAMAccountName**
-     * **objectTypeUser**
+     * **userObjectClass**
          * Identifies the value of the LDAP attribute *objectClass* to determine that an object is a user.
          * Default value **person**
      * **userEnabledMaskBit**
@@ -66,7 +66,7 @@ These fields are used by Rancher to determine how we identify an LDAP Object as 
      provide authorization to [Environments](http://docs.rancher.com/rancher/concepts/#environments). 
          * Default value **memberOf** 
  * User Metadata
-     * **nameFieldUser**
+     * **userNameField**
          * Identifies the LDAP attribute that Rancher will use to populate the name of a user's [[Identity|Identity And Authentication]]. 
          * Default value **name** 
 
@@ -91,10 +91,10 @@ The information from ldap for a user is used to create an [[Identity|Identity An
 These fields are used for defining a group based on the LDAP schema.
 
  * Fields used for Authorization/ Searching
-     * **searchFieldGroup**
+     * **groupSearchField**
          * Specifies the LDAP attribute used when searching for a group. 
          * Default value **sAMAccountName**
-     * **objectTypeGroup**
+     * **groupObjectClass**
          * Specifies the value used to compare with LDAP attribute *objectClass* to determine if an
          object is a group or not.
          * Default value **group**
@@ -102,7 +102,7 @@ These fields are used for defining a group based on the LDAP schema.
          * Specifies the LDAP attribute used to determine the members of a group. Similar to [**memberOfField**](#memberOfField)
          * Default value **member**
  * Group Metadata
-      * **nameFieldGroup**
+      * **groupNameField**
           * Identifies the LDAP attribute that Rancher will use to populate the name of a group's
       [[Identity|Identity And Authentication]]. 
           * Default value **name**
