@@ -13,7 +13,7 @@ to use LDAP as the backing authentication system.
     * Defaults to **sAMAccountName**
  * ***loginDomain*** 
     * Specifies the default domain to login using.
-    * ex User1 becomes loginDomain\User
+    * ex User1 becomes loginDomain\User1
     * ex foo\User1 stays foo\User1
  * ***port***
      * Specifies the port to use when connecting to LDAP.
