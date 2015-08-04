@@ -26,6 +26,7 @@ to use LDAP as the backing authentication system.
  * ***enabled***
      * Boolean that determines if auth is enabled or not.
      * If set to false, LDAP will not be used.
+     * When set to true overrides all other configured auth providers.
 
 ###LDAP Account Access
  
