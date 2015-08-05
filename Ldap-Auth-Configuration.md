@@ -22,7 +22,6 @@ to use LDAP as the backing authentication system.
      * Specifies the server ip or hostname that Rancher uses to connect to ldap.
  * **tls**
      * Use TLS or not.
-     * TLS is not implemented yet
      * When using tls read [[TLS Certificates|LDAP TLS]]
  * ***enabled***
      * Boolean that determines if auth is enabled or not.
