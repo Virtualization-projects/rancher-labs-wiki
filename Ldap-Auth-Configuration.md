@@ -23,6 +23,7 @@ to use LDAP as the backing authentication system.
  * **tls**
      * Use TLS or not.
      * TLS is not implemented yet
+     * When using tls read [[TLS Certificates|TLS Certificates]]
  * ***enabled***
      * Boolean that determines if auth is enabled or not.
      * If set to false, LDAP will not be used.
