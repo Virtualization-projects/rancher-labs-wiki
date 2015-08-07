@@ -26,7 +26,8 @@ Once you've started Rancher with the correct certificates, it's time to enable a
 Enter the information for your LDAP server. Here are some additional notes for specific fields.
 
 * **Port**: `389` is the standard port for insecure. `636` is the standard port for TLS. If you select port `636`. then please make sure to check off the TLS box.
-* **Search Base:** There can be no spaces between the comma separated list. 
+* **Search Base:** Please make sure this matches the Distinguishedname (dn) for the search base.
+
 
 ### Customizing your Schema
 
