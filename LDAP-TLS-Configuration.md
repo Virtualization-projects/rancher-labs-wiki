@@ -37,14 +37,14 @@ In this example, we've set up the standard Active Directory format.
 * **Object Class:** person
 * **Login Field:** sAMAccountName
 * **Name Field:** name
-* **Search Field:** name
+* **Search Field:** name   _Note: You could search by sAMAccountName._
 * **Status Field**: userAccountControl
 * **Disabled Status BitMask:** 2
 
 **Groups**
 * **Object Class:** group
 * **Name Field:** name
-* **Search Field:** name
+* **Search Field:** name _Note: You could search by sAMAccountName._
 
 ### Authenticate
 
