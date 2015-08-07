@@ -55,9 +55,9 @@ These fields are used by Rancher to determine how we identify an LDAP Object as 
      * **userObjectClass**
          * Identifies the value of the LDAP attribute *objectClass* to determine that an object is a user.
          * Default value **person**
-     * **userEnabledMaskBit**
+     * **userDisabledMaskBit**
          * Specifies the bit to check to see if an account/user is enabled. 
-         * Default value **514** 
+         * Default value **2** 
      * **userEnabledAttribute**
          * Identifies the LDAP attribute to mask with the **userEnabledMaskBit** to determine if a user is enabled.
          * Default value **userAccountControl** 
