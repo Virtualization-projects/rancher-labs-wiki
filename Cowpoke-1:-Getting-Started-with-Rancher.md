@@ -199,4 +199,4 @@ Further Reading
 ---------------
 [[Cowpoke 2: Halp! (Debugging, troubleshooting, starting over)]]
 
-[[Cowpoke 3: Tutorial introduction and the Rancher API]]
+[[Cowpoke-3.0:-Tutorial-introduction-and-the-Rancher-API]]
