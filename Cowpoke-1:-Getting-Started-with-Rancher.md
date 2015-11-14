@@ -32,7 +32,7 @@ Assuming that you're woking on a Mac, install Xcode from the app store (some pie
 
 ### Setup necessary tech
 Here's the list of the core libraries/technologies/software that you'll need:
-* docker (and boot2docker and Virtual Box if you're on a Mac)
+* docker [Mac](http://docs.docker.com/mac/step_one/)/[Linux](http://docs.docker.com/linux/step_one/)
 * mysql server and client
 * JDK 7
 * Python 2.7 and some python tools: pip, virtualenv, tox
