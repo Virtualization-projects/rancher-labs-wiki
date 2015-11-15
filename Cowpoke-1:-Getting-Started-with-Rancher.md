@@ -51,12 +51,12 @@ brew install maven
 brew install liquibase
 echo "export LIQUIBASE_HOME=$(find /usr/local/Cellar/liquibase -name libexec)" >> ~/.profile
 brew install gnu-sed --with-default-names
-brew install boot2docker
-boot2docker init
-boot2docker up
-$(boot2docker shellinit)
-echo '$(boot2docker shellinit)' >> ~/.profile # Get docker going in all new shells
+brew install caskroom/cask/brew-cask
+brew cask install dockertoolbox #Install docker toolbox.
+docker-machine create --driver virtualbox dockerbox
+eval `docker-machine env dockerbox`
 docker run busybox # Prove it works!
+echo 'eval "$(docker-machine env dockerbox)"' >> ~/.profile
 brew install mysql
 mysql.server start
 mysql -uroot # Prove it works!
