@@ -73,7 +73,7 @@ echo "export JAVA_HOME=$(/usr/libexec/java_home -v 1.7)" >> ~/.profile
 Clone cattle to your workspace directory:
 ```bash
 cd <your workspace directory>
-git clone https://github.com/rancherio/cattle.git
+git clone https://github.com/rancher/cattle.git
 ```
 That's it. All the code is in the cattle repo. [The rancher project](https://github.com/rancherio/rancher) actually just packages up the code in the cattle repo.
 
