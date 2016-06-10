@@ -7,15 +7,17 @@ things you'll need (mentioned in the meetup):
 - rancher-compose
 - https://github.com/ibuildthecloud/demo-compose-templates/tree/master/lychee-docker/nfs
 
-you need three parameters to instal convoy-nfs on the already installed nfs-server\\
-mount dir, nfs server (ip or hostname), mount options
+you need three parameters to instal convoy-nfs on the already installed nfs-server
+- mount dir
+- nfs server (ip or hostname)
+- mount options
 
-the mount dir is not /exports but / (in nfs4)\\
-mount_dir: /\\
-nfs_server: xx.xx.xx.xx
+the mount dir is not /exports but / (in nfs4)
+- mount_dir: /
+- nfs_server: xx.xx.xx.xx
 
-and you need to specify the nfs version (nfsvers=4)\\
-mount_opts: proto=tcp,port=2049,nfsvers=4
+and you need to specify the nfs version (nfsvers=4)
+- mount_opts: proto=tcp,port=2049,nfsvers=4
 
 
 without declaring nfsvers=4 you get the error that you need statd
