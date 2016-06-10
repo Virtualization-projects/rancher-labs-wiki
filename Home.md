@@ -10,6 +10,8 @@ Welcome to the Rancher wiki!
 
 [[Setup: Settings]]
 
+[[Setup: convoy-nfs]]
+
 [[Model: Create Database Type]]
 
 ## Cowpoke:
