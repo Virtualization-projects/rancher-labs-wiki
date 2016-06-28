@@ -39,7 +39,7 @@
   * Stack concept for catalog items [#5268](https://github.com/rancher/rancher/issues/5268)
   * Catalog Upgrades [#4530](https://github.com/rancher/rancher/issues/4530)
   * K8S API HA support [#5235](https://github.com/rancher/rancher/issues/5235)
-  * UI Improvements [#4789](https://github.com/rancher/rancher/issues/4789), [#4619]((https://github.com/rancher/rancher/issues/4619), [#4622](https://github.com/rancher/rancher/issues/4622), [#4647](https://github.com/rancher/rancher/issues/4647
+  * UI Improvements [#4789](https://github.com/rancher/rancher/issues/4789), [#4619](https://github.com/rancher/rancher/issues/4619), [#4622](https://github.com/rancher/rancher/issues/4622), [#4647](https://github.com/rancher/rancher/issues/4647)
 * Rancher CLI v2 [#1275](https://github.com/rancher/rancher/issues/1275)
   * Compose v2 support [#3973](https://github.com/rancher/rancher/issues/3973)
 * External ELB Support [#4659](https://github.com/rancher/rancher/issues/4659)   
