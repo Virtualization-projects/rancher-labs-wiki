@@ -11,4 +11,4 @@ Rancher supports 2 versions for `rancher/server`.
 
 Milestone |  Target Date | Goals|
 ---|---|---
-1.2 | Oct 28, 2016 | 
+1.2 | Oct 28, 2016 | [Rancher 1.2](https://github.com/rancher/rancher/wiki/Rancher-1.2.0)
