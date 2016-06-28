@@ -9,7 +9,7 @@ Rancher supports 2 versions for `rancher/server`.
 # Roadmap
 ---
 
-Milestone |  Target Date | Goals|
+Milestone |  Target Date | Release Plan |
 ---|---|---
 1.2 | Oct 28, 2016 | [Rancher 1.2](https://github.com/rancher/rancher/wiki/Rancher-1.2.0)
 1.1 | June 30, 2016 | [Rancher 1.1](https://github.com/rancher/rancher/wiki/Rancher-1.1.0)
