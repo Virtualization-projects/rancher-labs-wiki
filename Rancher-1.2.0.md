@@ -4,7 +4,7 @@
 
 # Pre-release builds
 
-* <link to 1.2.0-pre1>
+* link to 1.2.0-pre1
 
 # Release Goals
 
