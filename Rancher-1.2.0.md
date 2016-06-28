@@ -8,7 +8,7 @@
 
 # Release Goals
 
-[List of Docker Issues](https://github.com/rancher/rancher/issues?q=is%3Aopen+label%3Akind%2F1.2-feature+milestone%3A%22Release+1.2.0%22)
+[List of Features](https://github.com/rancher/rancher/issues?q=is%3Aopen+label%3Akind%2F1.2-feature+milestone%3A%22Release+1.2.0%22)
 
 * Scheduler v2 [#5264](https://github.com/rancher/rancher/issues/5264)
  * Resource Scheduling [#2228](https://github.com/rancher/rancher/issues/2228)
