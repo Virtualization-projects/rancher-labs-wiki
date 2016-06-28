@@ -1,5 +1,9 @@
 Welcome to the Rancher wiki!
 
+## Rancher Project Plan:
+
+[[Rancher Project Plan]]
+
 ## Overview:
 
 [[Overview: What is Cattle]]
