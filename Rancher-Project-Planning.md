@@ -2,9 +2,9 @@
 ---
 Rancher supports 2 versions for `rancher/server`. 
 
-* `rancher/server:latest`: This version will be our development builds which will have been validated through our CI automation framework, but these releases are not meant for deployment in production. All development builds will be appended with a `*-pre{n}` suffix to denote that it’s a development release. These releases will be shipped bi-weekly to allow everyone to experiment with our latest features prior to release it into a stable build. 
+* `rancher/server`: This build includes both the pre-release and stable versions of Rancher server.  Each pre-release build will be appended `*-pre{n}` suffix and will be shipped on a bi-weekly cadence leading up to the stable build release.  The pre-release builds are meant to allow the open source community to try out all the new features being developed for the current release rather than wait for the final release build.  Each pre-release build will support upgrades and will have passed all validation regression tests prior to shipping.  
 
-* `rancher/enterprise`: This version will be our feature release builds, which Rancher recommends for deployment in production.
+* `rancher/enterprise`: This version is meant for users running Rancher for production workloads and is identical to the rancher/server stable build releases.  Patch releases will only be shipped on rancher/enterprise builds to address critical and security issues.
 
 # Roadmap
 ---
