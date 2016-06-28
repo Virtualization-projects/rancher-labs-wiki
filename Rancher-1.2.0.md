@@ -2,6 +2,10 @@
 
 * Targeted: 2016-10-28
 
+# Pre-release builds
+
+* <link to 1.2.0-pre1>
+
 # Release Goals
 
 [List of Docker Issues](https://github.com/rancher/rancher/issues?q=is%3Aopen+label%3Akind%2F1.2-feature+milestone%3A%22Release+1.2.0%22)
