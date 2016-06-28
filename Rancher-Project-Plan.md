@@ -1,6 +1,6 @@
 # Releases
 ---
-Rancher supports 2 versions for `rancher/server`. 
+Rancher supports 2 versions for Rancher server. 
 
 * `rancher/server`: This build includes both the pre-release and stable versions of Rancher server.  Each pre-release build will be appended `*-pre{n}` suffix and will be shipped on a bi-weekly cadence leading up to the stable build release.  The pre-release builds are meant to allow the open source community to try out all the new features being developed for the current release rather than wait for the final release build.  Each pre-release build will support upgrades and will have passed all validation regression tests prior to shipping.  
 
