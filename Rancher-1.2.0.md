@@ -7,7 +7,7 @@
 * [1.2.0-pre1 milestone](https://github.com/rancher/rancher/milestones/Release%201.2.0-pre1)
 
 # Release Goals
-We have an aggressive [list of features](https://github.com/rancher/rancher/issues?q=is%3Aopen+label%3Akind%2F1.2-feature+milestone%3A%22Release+1.2.0%22)
+We have an aggressive [list of features](https://github.com/rancher/rancher/labels/kind%2F1.2-feature)
  we plan for Rancher 1.2.0.  Here are some of the highlights:
 
 * **[#5201](https://github.com/rancher/rancher/issues/5201): Docker built-in orchestration as a framework**
