@@ -4,7 +4,8 @@
 
 # Pre-release builds
 
-* [1.2.0-pre1 milestone](https://github.com/rancher/rancher/milestones/Release%201.2.0-pre1)
+* [1.2.0-pre2 milestone](https://github.com/rancher/rancher/milestone/72)
+* [1.2.0-pre1 Release Notes](https://github.com/rancher/rancher/releases/tag/v1.2.0-pre1)
 
 # Release Goals
 We have an aggressive [list of features](https://github.com/rancher/rancher/labels/kind%2F1.2-feature)
