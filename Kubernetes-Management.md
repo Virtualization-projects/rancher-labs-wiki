@@ -87,6 +87,7 @@ If a majority of hosts running etcd fail, follow these steps:
 
 ## Restoring Backups
 Backup restoration will only work for Resilient Separated-Planes deployments. If all hosts running etcd fail, follow these steps:
+
 1. Change your environment type to ‘Cattle’. This will tear down the Kubernetes system stack. Pods (the Compute plane) will remain intact and available.
 2. Delete reconnecting/disconnected hosts and add new hosts if you need them.
 3. Ensure at least one host is labelled etcd=true.
