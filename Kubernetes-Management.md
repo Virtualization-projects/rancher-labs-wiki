@@ -14,30 +14,36 @@ In a production deployment, each plane runs on separate physical or virtual host
 # Deployment
 
 ## Standalone Deployment
+
 ### Characteristics
 * Simple, low-cost environment for development and training
 * No resiliency to host failure
 * Low performance
+
 ### Instructions
 1. Create a Kubernetes environment.
 2. Add 1 host with >=1 CPU and >=4GB RAM.
 
 ## Resilient Overlapping-Planes Deployment
+
 ### Characteristics
 * Simple, low-cost environment for distributed development and training
 * Data/Orchestration plane availability resilient to minority of hosts failing
 * Failure tolerance of Compute plane depends on the deployment plan
 * Potential performance issues with etcd/kubernetes components
+
 ### Instructions
 1. Create a Kubernetes environment.
 2. Add 3 hosts with >=1 CPU and >=2GB RAM.
 
 ## Resilient Separated-Planes Deployment
+
 ### Characteristics
 * Data plane availability resilient to minority of hosts failing
 * Orchestration plane resilient to all but one host failing
 * Failure tolerance of Compute plane depends on the deployment plan
 * High-performance, production-ready environment
+
 ### Instructions
 1. Create a Cattle environment.
 2. Add 3 hosts with 1 CPU, >=1.5GB RAM, >=20GB DISK. Label these hosts etcd=true.
