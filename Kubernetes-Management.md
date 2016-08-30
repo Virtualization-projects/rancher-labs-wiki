@@ -98,7 +98,7 @@ If a majority of hosts running etcd fail, follow these steps:
 4. Add more hosts until you have at least three. Etcd scales back up. In most cases, everything will heal automatically. If new/dead containers are still initializing after three minutes, delete their data containers (green circle, shaded-in). **Do not, under any circumstance, delete the data container of your sole survivor.** System resiliency is restored.
 
 ## Restoring Backups
-Backup restoration will only work for a [Resilient Separated-Planes Deployment](#resilient-separated-planes-deployment). If all hosts running etcd fail, follow these steps:
+Backup restoration will only work for [Resilient Separated-Planes](#resilient-separated-planes) deployments. If all hosts running etcd fail, follow these steps:
 
 1. Change your environment type to **Cattle**. This will tear down the Kubernetes system stack. Pods (the Compute plane) will remain intact and available.
 2. Delete reconnecting/disconnected hosts and add new hosts if you need them.
