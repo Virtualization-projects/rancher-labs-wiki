@@ -93,6 +93,7 @@ Backup restoration will only work for Resilient Separated-Planes deployments. If
 2. Delete reconnecting/disconnected hosts and add new hosts if you need them.
 3. Ensure at least one host is labelled **etcd=true**.
 4. For each **etcd=true** host, mount the network storage containing backups - see [Configuring Remote Backups](#configuring-remote-backups) section for details. Then run these commands:
+
     ```bash
     # configure this to point to the desired backup in /var/etcd/backups
     target=2016-08-26T16:36:46Z
@@ -103,4 +104,5 @@ Backup restoration will only work for Resilient Separated-Planes deployments. If
     docker cp /var/etcd/backups/$target etcd-restore:/data/data.current
     docker rm etcd-restore
     ```
+
 5. Change your environment type back to **Kubernetes**. The system stack will launch and your pods will be reconciled. Your backup may reflect a different deployment topology than what currently exists; pods may be deleted/recreated.
