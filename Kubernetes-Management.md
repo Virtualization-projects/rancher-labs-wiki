@@ -47,10 +47,10 @@ In a production deployment, each plane runs on separate physical or virtual host
 ### Instructions
 1. Create a Cattle environment.
 2. Add 3 hosts with 1 CPU, >=1.5GB RAM, >=20GB DISK. Label these hosts etcd=true.
-2a. If you care about backups, see ‘Configuring Remote Backups’ now.
-2b. If you don’t want pods scheduled on these hosts, also add label nopods=true.
+    1. If you care about backups, see ‘Configuring Remote Backups’ now.
+    2. If you don’t want pods scheduled on these hosts, also add label nopods=true.
 3. Add 2 hosts with >=1 CPU and >=2GB RAM. Label these hosts orchestration=true.
-3a. If you don’t want pods scheduled on these hosts, also add label nopods=true.
+    1. If you don’t want pods scheduled on these hosts, also add label nopods=true.
 4. Add 1+ hosts without any special labels. Resource requirements vary by workload.
 5. Edit the environment and select Kubernetes.
 
@@ -93,14 +93,14 @@ Backup restoration will only work for Resilient Separated-Planes deployments. If
 2. Delete reconnecting/disconnected hosts and add new hosts if you need them.
 3. Ensure at least one host is labelled etcd=true.
 4. For each etcd=true host, mount the network storage containing backups - see ‘Configuring Remote Backups’ section for details. Then run these commands:
-```bash
-# configure this to point to the desired backup in /var/etcd/backups
-target=2016-08-26T16:36:46Z
-# don’t touch anything below this line
-docker volume rm etcd
-docker volume create --name etcd
-docker run -d -v etcd:/data --name etcd-restore busybox
-docker cp /var/etcd/backups/$target etcd-restore:/data/data.current
-docker rm etcd-restore
-```
+    ```bash
+    # configure this to point to the desired backup in /var/etcd/backups
+    target=2016-08-26T16:36:46Z
+    # don’t touch anything below this line
+    docker volume rm etcd
+    docker volume create --name etcd
+    docker run -d -v etcd:/data --name etcd-restore busybox
+    docker cp /var/etcd/backups/$target etcd-restore:/data/data.current
+    docker rm etcd-restore
+    ```
 5. Change your environment type back to ‘Kubernetes’. The system stack will launch and your pods will be reconciled. Your backup may reflect a different deployment topology than what currently exists; pods may be deleted/recreated.
