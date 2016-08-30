@@ -14,39 +14,39 @@ In a production deployment, each plane runs on separate physical or virtual host
 # Deployment
 
 ## Standalone Deployment
-Characteristics
-Simple, low-cost environment for development and training
-No resiliency to host failure
-Low performance
-Instructions
-Create a Kubernetes environment.
-Add 1 host with >=1 CPU and >=4GB RAM.
+### Characteristics
+* Simple, low-cost environment for development and training
+* No resiliency to host failure
+* Low performance
+### Instructions
+1. Create a Kubernetes environment.
+2. Add 1 host with >=1 CPU and >=4GB RAM.
 
 ## Resilient Overlapping-Planes Deployment
 ### Characteristics
-Simple, low-cost environment for distributed development and training
-Data/Orchestration plane availability resilient to minority of hosts failing
-Failure tolerance of Compute plane depends on the deployment plan
-Potential performance issues with etcd/kubernetes components
+* Simple, low-cost environment for distributed development and training
+* Data/Orchestration plane availability resilient to minority of hosts failing
+* Failure tolerance of Compute plane depends on the deployment plan
+* Potential performance issues with etcd/kubernetes components
 ### Instructions
-Create a Kubernetes environment.
-Add 3 hosts with >=1 CPU and >=2GB RAM.
+1. Create a Kubernetes environment.
+2. Add 3 hosts with >=1 CPU and >=2GB RAM.
 
 ## Resilient Separated-Planes Deployment
 ### Characteristics
-Data plane availability resilient to minority of hosts failing
-Orchestration plane resilient to all but one host failing
-Failure tolerance of Compute plane depends on the deployment plan
-High-performance, production-ready environment
+* Data plane availability resilient to minority of hosts failing
+* Orchestration plane resilient to all but one host failing
+* Failure tolerance of Compute plane depends on the deployment plan
+* High-performance, production-ready environment
 ### Instructions
-Create a Cattle environment.
-Add 3 hosts with 1 CPU, >=1.5GB RAM, >=20GB DISK. Label these hosts etcd=true.
-If you care about backups, see ‘Configuring Remote Backups’ now.
-If you don’t want pods scheduled on these hosts, also add label nopods=true.
-Add 2 hosts with >=1 CPU and >=2GB RAM. Label these hosts orchestration=true.
-If you don’t want pods scheduled on these hosts, also add label nopods=true.
-Add 1+ hosts without any special labels. Resource requirements vary by workload.
-Edit the environment and select Kubernetes.
+1. Create a Cattle environment.
+2. Add 3 hosts with 1 CPU, >=1.5GB RAM, >=20GB DISK. Label these hosts etcd=true.
+2a. If you care about backups, see ‘Configuring Remote Backups’ now.
+2b. If you don’t want pods scheduled on these hosts, also add label nopods=true.
+3. Add 2 hosts with >=1 CPU and >=2GB RAM. Label these hosts orchestration=true.
+3a. If you don’t want pods scheduled on these hosts, also add label nopods=true.
+4. Add 1+ hosts without any special labels. Resource requirements vary by workload.
+5. Edit the environment and select Kubernetes.
 
 ## Configuring Remote Backups
 With the newest release, full backups of the Data Plane are performed every 15 minutes and deleted after 24 hours, by default. A backup period below 30 seconds is not recommended.
@@ -58,12 +58,13 @@ These backups are persisted to a static location /var/etcd/backups on exactly on
 ## Deployment Migrations
 Any deployment plan may be migrated to any other deployment plan. For resilient deployment targets, this involves no downtime. If your desired migration is not listed, we don’t officially support it – but it is possible. Contact Rancher for further instruction.
 
-## Standalone -> Overlapping
-Add 2 more hosts to the environment. The deployment automatically scales up.
-Overlapping -> Separated
-Add 3+ hosts to the environment. Ensure resource requirements are satisfied and create host labels as defined in Resilient Separated-Planes deployment instructions.
-For etcd containers not on etcd=true hosts, migration is necessary. Delete one data sidekick container of an etcd. Ensure it is recreated on a correct host and becomes healthy (green circle) before continuing. Repeat this process as is necessary.
-For kubernetes, scheduler, controller-manager, kubectld, rancher-kubernetes-agent, rancher-ingress-controller containers not on the orchestration=true host, delete the containers.
+### Standalone -> Overlapping
+1. Add 2 more hosts to the environment. The deployment automatically scales up.
+
+### Overlapping -> Separated
+1. Add 3+ hosts to the environment. Ensure resource requirements are satisfied and create host labels as defined in Resilient Separated-Planes deployment instructions.
+2. For etcd containers not on etcd=true hosts, migration is necessary. Delete one data sidekick container of an etcd. Ensure it is recreated on a correct host and becomes healthy (green circle) before continuing. Repeat this process as is necessary.
+3. For kubernetes, scheduler, controller-manager, kubectld, rancher-kubernetes-agent, rancher-ingress-controller containers not on the orchestration=true host, delete the containers.
 Make note of etcd=true and orchestration=true hostnames. From kubectl, type 'kubectl delete node <hostname>’ to remove the hosts from the Compute plane. Wait until all pods on etcd=true, orchestration=true hosts are deleted. At this point, delete kubelet and proxy containers from these hosts.
 
 # Management
@@ -84,6 +85,7 @@ Change your environment type to ‘Cattle’. This will tear down the Kubernetes
 Delete reconnecting/disconnected hosts and add new hosts if you need them.
 Ensure at least one host is labelled etcd=true.
 For each etcd=true host, mount the network storage containing backups - see ‘Configuring Remote Backups’ section for details. Then run these commands:
+```bash
 # configure this to point to the desired backup in /var/etcd/backups
 target=2016-08-26T16:36:46Z
 # don’t touch anything below this line
@@ -92,4 +94,5 @@ docker volume create --name etcd
 docker run -d -v etcd:/data --name etcd-restore busybox
 docker cp /var/etcd/backups/$target etcd-restore:/data/data.current
 docker rm etcd-restore
+```
 Change your environment type back to ‘Kubernetes’. The system stack will launch and your pods will be reconciled. Note: your backup may reflect a different deployment topology than what currently exists; pods may be deleted/recreated at this time.
