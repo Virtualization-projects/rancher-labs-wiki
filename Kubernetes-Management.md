@@ -107,7 +107,7 @@ Backup restoration will only work for [Resilient Separated-Planes](#resilient-se
 
     ```bash
     # configure this to point to the desired backup in /var/etcd/backups
-    target=2016-08-26T16:36:46Z
+    target=2016-08-26T16:36:46Z_etcd_1
     # don’t touch anything below this line
     docker volume rm etcd
     docker volume create --name etcd
