@@ -4,7 +4,7 @@
 
 ## Planes
 
-In a production deployment, it is best practice that each plane runs on separate physical or virtual hosts. For development, planes may overlap to simplify management and reduce costs.
+For production deployments, it is best practice that each plane runs on dedicated physical or virtual hosts. For development, multi-tenancy may be used to simplify management and reduce costs.
 
 ### Data Plane
 Comprised of one or more Etcd nodes which persist state regarding the [Compute Plane](#compute-plane). Resiliency is achieved by adding 3 hosts to this plane.
