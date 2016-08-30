@@ -11,9 +11,9 @@ The Compute Plane is comprised of the real workload, orchestrated and managed by
 
 In a production deployment, each plane runs on separate physical or virtual hosts. For development, planes may overlap to simplify management and reduce costs.
 
-# Deployment
+# Deployment Types
 
-## Standalone Deployment
+## Standalone
 
 ### Characteristics
 * Simple, low-cost environment for development and training
@@ -24,7 +24,7 @@ In a production deployment, each plane runs on separate physical or virtual host
 1. Create a Kubernetes environment.
 2. Add 1 host with >=1 CPU and >=4GB RAM.
 
-## Resilient Overlapping-Planes Deployment
+## Resilient Overlapping-Planes
 
 ### Characteristics
 * Simple, low-cost environment for distributed development and training
@@ -36,7 +36,7 @@ In a production deployment, each plane runs on separate physical or virtual host
 1. Create a Kubernetes environment.
 2. Add 3 hosts with >=1 CPU and >=2GB RAM.
 
-## Resilient Separated-Planes Deployment
+## Resilient Separated-Planes
 
 ### Characteristics
 * Data plane availability resilient to minority of hosts failing
@@ -54,6 +54,8 @@ In a production deployment, each plane runs on separate physical or virtual host
 4. Add 1+ hosts without any special labels. Resource requirements vary by workload.
 5. Edit the environment and select Kubernetes.
 
+# Management
+
 ## Configuring Remote Backups
 With the newest release, full backups of the Data Plane are performed every 15 minutes and deleted after 24 hours, by default. A backup period below 30 seconds is not recommended.
 
@@ -64,16 +66,14 @@ These backups are persisted to a static location `/var/etcd/backups` on exactly 
 ## Deployment Migrations
 Any deployment plan may be migrated to any other deployment plan. For resilient deployment targets, this involves no downtime. If your desired migration is not listed, we don’t officially support it – but it is possible. Contact Rancher for further instruction.
 
-### Standalone -> Overlapping
+### [Standalone](#standalone) to [Overlapping-Planes](#resilient-overlapping-planes)
 1. Add 2 more hosts to the environment. The deployment automatically scales up.
 
-### Overlapping -> Separated
+### [Overlapping-Planes](#resilient-overlapping-planes) to [Separated-Planes](#resilient-separated-planes)
 1. Add 3+ hosts to the environment. Ensure resource requirements are satisfied and create host labels as defined in Resilient Separated-Planes deployment instructions.
-2. For etcd containers not on etcd=true hosts, migration is necessary. Delete one data sidekick container of an etcd. Ensure it is recreated on a correct host and becomes healthy (green circle) before continuing. Repeat this process as is necessary.
+2. For etcd containers not on **etcd=true** hosts, migration is necessary. Delete one data sidekick container of an etcd. Ensure it is recreated on a correct host and becomes healthy (green circle) before continuing. Repeat this process as is necessary.
 3. For kubernetes, scheduler, controller-manager, kubectld, rancher-kubernetes-agent, rancher-ingress-controller containers not on the **orchestration=true** host, delete the containers.
 Make note of **etcd=true** and **orchestration=true** hostnames. From kubectl, type `kubectl delete node <hostname>` to remove the hosts from the Compute plane. Wait until all pods on **etcd=true**, **orchestration=true** hosts are deleted. At this point, delete kubelet and proxy containers from these hosts.
-
-# Management
 
 ## Failure Recovery
 If a host enters reconnecting/disconnected state, attempt to re-run the agent registration command. Wait 3 minutes. If the host hasn’t re-entered active state, add a new host with similar resources and host labels. Delete the old host from the environment. Containers will be scheduled to the new host and eventually become healthy.
