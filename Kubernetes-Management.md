@@ -59,9 +59,9 @@ Comprised of the real workload (Kubernetes pods), orchestrated and managed by Ku
 1. Create a Cattle environment.
 2. Add 3 hosts with 1 CPU, >=1.5GB RAM, >=20GB DISK. Label these hosts **etcd=true**.
     1. If you care about backups, see [Configuring Remote Backups](#configuring-remote-backups) now.
-    2. If you don’t want pods scheduled on these hosts, also add label **nopods=true**.
+    2. If you don’t want pods scheduled on these hosts add label **nopods=true**.
 3. Add 2 hosts with >=1 CPU and >=2GB RAM. Label these hosts **orchestration=true**.
-    1. If you don’t want pods scheduled on these hosts, also add label **nopods=true**.
+    1. If you don’t want pods scheduled on these hosts, add label **nopods=true**.
 4. Add 1+ hosts without any special labels. Resource requirements vary by workload.
 5. Edit the environment and select Kubernetes.
 
