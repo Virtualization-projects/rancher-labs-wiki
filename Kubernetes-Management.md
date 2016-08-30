@@ -3,11 +3,24 @@
 * Basic understanding of Data, Orchestration, Compute planes
 
 ## Planes
-* Data Plane - Comprised of one of more Etcd nodes which persist state regarding the Compute Plane. Resiliency is achieved by adding 3 hosts to this plane.
-* Orchestration Plane - Comprised of stateless K8s components (kubernetes, scheduler, controller-manager, kubectld, rancher-kubernetes-agent, rancher-ingress-controller) which orchestrate and manage the Compute Plane. Resiliency is achieved by adding 2 hosts to this plane.
-* Compute Plane - Comprised of the real workload, orchestrated and managed by Kubernetes.
 
-In a production deployment, each plane runs on separate physical or virtual hosts. For development, planes may overlap to simplify management and reduce costs.
+In a production deployment, it is best practice that each plane runs on separate physical or virtual hosts. For development, planes may overlap to simplify management and reduce costs.
+
+### Data Plane
+Comprised of one or more Etcd nodes which persist state regarding the [Compute Plane](#compute-plane). Resiliency is achieved by adding 3 hosts to this plane.
+
+### Orchestration Plane
+Comprised of stateless Kubernetes/Rancher components which orchestrate and manage the [Compute Plane](#compute-plane):
+* apiserver
+* scheduler
+* controller-manager
+* kubectld
+* rancher-kubernetes-agent
+* rancher-ingress-controller)
+Resiliency is achieved by adding 2 hosts to this plane.
+
+### Compute Plane
+Comprised of the real workload (Kubernetes pods), orchestrated and managed by Kubernetes.
 
 # Deployment Types
 
@@ -26,9 +39,9 @@ In a production deployment, each plane runs on separate physical or virtual host
 
 ### Characteristics
 * Simple, low-cost environment for distributed development and training
-* Data/Orchestration plane availability resilient to minority of hosts failing
-* Failure tolerance of Compute plane depends on the deployment plan
-* Potential performance issues with etcd/kubernetes components
+* [Data Plane](#data-plane) and [Orchestration Plane](#orchestration-plane) resilient to minority of hosts failing
+* [Compute Plane](#compute-plane) resiliency depends on the deployment plan
+* Potential performance issues with Etcd/Kubernetes components
 
 ### Instructions
 1. Create a Kubernetes environment.
@@ -37,9 +50,9 @@ In a production deployment, each plane runs on separate physical or virtual host
 ## Resilient Separated-Planes
 
 ### Characteristics
-* Data plane availability resilient to minority of hosts failing
-* Orchestration plane resilient to all but one host failing
-* Failure tolerance of Compute plane depends on the deployment plan
+* [Data Plane](#data-plane) resilient to minority of hosts failing
+* [Orchestration Plane](#orchestration-plane) resilient to all but one host failing
+* [Compute Plane](#compute-plane) resiliency depends on the deployment plan
 * High-performance, production-ready environment
 
 ### Instructions
