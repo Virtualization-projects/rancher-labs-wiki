@@ -3,11 +3,9 @@
 * Basic understanding of Data, Orchestration, Compute planes
 
 ## Planes
-The Data Plane is comprised of one of more Etcd nodes which persist state regarding the Compute Plane. Resiliency is achieved by adding 3 hosts to this plane.
-
-The Orchestration plane is comprised of stateless K8s components (kubernetes, scheduler, controller-manager, kubectld, rancher-kubernetes-agent, rancher-ingress-controller) which orchestrate and manage the Compute Plane. Resiliency is achieved by adding 2 hosts to this plane.
-
-The Compute Plane is comprised of the real workload, orchestrated and managed by Kubernetes.
+* Data Plane - Comprised of one of more Etcd nodes which persist state regarding the Compute Plane. Resiliency is achieved by adding 3 hosts to this plane.
+* Orchestration Plane - Comprised of stateless K8s components (kubernetes, scheduler, controller-manager, kubectld, rancher-kubernetes-agent, rancher-ingress-controller) which orchestrate and manage the Compute Plane. Resiliency is achieved by adding 2 hosts to this plane.
+* Compute Plane - Comprised of the real workload, orchestrated and managed by Kubernetes.
 
 In a production deployment, each plane runs on separate physical or virtual hosts. For development, planes may overlap to simplify management and reduce costs.
 
