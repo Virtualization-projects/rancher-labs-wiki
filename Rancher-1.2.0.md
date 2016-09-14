@@ -4,7 +4,8 @@
 
 # Pre-release builds
 
-* [1.2.0-pre3 milestone](https://github.com/rancher/rancher/milestone/76)
+* [1.2.0-pre4 milestone](https://github.com/rancher/rancher/milestone/79)
+* [1.2.0-pre3 Release Notes](https://github.com/rancher/rancher/releases/tag/v1.2.0-pre3)
 * [1.2.0-pre2 Release Notes](https://github.com/rancher/rancher/releases/tag/v1.2.0-pre2)
 * [1.2.0-pre1 Release Notes](https://github.com/rancher/rancher/releases/tag/v1.2.0-pre1)
 
