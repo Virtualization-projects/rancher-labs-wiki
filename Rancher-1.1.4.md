@@ -2,6 +2,7 @@
 
 * Shipped: June 30, 2016
 
+* [v1.1.4 Release Notes](https://github.com/rancher/rancher/releases/tag/v1.1.4)
 * [v1.1.3 Release Notes](https://github.com/rancher/rancher/releases/tag/v1.1.3)
 * [v1.1.2 Release Notes](https://github.com/rancher/rancher/releases/tag/v1.1.2)
 * [v1.1.1 Release Notes](https://github.com/rancher/rancher/releases/tag/v1.1.1)
