@@ -14,7 +14,7 @@ Let's create a ```pet``` resource by extending ```animal```. We'll add the field
 
 It's pretty simple actually:
 
-1. Open ```spring-core-model-context.xml``` ($CATTLE_HOME/cattle-iaas-model/src/main/resources/META-INF/cattle/core-model/spring-core-model-context.xml)
+1. Open [spring-core-model-context.xml] (https://github.com/rancher/cattle/blob/master/code/packaging/app-config/src/main/resources/META-INF/cattle/core-model/spring-core-model-context.xml)
 2. In the ```CoreTypeSet.typeNames``` property, follow the existing convention create a pet with parent of animal.
 3. Apply the lessons learned in [3.1](https://github.com/rancherio/rancher/wiki/Cowpoke-3.1:-Modifying-an-existing-resource) to add the owner field and expose it in the API.
 
