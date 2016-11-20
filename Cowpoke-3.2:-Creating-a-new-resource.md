@@ -74,7 +74,7 @@ If you look at the resourceDot graph for animal, you'll see that it has the ```A
 
 But more to the point, why didn't that logic activate the animal? Good news: ```ActivateByDefault``` is just a java class. Open it up in eclipse and take a look. If you look closely, that class looks for a config property specific to the resource to determine if it should activate it. Let's add that. 
 
-1. In eclipse, open up [core-process/default.properties](https://github.com/rancherio/cattle/blob/master/code/iaas/logic/src/main/resources/META-INF/cattle/core-process/defaults.properties)
+1. In eclipse, open up [process/default.properties](https://github.com/rancher/cattle/blob/master/code/packaging/app-config/src/main/resources/META-INF/cattle/process/defaults.properties)
 2. Add ```activate.by.default.animal=true```
 3. Restart cattle.
 
