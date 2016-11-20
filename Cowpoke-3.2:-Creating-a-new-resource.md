@@ -55,7 +55,7 @@ Go there in the API UI and look for animal or pet. Nothing. There are no process
 
 While instance is a very important resource, it also has the most complicated life cycle. Checkout the [mount resource definition](http://localhost:8080/v1/resourcedefinitions/1rd!mount/resourcedot) for a much simpler life cycle. In fact, this is the "default" life-cycle. We can get it for animal (and by extension pet) with just a few lines of spring xml configuration:
 
-1. In eclipse, open [spring-process-context.xml](https://github.com/rancherio/cattle/blob/master/code/iaas/logic/src/main/resources/META-INF/cattle/core-process/spring-process-context.xml)
+1. In eclipse, open [spring-process-context.xml](https://github.com/rancher/cattle/blob/master/code/packaging/app-config/src/main/resources/META-INF/cattle/process/spring-process-context.xml)
 2. Add ```<process:defaultProcesses resourceType="animal" />``` after the long list of similar defaultProcesses.
 3. Save and restart the cattle debug process
 
