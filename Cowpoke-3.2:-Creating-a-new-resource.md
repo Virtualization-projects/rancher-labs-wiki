@@ -48,7 +48,7 @@ That's because we haven't defined the life cycle the animal resource yet.
 ## Defining the life-cycle of a resource.
 The life-cycle of a resource is made up a interconnected processes. Once you have defined a resource, you can attach processes to it. Processes are what drive the orchestration logic. You can list all the defined processes at:
 * [http://localhost:8080/v1/processdefinitions](http://localhost:8080/v1/processdefinitions)
-That lists all processes for all resources. You can get a resource-centric veiw at:
+That lists all processes for all resources. You can get a resource-centric view at:
 * [http://localhost:8080/v1/resourcedefinitions](http://localhost:8080/v1/resourcedefinitions)
 
 Go there in the API UI and look for animal or pet. Nothing. There are no processes (and no states) associated to those resources. But go to [http://localhost:8080/v1/resourcedefinitions/1rd!instance](http://localhost:8080/v1/resourcedefinitions/1rd!instance) and click the resourceDot link. You'll see a diagram of all the processes attached to instances and how you can transition from one to the next. ***This is an incredibly powerful way to visualize everything that happens in the life cycle of an instance.***
@@ -72,7 +72,7 @@ E         + active
 ```
 If you look at the resourceDot graph for animal, you'll see that it has the ```ActivateByDefault``` post create logic. What is ```ActivateByDefault```? It's a piece of logic that executes at a certain point in the resource's life cycle. In this case, it executes ***after*** the core create logic executes (hence **post**=ActivateByDefault as opposed to **pre**=ActivateByDefault). 
 
-But more to the point, why didn't that logic activate the animal? Good news: ```ActivateByDefault``` is just a java class. Open it up in eclipse and take a look. If you look closely, that class looks for a config property specific to the resource to determine if it should activate it. Let's add that. 
+But more to the point, why didn't that logic activate the animal? Good news: ```ActivateByDefault``` is just a java class. Open it ([ActivateByDefault.java](https://github.com/rancher/cattle/blob/master/code/iaas/logic/src/main/java/io/cattle/platform/process/generic/ActivateByDefault.java)) up in eclipse and take a look. If you look closely, that class looks for a config property specific to the resource to determine if it should activate it. Let's add that. 
 
 1. In eclipse, open up [process/default.properties](https://github.com/rancher/cattle/blob/master/code/packaging/app-config/src/main/resources/META-INF/cattle/process/defaults.properties)
 2. Add ```activate.by.default.animal=true```
@@ -81,25 +81,26 @@ But more to the point, why didn't that logic activate the animal? Good news: ```
 Now, rerun that test and it should pass. YEEHAW!
 
 ### What just happened?
-That was a lot to take in. What just happened? When we added that ```<process:defaultProcesses resourceType="animal" />``` line, we got a lot of stuff for free. Now would be a good time to ask questions. Ask in #rancher on freenode if you don't have more direct access to another Rancher engineer.
+That was a lot to take in. What just happened? When we added that ```<process:defaultProcesses resourceType="animal" />``` line, we got a lot of stuff for free. Now would be a good time to ask questions. If you don't have more direct access to another Rancher engineer ask in:
+- `#rancher` on freenode
+- [Rancher Forums] (https://forums.rancher.com)
 
-But in short, defaultProcesses is shorthand for a set of custom processes, states, and transition logic that a typical resource could be expected to have. But what are these processes, states, and transitions? Let's take a look at one simple process, instance start:
-![](http://rancherio.github.io/rancher/instance-start.svg)
 
-You can also see it here: [http://localhost:8080/v1/processdefinitions/1pd!instance.start/processdot](http://localhost:8080/v1/processdefinitions/1pd!instance.start/processdot)
+But in short, defaultProcesses is shorthand for a set of custom processes, states, and transition logic that a typical resource could be expected to have. But what are these processes, states, and transitions? 
 
-Processes are defined as having start, transitioning, and done states. All processes are modeled in this fashion. For a process to be started, it obviously must be in the start state. In the above example, there are three valid start states for the process:
+Let's take a look at one simple process, instance.start. If you have cattle running locally, you can see it here: [http://localhost:8080/v1/processdefinitions/1pd!instance.start/processdot](http://localhost:8080/v1/processdefinitions/1pd!instance.start/processdot)
 
-* stopped
-* creating
-* restoring
+Processes are defined as having start, transitioning, and done states. All processes are modeled in this fashion. For a process to be started, it obviously must be in the start state. In the above example, there are two valid start states for the process:
 
-This means that you can only kickoff the InstanceStart process if the instance is in one of those states. Once the process has been started it will update the state to the transitioning state. For a process to be completed it must move from the transitioning state to the done state. If there is not logic attached to that transition, the orchestration system will simply update the state and be done.
+* `'stopped'`
+* `'creating'`
 
-Processes can have many start states, but only one done state. For InstanceStart, it is Running. This means that if an error occurs that prevents a resource from transitioning to done (for example, if an instance can't start), it will just hang and continue to retry. That said, the transitioning state can be defined as a start state for another process. So, an instance stuck in the transitioning state of ```starting``` can be moved to another state (specifically, the instance starting state is defined as a start state for instance.stop).
+This means that you can only kickoff the `instance.start` process if the instance is in one of those states. Once the process has been started it will update the state to the transitioning (`'starting'`) state. For a process to be completed it must move from the transitioning state to the done state. If there is not logic attached to that transition, the orchestration system will simply update the state and be done.
 
-To make the orchestration system actually perform real operations, you must attach some logic. In the above diagram you can see that the ```InstanceStart``` logic has been attached to this process. One can attached any logic they choose. This makes the orchestartion system very flexible and extensible. At any point in the lifecycle of the resources you can plug-in any arbitrary logic. Again, ```InstanceStart``` is a java class. It does a lot of interesting things. Take a look.
+Processes can have many start states, but only one done state. For `instance.start`, it is `'running'`. This means that if an error occurs that prevents a resource from transitioning to done (for example, if an instance can't start), it will just hang and continue to retry. That said, the transitioning state can be defined as a start state for another process. So, an instance stuck in the transitioning state of ```'starting'``` can be moved to another state (specifically, the instance `'starting'` state is defined as a start state for `instance.stop`).
 
-Once you assign enough states and process to a resource you begin to construct a finite state machine for the resource. This is what you're viewing when you view the resourceDot graph of a resourceDefinition. 
+To make the orchestration system actually perform real operations, you must attach some logic. In the above diagram you can see that the ```InstanceStart``` logic has been attached to this process. One can attach any logic they choose. This makes the orchestration system very flexible and extensible. At any point in the lifecycle of the resources you can plug-in any arbitrary logic. Again, ```InstanceStart``` is a java class [(InstanceStart.java)](https://github.com/rancher/cattle/blob/master/code/iaas/logic/src/main/java/io/cattle/platform/process/instance/InstanceStart.java). It does a lot of interesting things, take a look.
+
+Once you assign enough states and process to a resource you begin to construct a finite state machine for the resource. This is what you're viewing when you view the `resourceDot` graph of a `resourceDefinition`. 
 
 **Next:** [[Add a new process handler to a resource.|Cowpoke 3.3: Add a new process handler to a resource]]
