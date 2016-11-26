@@ -6,6 +6,8 @@ There is a great example written in bash here:
 
 [https://github.com/rancherio/cattle/blob/master/docs/examples/handler-bash/simple_handler.sh](https://github.com/rancherio/cattle/blob/master/docs/examples/handler-bash/simple_handler.sh)
 
+> The above mentioned script doesn't exist anymore in the latest tree. But if you want to take a peek at the last available version, here it is: [simple_handler.sh](https://github.com/rancher/cattle/blob/e85559b81b27a2f942579888c300d62742b3aa6f/docs/examples/handler-bash/simple_handler.sh)
+
 Can you adapt this to interact with your animal or pet resource? Give it a shot.
 
 
