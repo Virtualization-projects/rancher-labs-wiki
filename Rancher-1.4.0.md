@@ -10,4 +10,4 @@
 
 * Service Autoscaling [#3315](https://github.com/rancher/rancher/issues/3315)
 
-* Webhooks (Event ones or API-Service-Proxy)? 
+* API Filter Proxy [#7134](https://github.com/rancher/rancher/issues/7134)
