@@ -1,6 +1,10 @@
 # Schedule
 
-* Scheduled: 2016-12-31
+* Shipped: 2017-01-03
+
+# Release Notes
+
+* [1.3.0 Release Notes](https://github.com/rancher/rancher/releases/tag/v1.3.0)
 
 # Release Goals
 
