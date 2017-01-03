@@ -4,6 +4,7 @@
 
 # Release Notes
 
+* [1.2.2 Release Notes](https://github.com/rancher/rancher/releases/tag/v1.2.2)
 * [1.2.1 Release Notes](https://github.com/rancher/rancher/releases/tag/v1.2.1)
 * [1.2.0 Release Notes](https://github.com/rancher/rancher/releases/tag/v1.2.0)
 
