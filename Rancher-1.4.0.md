@@ -12,4 +12,4 @@
 
 * API Filter Proxy [#7134](https://github.com/rancher/rancher/issues/7134)
 
-* Secrets Management - Experimental [#1269](https://github.com/rancher/rancher-catalog/pull/392)
+* Secrets Management - Experimental [#1269](https://github.com/rancher/rancher/1269)
