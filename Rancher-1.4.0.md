@@ -8,7 +8,7 @@
  
 * Scheduling Enhancements [#7034](https://github.com/rancher/rancher/issues/7034)
 
-* Service Autoscaling [#3315](https://github.com/rancher/rancher/issues/3315)
+* Webhooks
 
 * API Filter Proxy [#7134](https://github.com/rancher/rancher/issues/7134)
 
