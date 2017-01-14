@@ -4,6 +4,7 @@
 
 # Release Notes
 
+* [1.3.1 Release Notes](https://github.com/rancher/rancher/releases/tag/v1.3.1)
 * [1.3.0 Release Notes](https://github.com/rancher/rancher/releases/tag/v1.3.0)
 
 # Release Goals
