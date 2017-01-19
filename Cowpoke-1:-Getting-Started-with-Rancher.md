@@ -145,27 +145,74 @@ Remember that Cattle.launch we copied? That's how we launch the management serve
 That's taken from the [rancher repo's documentation](https://github.com/rancherio/rancher). We skipped the step of starting the management server container because we're running that out of eclipse. The IP address is the default gateway that is setup by virtualbox.
 
 ### Run integration tests and verify everything is working
-We'll run the python integration tests out of PyCharm. Go install the latest [PyCharm Community Edition](https://www.jetbrains.com/pycharm/download/) and open it up.
 
-Now, create a project for the integration tests via: File > Open > $CATTLE_ROOT/tests/integration
+Cattle Integration tests can be run either from Command Line or from an IDE, PyCharm. 
 
+Instructions for running the tests in IDE:
+
+### Step 0:
+Please install the latest [PyCharm Community Edition](https://www.jetbrains.com/pycharm/download/) and launch it.
+
+### Step 1:
+From the IDE options, select "Open" and point to `$CATTLE_ROOT/tests/integration`.
+
+Or
+
+From the Menu: Select `File` > `Open`
+
+[[images/integration-tests/010.png]]
+
+[[images/integration-tests/011.png]]
+
+
+### Step 2:
 Set the python interpreter as a virtual environment:
+
+From the Menu: Select `PyCharm Community Edition` > `Preferences`
+
+[[images/integration-tests/020.png]]
+
+- On the left hand side, select `Project:${project_name}` > `Project Interpreter`.
+- Click the gear box next to the Project Interpreter drop down on the right.
+- Select "Create VirtualEnv".
+
+[[images/integration-tests/021.png]]
+
+Use the following information to fill out the needed information:
+` * Name: .venv`
+ `* Location: $CATTLE_ROOT/tests/integration/.venv`
+ `* Base Interpreter: Choose the Default OS X Python.`
+
+[[images/integration-tests/022.png]]
+
+[[images/integration-tests/023.png]]
+
 > **Note:** You can setup the .venv from the command line if you prefer. PyCharm will automatically pick it up.
 
-1. PyCharm > Preferences > Project Interpreter
-1. Click the gear box next to the Project Interpreter drop down on the right
-1. Create virtualenv. 
- * Name: .venv
- * Location: $CATTLE_ROOT/tests/integration/.venv
- * Base Interpreter: Choose the Default OS X Python.
+
+
+### Step 3:
 
 Create your project with the virtual environment.
 
-After your project is created, setup Python integrated tools:
-1. PyCharm > Preferences > Tools > Python Integrated Tools
-1. Package requirements file...click ```...``` and select $CATTLE_ROOT/tests/integration/requirements.txt
-1. Default test runner: py.test
-1. Click Okay
+- On the left hand side, select `Python Integrated Tools`
+- For `Package requirements file:`, select: `$CATTLE_ROOT/tests/integration/requirements.txt`
+- For `Default test runner:`, select `py.test`
+- If you get an error: "No py.test runner found ...", you can just click Fix to install it.
+- Click "OK"
+
+[[images/integration-tests/030.png]]
+
+[[images/integration-tests/031.png]]
+
+- Now to install the packages, there is no direct menu option since PyCharm tries to be intelligent and install on demand. So open any test file, for example: `$CATTLE_ROOT/tests/integration/cattletest/core/__init__.py`
+- Now a dynamic option/button "Install requirements" shows up at the top.
+
+[[images/integration-tests/032.png]]
+
+- Click on that and select all the requirements to install them.
+
+[[images/integration-tests/033.png]]
 
 > **Note:** Another way to set up and activate the requirements file, open the terminal and run these commands.
 ```
@@ -174,12 +221,24 @@ cd $CATTLE_ROOT/tests/integration
 pip install -r requirements.txt
 ```
 
-We're ready to run the integration tests. There's a run configuration drop down in the tool bar. It's just an empty arrow now.
- 1. Click the Run dropdown. Click 'Edit Configurations...'
- 1. + > Python tests > py.test
-  * Name: Integration-tests
+### Step 4:
+We're ready to run the integration tests. 
+
+- There's a run configuration drop down in the tool bar. It's just an empty arrow on the top right hand side. Click the Run dropdown. Click 'Edit Configurations...'
+
+[[images/integration-tests/040.png]]
+
+- Click on "+" > `Python tests` > `py.test` and use the following information.
+  * Name: integration-tests
   * Target: $CATTLE_ROOT/tests/integration/cattletest
- 1. Run it! It's in the drop down now. Select it and hit the green arrow.
+
+[[images/integration-tests/041.png]]
+
+[[images/integration-tests/042.png]]
+
+- Run it! It's in the drop down now. Select it and hit the green arrow.
+
+[[images/integration-tests/043.png]]
 
 > **Note:** If you didn't activate the requirements file through the commands, the tests may not run immediately. If you get an error, open a specific test case by expanding cattletest > core and click on a test case. Try to run the test case and PyCharm should pop up a note to install requirements. Install the requirements and try to run the tests again. 
 
