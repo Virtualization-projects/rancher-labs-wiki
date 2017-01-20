@@ -15,7 +15,7 @@ If you are using a self signed cert or a private CA, you must start Rancher with
 * Place the certificate for the CA in ```/some/dir``` and the cert must be named ```cacert.crt```
 * Start Rancher server by adding a command to bind mount the volume, that has the certificate.
 
-     ```docker run -d -v /some/dir/cacert.crt:/ca.crt --restart=always -p 8080:8080 rancher/server:v0.33.0-rc3```
+     ```docker run -d -v /some/dir/cacert.crt:/var/lib/rancher/etc/ssl/ca.crt --restart=always -p 8080:8080 rancher/server:v0.33.0-rc3```
 
 ## Enabling LDAP in Rancher using the UI
 
