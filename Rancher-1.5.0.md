@@ -13,3 +13,6 @@
 * Catalog Enhancements
   * Ability to add catalogs per environment [https://github.com/rancher/rancher/issues/3158]
   * Add support for private catalogs [https://github.com/rancher/rancher/issues/3147, https://github.com/rancher/rancher/issues/3248]
+
+* Longhorn - Experimental [#5278](https://github.com/rancher/rancher/issues/5278)
+ 
