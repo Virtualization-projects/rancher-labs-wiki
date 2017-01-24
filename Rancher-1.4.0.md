@@ -4,8 +4,6 @@
 
 # Release Goals
 
-* Longhorn - Experimental [#5278](https://github.com/rancher/rancher/issues/5278)
- 
 * Scheduling Enhancements [#7034](https://github.com/rancher/rancher/issues/7034)
 
   * Ability to schedule containers to multiple IPs per host.
