@@ -19,4 +19,4 @@ Milestone |  Target Date | Release Plan |
 1.3 | Jan 3, 2017 | [Rancher 1.3](https://github.com/rancher/rancher/wiki/Rancher-1.3.3)
 1.2 | Nov 24, 2016 | [Rancher 1.2](https://github.com/rancher/rancher/wiki/Rancher-1.2.3)
 1.1 | June 30, 2016 | [Rancher 1.1](https://github.com/rancher/rancher/wiki/Rancher-1.1.4)
-1.0 | March 28, 2016 | [Rancher 1.0](https://github.com/rancher/rancher/wiki/Rancher-1.0.0)
+1.0 | March 28, 2016 | [Rancher 1.0](https://github.com/rancher/rancher/wiki/Rancher-1.0.2)
