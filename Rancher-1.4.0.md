@@ -11,8 +11,6 @@
 * Webhooks
   * Ability to call a webhook to scale up/down a service.
 
-* API Filter Proxy [#7134](https://github.com/rancher/rancher/issues/7134)
-
 * Secrets Management - Experimental [#1269](https://github.com/rancher/rancher/issues/1269)
 
 * Network Policies 
