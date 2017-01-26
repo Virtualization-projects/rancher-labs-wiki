@@ -4,6 +4,8 @@
 
 # Release Goals
 
+* API Filter Proxy [#7134](https://github.com/rancher/rancher/issues/7134)
+
 * Autoscaling Service [https://github.com/rancher/rancher/issues/3315]
 
 * Scheduling Enhancements
