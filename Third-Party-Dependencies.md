@@ -493,3 +493,87 @@ gopkg.in/check.v1	| 4f90aea
   version: 11d3bc7aa68e238947792f30573146a3231fc0f1
 
 
+### Repo: https://github.com/rancher/secrets-api/blob/master/trash.conf
+
+Name | Version
+|---|---
+github.com/Sirupsen/logrus | v0.10.0
+github.com/urfave/cli | v1.18.0
+github.com/gorilla/mux | 7804150
+github.com/rancher/go-rancher | 2c43ff3
+github.com/gorilla/websocket | a69d25b
+github.com/gorilla/context | aed02d1
+github.com/hashicorp/vault/api | v0.6.1
+github.com/hashicorp/vault/helper/jsonutil | v0.6.1
+github.com/hashicorp/vault/helper/compressutil | v0.6.1
+github.com/fatih/structs | dc3312c
+github.com/hashicorp/go-cleanhttp | ad28ea4
+github.com/hashicorp/go-multierror | 8c5f0ad
+github.com/hashicorp/go-rootcerts | 6bb64b3
+github.com/hashicorp/hcl | ef8133d
+github.com/mitchellh/mapstructure | ca63d7c
+github.com/sethgrid/pester | 2a10273
+github.com/hashicorp/errwrap | 7554cd9
+github.com/pkg/errors | v0.8.0
+github.com/mitchellh/go-homedir | b8bc1bf
+
+### Repo: https://github.com/rancher/secrets-flexvol/blob/master/trash.conf
+
+Name | Version
+|---|---
+github.com/Sirupsen/logrus | v0.11.0
+github.com/docker/docker/pkg/mount | v1.12.1
+github.com/gorilla/websocket | v1.1.0
+github.com/pkg/errors | v0.8.0
+github.com/rancher/go-rancher/v2 | 2c43ff300f3eafcbd7d0b89b10427fc630efdc1e
+github.com/rancher/rancher-flexvol | 21c42c8
+github.com/urfave/cli | v1.18.0
+
+### Repo: https://github.com/rancher/secrets-bridge/blob/master/trash.yml
+
+- package: github.com/urfave/cli
+  version: 4205e9c4ee9672a8df5bb4fe486a8aa07e1e4037
+- package: github.com/docker/distribution
+  version: cd27f179f2c10c5d300e6d09025b538c475b0d51
+- package: github.com/docker/engine-api
+  version: 3d72d392d07bece8d7d7b2a3b6b2e57c2df376a2
+- package: github.com/docker/go-connections
+  version: 5b7154ba2efe13ff86ae8830a9e7cb120b080d6e
+- package: github.com/docker/go-units
+  version: 5d2041e26a699eaca682e2ea41c8f891e1060444
+- package: github.com/fatih/structs
+  version: 24f3e1df2f5ffab5696aaa95cf0b8dea167ef084
+- package: github.com/gorilla/context
+  version: a8d44e7d8e4d532b6a27a02dd82abb31cc1b01bd
+- package: github.com/gorilla/mux
+  version: 9c19ed558d5df4da88e2ade9c8940d742aef0e7e
+- package: github.com/gorilla/websocket
+  version: e2e3d8414d0fbae04004f151979f4e27c6747fe7
+- package: github.com/hashicorp/errwrap
+  version: 7554cd9344cec97297fa6649b055a8c98c2a1e55
+- package: github.com/hashicorp/go-cleanhttp
+  version: ad28ea4487f05916463e2423a55166280e8254b5
+- package: github.com/hashicorp/go-multierror
+  version: d30f09973e19c1dfcd120b2d9c4f168e68d6b5d5
+- package: github.com/hashicorp/hcl
+  version: 9a905a34e6280ce905da1a32344b25e81011197a
+- package: github.com/hashicorp/vault
+  version: 46ecb9a660059e7aa84df7e42b35f8ea7b92b443
+- package: github.com/hashicorp/go-rootcerts
+  version: 6bb64b370b90e7ef1fa532be9e591a81c3493e00
+- package: github.com/sethgrid/pester
+  version: 8053687f99650573b28fb75cddf3f295082704d7
+- package: github.com/mitchellh/mapstructure
+  version: d2dd0262208475919e1a362f675cfc0e7c10e905
+- package: github.com/opencontainers/runc
+  version: ae0fc15b1e969b06fa575638d234feaa1596d69c
+- package: github.com/rancher/go-rancher
+  version: 8e54b49532eca88e1bed40dcf0c7d29ddfe5a630
+- package: github.com/rancher/go-rancher-metadata
+  version: 524187cee8326c13b4d85b0a237b4f89653d76c4
+- package: github.com/rancher/trash
+  version: 8c623b6961c66b566a73e05c588235d6b88afefe
+- package: github.com/Sirupsen/logrus
+  version: 4b6ea7319e214d98c938f12692336f7ca9348d6b
+- package: golang.org/x/net
+  version: b797637b7aeeed133049c7281bfa31dcc9ca42d6
