@@ -1,9 +1,68 @@
-### Repo: 
+### Repo: https://github.com/rancher/ui
 
-
-### Repo: 
-
-### Repo: 
+Package | Semver | License | URL
+---|---|---|---
+async | 2.1.2 | MIT | https://github.com/caolan/async
+c3 | ~0.4.10 | MIT | https://github.com/c3js/c3
+commonmark | ~0.22.1 | CC-BY-SA | https://github.com/jgm/CommonMark
+dagre | ~0.7.1 | MIT | https://github.com/cpettitt/dagre
+ember | 2.9.1 | MIT | https://github.com/emberjs/ember.js/
+ember-cli-shims | 0.1.3 | MIT | https://github.com/ember-cli/ember-cli-shims
+ember-qunit-notifications | 0.1.0 | MIT | https://github.com/DockYard/ember-qunit-notifications
+ember-resolver | ~0.1.20 | MIT | https://github.com/ember-cli/ember-resolver
+identicon.js | identicon#* | BSD | https://github.com/stewartlord/identicon.js
+jgrowl | ~1.4.2 | MIT | https://github.com/stanlemon/jGrowl
+lodash | ~3.10.1 | MIT | https://github.com/lodash/lodash
+md5-jkmyers | ~0.0.1 | MIT | https://github.com/AndreasPizsa/md5-jkmyers
+no-vnc | ~0.5.1 | MPL 2 | https://github.com/novnc/noVNC
+position-calculator | ~1.1.2 | MIT | https://github.com/tlindig/position-calculator
+prism | gh-pages | MIT | https://github.com/PrismJS/prism
+momentjs | ~2.10.6 | MIT | https://github.com/moment/moment/
+ember-shortcuts | ^0.0.9" | MIT | https://github.com/satchmorun/ember-shortcuts
+ansi_up | ^1.3.0 | MIT | https://github.com/drudru/ansi_up
+broccoli-asset-rev | ^2.4.5 | MIT | https://github.com/rickharrison/broccoli-asset-rev
+ember-browserify | ^1.0.1 | MIT | https://github.com/ef4/ember-browserify
+ember-cli | ^2.9.1 | MIT | https://github.com/ember-cli/ember-cli
+ember-cli-app-version | ^2.0.0 | MIT | https://github.com/embersherpa/ember-cli-app-version
+ember-cli-babel | ^5.1.7 | MIT | https://github.com/babel/ember-cli-babel
+ember-cli-clipboard | 0.4.1 | MIT | https://github.com/jkusa/ember-cli-clipboard
+ember-cli-dependency-checker | ^1.3.0 | MIT | https://github.com/quaertym/ember-cli-dependency-checker
+ember-cli-htmlbars | ^1.0.10 | MIT | https://github.com/ember-cli/ember-cli-htmlbars
+ember-cli-htmlbars-inline-precompile | ^0.3.3 | MIT | https://github.com/ember-cli/ember-cli-htmlbars-inline-precompile
+ember-cli-inject-live-reload | ^1.4.1 | MIT | https://github.com/ember-cli/ember-cli-inject-live-reload
+ember-cli-inline-content | ^0.4.0 | MIT | https://github.com/gdub22/ember-cli-inline-content
+ember-cli-jshint | ^1.0.4 | MIT | https://github.com/ember-cli/ember-cli-jshint
+ember-cli-node-assets | ^0.1.4 | MIT | https://github.com/dfreeman/ember-cli-node-assets
+ember-cli-qunit | ^3.0.1 | MIT | https://github.com/ember-cli/ember-cli-qunit
+ember-cli-release | ^0.2.9 | MIT | https://github.com/ember-cli/ember-cli
+ember-cli-rtlcss | 0.0.1 | MIT | https://github.com/dbouwman/ember-cli-rtlcss
+ember-cli-sass | ^5.1.0 | MIT | https://github.com/aexmachina/ember-cli-sass
+ember-cli-sri | ^2.1.0 | MIT | https://github.com/jonathanKingston/ember-cli-sri
+ember-cli-test-loader | ^1.1.0 | MIT | https://github.com/ember-cli/ember-cli-test-loader
+ember-cli-uglify | ^1.2.0 | MIT | https://github.com/ember-cli/ember-cli-uglify
+ember-export-application-global | ^1.0.5 | MIT | https://github.com/ember-cli/ember-export-application-global
+ember-href-to | 1.6.0 | Apache 2 | https://github.com/intercom/ember-href-to
+ember-intl | 2.13.0 | BSD | https://github.com/jasonmit/ember-intl
+ember-load-initializers | ^0.5.1 | MIT | https://github.com/ember-cli/ember-load-initializers
+ember-power-select | 1.0.0-beta.19 | MIT | https://github.com/cibernox/ember-power-select
+ember-resolver | ^2.0.3 | MIT | https://github.com/ember-cli/ember-resolver
+ember-route-action-helper | ^2.0.0 | MIT | https://github.com/dockyard/ember-route-action-helper
+ember-truth-helpers | 1.2.0 | MIT | https://github.com/jmurphyau/ember-truth-helpers
+express | ^4.8.5 | MIT | https://github.com/expressjs/express/?_ga=1.233078685.2093809528.1485540108
+forever-agent | ^0.6.1 | Apache 2 | https://github.com/request/forever-agent
+glob | ^5.0.3 | ISC | https://github.com/isaacs/node-glob
+http-proxy | ^1.11.1 | MIT | https://github.com/nodejitsu/node-http-proxy
+liquid-fire | 0.26.4 | MIT | https://github.com/ember-animation/liquid-fire
+loader.js | ^4.0.10 | MIT | https://github.com/ember-cli/loader.js
+semver | ^5.3.0 | ISC | https://github.com/npm/node-semver
+shell-quote | ^1.4.3 | MIT | https://github.com/substack/node-shell-quote
+xterm | 1.0.0 | MIT | https://github.com/sourcelair/xterm.js/
+yamljs | ^0.2.7" | MIT | https://github.com/jeremyfa/yaml.js
+broccoli-file-creator | ^1.1.1 | MIT | https://github.com/rwjblue/broccoli-file-creator
+ember-disable-prototype-extensions | ^1.1.0 | MIT | https://github.com/ember-cli/ember-disable-prototype-extensions
+ember-disable-proxy-controllers | ^1.0.1 | MIT | https://github.com/cibernox/ember-disable-proxy-controllers
+ember-try | ^0.1.2 | MIT | https://github.com/ember-cli/ember-try
+ember-network | ^0.3.0 | MIT | https://github.com/tomdale/ember-network
 
 ### Repo: https://github.com/rancher/lb-controller
 haproxy-1.6
