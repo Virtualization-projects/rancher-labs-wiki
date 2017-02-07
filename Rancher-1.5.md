@@ -4,12 +4,13 @@
 
 # Release Goals
 
-* API Filter Proxy [[#7134](https://github.com/rancher/rancher/issues/7134)]
+* API Interceptor [[#7134](https://github.com/rancher/rancher/issues/7134)]
 
-* Autoscaling Service [[#3315](https://github.com/rancher/rancher/issues/3315)]
+* Additional Webhooks
+ * Scaling up and down a host
+ * Redeploying a service 
 
 * Scheduling Enhancements
-  * Ability to schedule evenly across pools of hosts (zones/regions) [[#7253](https://github.com/rancher/rancher/issues/7253)]
   * Ability to label hosts as non-scheduleable unless explicitly requested [[#7254](https://github.com/rancher/rancher/issues/7254)]
 
 * Catalog Enhancements
