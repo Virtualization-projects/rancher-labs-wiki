@@ -7,10 +7,10 @@
 * API Interceptor [[#7134](https://github.com/rancher/rancher/issues/7134)]
 
 * Additional Webhooks
- * Scaling up and down a host [#7713]
- * Redeploying a service [#7735]
+ * Scaling up and down a host [[#7713]((https://github.com/rancher/rancher/issues/7713)]
+ * Redeploying a service [[#7735]((https://github.com/rancher/rancher/issues/7735)]
 
-* Additional Network Policies [https://github.com/rancher/rancher/issues/7743]
+* Additional Network Policies [[#7743](https://github.com/rancher/rancher/issues/7743)]
 
 * Scheduling Enhancements
   * Ability to label hosts as non-scheduleable unless explicitly requested [[#7254](https://github.com/rancher/rancher/issues/7254)]
