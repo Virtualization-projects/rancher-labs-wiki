@@ -4,6 +4,7 @@
 
 # Release Notes
 
+* [1.4.1 Release Notes](https://github.com/rancher/rancher/releases/tag/v1.4.1)
 * [1.4.0 Release Notes](https://github.com/rancher/rancher/releases/tag/v1.4.0)
 
 # Release Goals
