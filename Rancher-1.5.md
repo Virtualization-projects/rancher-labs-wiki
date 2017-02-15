@@ -17,7 +17,6 @@
 
 * Catalog Enhancements [[#7610](https://github.com/rancher/rancher/issues/7610)]
   * Ability to add catalogs per environment [[#3158](https://github.com/rancher/rancher/issues/3158)]
-  * Add support for private catalogs [[#3147](https://github.com/rancher/rancher/issues/3147), [#3248](https://github.com/rancher/rancher/issues/3248)]
 
 * Metadata Refactoring 
 
