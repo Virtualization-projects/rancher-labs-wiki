@@ -16,7 +16,6 @@
   * Ability to label hosts as non-scheduleable unless explicitly requested [[#7254](https://github.com/rancher/rancher/issues/7254)]
 
 * Catalog Enhancements [[#7610](https://github.com/rancher/rancher/issues/7610)]
-  * Ability to add catalogs per environment [[#3158](https://github.com/rancher/rancher/issues/3158)]
 
 * Metadata Refactoring 
 
