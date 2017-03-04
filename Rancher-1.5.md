@@ -1,6 +1,9 @@
 # Schedule
 
-* Scheduled: 2017-2-28
+* Shipped: 3/1/17
+
+# Release Notes
+* [1.5.0 Release Notes](https://github.com/rancher/rancher/releases/tag/v1.5.0)
 
 # Release Goals
 
