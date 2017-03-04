@@ -14,7 +14,7 @@ Rancher supports 2 images for Rancher server.
 
 Milestone |  Target Date | Release Plan |
 ---|---|---
-1.6 | Apr 5, 2017 | [Rancher 1.6](https://github.com/rancher/rancher/wiki/Rancher-1.6)
+1.6 | Apr 30, 2017 | [Rancher 1.6](https://github.com/rancher/rancher/wiki/Rancher-1.6)
 1.5 | Feb 28, 2017 | [Rancher 1.5](https://github.com/rancher/rancher/wiki/Rancher-1.5)
 1.4 | Jan 31, 2017 | [Rancher 1.4](https://github.com/rancher/rancher/wiki/Rancher-1.4)
 1.3 | Jan 3, 2017 | [Rancher 1.3](https://github.com/rancher/rancher/wiki/Rancher-1.3)
