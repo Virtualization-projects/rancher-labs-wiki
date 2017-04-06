@@ -4,12 +4,16 @@ This is a post mortem on https://github.com/rancher/rancher/issues/8326 to share
 Hosts would flapping through the states of disconnecting, reconnecting, and active after a single host was deactivated and then activated or if a new host was added.
 
 ## The root cause
-A call to the external scheduler during global service deployment planning was consuming the threads used for host agent pings such that pings were never processed and cattle marked the hosts as disconnected.
+A call to the external scheduler during global service deployment planning was consuming threads used for host agent pings such that pings were never processed and cattle marked the hosts as disconnected.
+
+The calls to the external scheduler are not particularly slow, but the volume of them and the overhead of the network traffic was enough to trigger a snowballing effect where more and more events were getting put onto the core thread pool's queue. This cause the agent ping events to not get processed in a timely manner. 
 
 The issue could be reproduced by having a high number of global services (I reproduced with 20) and deactivating and then activating a host.
 
 ## The fix
 We removed the call to the external sceduler in the global deployment planner and that completely fixed the issue. This will cause our cause our [io.rancher.scheduler.require_any](https://github.com/rancher/rancher/issues/7254) feature to not work properly for global services, but we'll address that problem separately in the future.
+
+I believe we also plan to move the agent pings to a separate thread pool so that they cannot get starved like this in the future.
 
 ## Things learned/re-enforced
 ### Global services are special
