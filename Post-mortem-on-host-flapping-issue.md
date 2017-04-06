@@ -28,7 +28,7 @@ We have thread pools in cattle that are segregated for different purposes.
 
 We dont expose this in the UI because it donesnt work correctly in HA. It only shows the threads for the particular instance of cattle that served that request.
 
-In this cause, when a host was activated, we saw the core pool hit its maximum and a large queue start to build up. This was the smoking gun that allowed us to find the root cause. The core pool is the default pool and unless you specify otherwise explicity in cattle events will use this pool. So, things that are in this pool need to be fast. A network call to the external scheduler was not fast enough.
+In this case, when a host was activated, we saw the core pool hit its maximum and a large queue start to build up. This was the smoking gun that allowed us to find the root cause. The core pool is the default pool and unless you specify otherwise explicity in cattle events will use this pool. So, things that are in this pool need to be fast. A network call to the external scheduler was not fast enough.
 
 ### Java thread dumps in rancher logs
 You can get a thread dump in cattle by doing a `kill -3` on the java process. This will not kill cattle, it will just pause it long enough to get a thread dump. This thread dump showed that threads in the core pool were busy making calls to the external scheduler and that told us what we needed.
