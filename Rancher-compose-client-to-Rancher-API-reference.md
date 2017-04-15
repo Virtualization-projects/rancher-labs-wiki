@@ -3,18 +3,18 @@ Overview
 This doc is meant to be used by rancher-compose client for translating rancher-compose actions and .yml file config parameters to Rancher APIs/parameters
 
 Rancher-compose commands to Rancher API commands translation
+
 ----------
 |Rancher-compose client command|Rancher API(s)|Comments|
----------|------|---------------|--------------------------------------------------------------------------
+|---------|------|---------------|
 |rancher-compose up|1. environment.create<br>2. service.create for all the services defined in the .yml file<br>3.service.addServiceLink for "links" items to create mappings to another services<br>4. environment.activateServices||
 |rancher-compose stop|environment.deactivateServices|Deactivate all the services that are the part of the environment|
 |rancher-compose rm|environment.remove|All active services in the environment get deactivated; then all the services get removed. After that, the environment gets removed|
 
-
 docker-compose.yml/fig.yml parameters to Rancher parameters translation
 ----------
 |Compose parameter|Rancher parameter|Extra logic that needs to be done on a client side|
----------|------|---------------|--------------------------------------------------------------------------
+|---------|------|---------------|
 |image|image|Prepend image with "docker:" as its used by Cattle to locate the storage driver (currently, there are 2: "docker:"/"sim:"<br>If image belongs to client's private repo, rancher-compose.yml file should have registryCredentialId specified<|
 |build|**Not supported**|-|
 |command|command|-|
@@ -44,6 +44,7 @@ docker-compose.yml/fig.yml parameters to Rancher parameters translation
 |cpu_shares|cpuShares|-|
 
 Extra parameters supported by rancher-compose.yml
+
 ---------
 |Parameter name|Required|Comments|
 ---------|------|------|
