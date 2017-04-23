@@ -1,7 +1,7 @@
 ### Repo: https://github.com/rancher/cattle
 
 Group ID | Name (Artifact ID) | Version
----|---|---|---
+---|---|---
 ch.qos.logback | logback-classic | 1.0.13
 ch.qos.logback | logback-core | 1.0.13
 com.codahale.metrics | metrics-annotation | 3.0.1
