@@ -1,6 +1,5 @@
 **Resources**
 * [[Rancher Project Plan]]
-  * [[Rancher-1.7]]
   * [[Rancher-1.6]]
   * [[Rancher-1.5]]
   * [[Rancher-1.4]]
