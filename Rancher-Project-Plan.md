@@ -11,11 +11,12 @@ Rancher supports 2 images for Rancher server.
 
 # Roadmap
 ---
+**Notes: Rancher is currently working on v2.0 slated to ship in Q4 of 2017.  Until it becomes available, 1.6.x will be our recommended stable build for all production workload and maintained until May 4, 2018 .  The Rancher team will continue to ship a regular monthly release of 1.6.x that includes critical bugs fixes as well as smaller features as required by our community.  All 1.6.x milestones will be tracked under our [milestone](https://github.com/rancher/rancher/milestones) page labeled as a monthly release.**
 
 Milestone |  Target Date | Release Plan |
 ---|---|---
-1.7 | May 31, 2017 | [Rancher 1.7](https://github.com/rancher/rancher/wiki/Rancher-1.7)
-1.6 | Apr 30, 2017 | [Rancher 1.6](https://github.com/rancher/rancher/wiki/Rancher-1.6)
+2.0 | Q4, 2017 | [Rancher 2.0](https://github.com/rancher/rancher/wiki/Rancher-2.0)
+1.6 | May 4, 2017 | [Rancher 1.6](https://github.com/rancher/rancher/wiki/Rancher-1.6)
 1.5 | Feb 28, 2017 | [Rancher 1.5](https://github.com/rancher/rancher/wiki/Rancher-1.5)
 1.4 | Jan 31, 2017 | [Rancher 1.4](https://github.com/rancher/rancher/wiki/Rancher-1.4)
 1.3 | Jan 3, 2017 | [Rancher 1.3](https://github.com/rancher/rancher/wiki/Rancher-1.3)
