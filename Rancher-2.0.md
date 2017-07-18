@@ -15,7 +15,7 @@ Rancher 2.0 will be one of our most significant release since 1.0 was announced 
 * __Shared hosts within an environment-__ Multi-tenancy within Rancher was always achieved by isolating access between environments.  We are looking to add multi-tenant support within an environment so multiple users can use the same compute nodes for containers but not share the same management and access rights to those containers.
 
 # Release Goals (Stretch)
-We are also working on a few stretch goals for 2.X that will come out after 2.0 has shipped.  
+We are also working on a few stretch goals for 2.x that will come out after 2.0 has shipped.  
 * Integrated CI/CD pipeline using Jenkins
 * Integrated monitoring and alert management using Prometheus
 * Integrated aggregated and centralized logging
