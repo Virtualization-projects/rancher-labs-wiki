@@ -6,7 +6,7 @@
 * 2.0-tech-preview 
 
 # Release Goals
-Rancher 2.0 will be the most significant release since 1.0 was announced over a year ago. The following describes some of the innovations and improvements we are expecting to launch.  While we are ambitious in what we plan to do, the final feature set can change based on ideas and feedback from our user base.  Unlike 1.x, we do plan to ship regular tech preview builds so that our community has a chance to look at what we are building and help shape the release.
+Rancher 2.0 will be the most significant release since 1.0 was announced over a year ago. The following describes some of the innovations and improvements we are expecting to launch.  While we are ambitious and confident in what we plan to do, the final feature set can change based on ideas and feedback from our user base.  Unlike 1.x, we do plan to ship regular tech preview builds so that our community has a chance to look at what we are building and help shape the release.
 
 * __New user interface-__ We are refreshing the existing UI with a new and improved look and feel.  The new UI will be much more responsive and will incorporate the feedback we have received with the UX since 1.0 went GA last year.
 * __More k8s improvements-__ In 1.x, Rancher made it easier for users to deploy and manage the lifecycle of kubernetes environments.  With 2.0, we plan to add more features on top of k8s that will make k8s even simpler to operate and use.  Stay tuned for more...
