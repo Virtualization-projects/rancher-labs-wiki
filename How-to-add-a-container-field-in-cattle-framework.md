@@ -8,11 +8,11 @@ In the following example, we will take `init` as an example to explain how we ca
 
 2. Once agent is merged and released, we need to update cattle(https://github.com/rancher/cattle/pull/2823). One thing we need to remember is to bump agent version(https://github.com/rancher/cattle/pull/2831). So basically in cattle there is a test file called `test_docker.py` which uses the new agent binary to launch docker containers. Without new agent release the test won't pass even the new field is added into the schema. After that, we need to do the following changes:
 
-a) update `container.json` and `user.auth` to add new field to the schema. Add tests in `test_authrization.py` to test the schema. Also update `test_docker.py` to test new fields. In UI `localhost:8080/v2-beta/projects/1a5/instances` you can click on the button to create container, and then you can check if the new field is being added to the schema.
+    a) update `container.json` and `user.auth` to add new field to the schema. Add tests in `test_authrization.py` to test the schema. Also update `test_docker.py` to test new fields. In UI `localhost:8080/v2-beta/projects/1a5/instances` you can click on the button to create container, and then you can check if the new field is being added to the schema.
 
-b) update `ServiceDiscoveryConfigItem.java`. This is required when we transform service api to YAML compose file. Update the corresponding test file `test_svc_discovery.py`. 
+    b) update `ServiceDiscoveryConfigItem.java`. This is required when we transform service api to YAML compose file. Update the corresponding test file `test_svc_discovery.py`. 
 
-c) update `DockerTransformerImpl.java`. This is required when rancher-compose-executor call back cattle to transform `config` and `hostConfig` to service.launchConfig. 
+    c) update `DockerTransformerImpl.java`. This is required when rancher-compose-executor call back cattle to transform `config` and `hostConfig` to service.launchConfig. 
 
 3. Once Cattle PR is merged, update go-rancher(https://github.com/rancher/go-rancher/pull/161). Go-rancher is our golang binding for all cattle resources. This will make sure the new fields is added in go-rancher.
 
