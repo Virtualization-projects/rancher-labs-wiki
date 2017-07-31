@@ -1,6 +1,6 @@
 Container fields define runtime behaviors of a container. Things like `workingDir` and `securityOpts` define the  runtime parameters of a container. Cattle already supports a list of container fields. In this Wiki, we will go through the framework and explain how to add a new field in cattle.
 
-To add a field in cattle, we need to change four projects in rancher. Those are [rancher/agent](https://github.com/rancher/agent), [rancher/cattle](https://github.com/rancher/cattle), [rancher/rancher-compose-executor](https://github.com/rancher/rancher-compose-executor) and [rancher/go-rancher](https://github.com/rancher/go-rancher). Noticed that this instruction only applies to rancher V1.6.x.
+To add a field in cattle, we need to change four projects in rancher. Those are [rancher/agent](https://github.com/rancher/agent), [rancher/cattle](https://github.com/rancher/cattle), [rancher/rancher-compose-executor](https://github.com/rancher/rancher-compose-executor) and [rancher/go-rancher](https://github.com/rancher/go-rancher). Noticed that this instruction only applies to rancher v1.6.x.
 
 In the following example, we will take `init` as an example to explain how we can add it into cattle.
 
