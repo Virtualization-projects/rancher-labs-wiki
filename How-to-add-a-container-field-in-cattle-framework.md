@@ -14,12 +14,12 @@ In the following example, we will take `init` as an example to explain how we ca
 
     c) update `DockerTransformerImpl.java`. This is required when rancher-compose-executor call back cattle to transform `config` and `hostConfig` to service.launchConfig. 
 
-3. Once Cattle PR is merged, update go-rancher(https://github.com/rancher/go-rancher/pull/161). Go-rancher is our golang binding for all cattle resources. This will make sure the new fields is added in go-rancher.
+3. Once Cattle PR is merged and released, update go-rancher(https://github.com/rancher/go-rancher/pull/161). Go-rancher is our golang binding for all cattle resources. This will make sure the new fields is added in go-rancher.
 
 4. Once Go-rancher PR is merged, update rancher-compose-executor(https://github.com/rancher/rancher-compose-executor/pull/67). This change is required to support new fields in compose file. Follow the same pattern and don't forget to add the tests!
 
 5. Update Cattle with new rancher-compose-executor release. (https://github.com/rancher/cattle/pull/2840)
 
-6. (Optional) Bump the CLI with new rancher-compose-executor code. Because CLI uses rancher-compose-executor's code base, it needs to update vendor library. (https://github.com/rancher/cli/pull/70)
+6. (Optional) Bump the CLI with new rancher-compose-executor and go-rancher code. Because CLI uses rancher-compose-executor's code base, it needs to update vendor library. (https://github.com/rancher/cli/pull/70)
 
 Last thing, make sure the new field is not conflicted with any javaScripts or Ember function. In this example the  `init` is conflicted with a ember init function and we end up with renaming it as `runInit`. That's too much work as you need to redo all of these above!
