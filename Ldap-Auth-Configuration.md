@@ -28,7 +28,7 @@ to use LDAP as the backing authentication system.
      * If set to false, LDAP will not be used.
      * When set to true overrides all other configured auth providers.
 
-###LDAP Account Access
+### LDAP Account Access
  
 These fields are used to determine who has access to Rancher, and specifies the service account that Rancher will
 use. A service account, with read only access,  is needed for querying LDAP so that Rancher can perform user searches.
@@ -45,7 +45,7 @@ use. A service account, with read only access,  is needed for querying LDAP so t
      This is what [[Identities|Identity And Authentication]] use as an externalId.
      * Default value **distinguishedname**  
 
-##Users
+## Users
 These fields are used by Rancher to determine how we identify an LDAP Object as a user.
 
  * Fields used for Authorization/ Searching
@@ -70,7 +70,7 @@ These fields are used by Rancher to determine how we identify an LDAP Object as 
          * Identifies the LDAP attribute that Rancher will use to populate the name of a user's [[Identity|Identity And Authentication]]. 
          * Default value **name** 
 
-###Example
+### Example
 Assuming the defaults for the above fields on a user object, a search for: 
 
 `user1`
@@ -86,7 +86,7 @@ We would then take the value of **userAccountControl** attribute for each user a
 The information from ldap for a user is used to create an [[Identity|Identity And Authentication]] for the user.
 
  
-##Groups
+## Groups
 
 These fields are used for defining a group based on the LDAP schema.
 
@@ -107,7 +107,7 @@ These fields are used for defining a group based on the LDAP schema.
       [[Identity|Identity And Authentication]]. 
           * Default value **name**
 
-###Example
+### Example
 
 Assuming defaults for the fields above on a group, a search for:
 
@@ -126,7 +126,7 @@ The information from LDAP for a group is used to create an [[Identity|Identity A
  [[More Examples|LDAP Examples]]
  
  
-####Questions
+#### Questions
  
  * Do we need to support multiple levels of group membership? 
      * ex: Group A is member of Group B and User a is a member of Group B so as a result User a is a member of Group A.
