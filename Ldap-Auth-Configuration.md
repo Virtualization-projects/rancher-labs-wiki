@@ -131,4 +131,4 @@ The information from LDAP for a group is used to create an [[Identity|Identity A
  * Do we need to support multiple levels of group membership? 
      * ex: Group A is member of Group B and User a is a member of Group B so as a result User a is a member of Group A.
  * Do we need to be able to search for users/groups on multiple fields?
- * Do we need to support connecting to multiple servers/ domain controllers.
+ * Do we need to support connecting to multiple servers/ domain controllers.<--YES! If the ldap server goes down (but has a backup/replica) it should failover
