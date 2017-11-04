@@ -12,7 +12,7 @@ This series of articles (All starting with "Cowpoke 3") walk you through working
 1. [[Interact with a resource in an existing agent.|Cowpoke 3.5: Interact with a resource in an existing agent]]
 
 ## Pre-requisites:
-You've setup rancher according to cowpoke (link). We're going to be modifying the source code in a number of projects and running it.
+You've setup rancher according to [Cowpoke 1](https://github.com/rancher/rancher/wiki/Cowpoke-1%3A-Getting-Started-with-Rancher). We're going to be modifying the source code in a number of projects and running it.
 
 ## Explore Rancher's API.
 Navigate to [http://localhost:8080/v1](http://localhost:8080/v1)
