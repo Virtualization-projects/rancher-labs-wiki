@@ -1,6 +1,6 @@
 # Schedule
 
-* Scheduled: 2017 Mid Q1
+* Scheduled: 2018 Mid Q1
 
 # Milestones
 * 2.0-tech-preview 
