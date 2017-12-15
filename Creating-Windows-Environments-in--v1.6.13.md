@@ -46,7 +46,7 @@ $ip | New-NetIPAddress
 
 In Rancher Server, click on **Infrastructure** -> **Add Hosts** in the Windows environment. Follow the instructions on the screen. 
 
-* Subnet: Set the subnet that will be used to launch the containers on the host. In order to support an overlay network in Windows, each host in the environment must have a unique subnet.
+* Subnet: Set the subnet that will be used to launch the containers on the host. In order to support an overlay network in Windows, each host in the environment must have a unique subnet. Note: This subnet is not related to either `Subnet A` or `Subnet B` created in AWS. This is a unique subnet in Rancher between the different hosts that will provide IPs to each container. 
 * Route IP: Set the route IP for this instance, which is used to forward network traffic between the different hosts. In our AWS EC2 example, the route IP is the IP of `Subnet B`. 
 * Agent IP (Optional): This is the public IP of the AWS EC2 instance, which is used in the Rancher agent. 
 
