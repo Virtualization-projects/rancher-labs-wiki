@@ -13,8 +13,10 @@
 ## Networking Requirements in AWS
 
 1. Create a VPC
-2. Create 2 Subnets in the VPC. Ensure that these 2 subnets are in the same availability zone. In the rest of these instructions, we will refer to them as `Subnet A` and `Subnet B`.
+2. For this example, create 2 Subnets in the VPC. Ensure that these 2 subnets are in the same availability zone. In the rest of these instructions, we will refer to them as `Subnet A` and `Subnet B`.
 3. Create an additional network interface in `Subnet B`. 
+
+In a Windows environment, each host must be in their own subnet. 
 
 ## Launching Rancher Server
 
