@@ -10,13 +10,15 @@ AWS Instance Requirements
 * 1 core CPU
 * 2+ GB memory
 * One Subnet will be for NAT and used across Rancher Server and any hosts added
-* For each host, an additional subnet/NIC will be required in order to have an overlay network that allows cross host communication between containers
+* One Subnet will be for the overlay network that allows cross host communication 
 
 ## Networking Requirements in AWS
 
 1. Create a VPC
-2. For this example of starting Rancher server and adding 1 host, only 2 subnets will be created. One subnet will be used for NAT, and the second will be used for creating the overlay network. For each additional host that will be added, an additional subnet will need to be created for the overlay network. Ceate 2 Subnets in the VPC. Ensure that these 2 subnets are in the same availability zone. In the rest of these instructions, we will refer to them as `Subnet A` and `Subnet B`. `Subnet A` will be used for NAT, while `Subnet B` is used for the overlay network that is established in the `per-host-subnet` service. 
-3. Create an additional network interface in `Subnet B`. For each additional host that is added, a new subnet and network interface will need to be created. 
+2. Create 2 subnets in the VPC. Ensure that these 2 subnets are in the same availability zone.
+  * One subnet will be used for NAT (`Subnet A`)
+  * One subnet will be used for creating the overlay network (`Subnet B`)
+3. Create an additional network interface in `Subnet B`. For each additional host that is added, an additional network interface will need to be created. 
 
 ## Launching Rancher Server
 
