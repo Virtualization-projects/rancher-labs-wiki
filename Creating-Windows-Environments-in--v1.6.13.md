@@ -18,7 +18,7 @@ AWS Instance Requirements
 2. Create 2 subnets in the VPC. Ensure that these 2 subnets are in the same availability zone.
   * One subnet will be used for NAT (`Subnet A`)
   * One subnet will be used for creating the overlay network (`Subnet B`)
-3. Create an additional network interface in `Subnet B`. For each additional host that is added, an additional network interface will need to be created. 
+3. Create an additional network interface in `Subnet B`. For each additional host that is added, an additional network interface will need to be created in `Subnet B`. 
 
 ## Launching Rancher Server
 
