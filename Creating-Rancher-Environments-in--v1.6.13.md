@@ -41,7 +41,7 @@ Set-netroute -DestinationPrefix 0.0.0.0/0 -ifIndex <subnet-B-interface-index> -R
 
 In Rancher Server, click on **Infrastructure** -> **Add Hosts** in the Windows environment. Follow the instructions on the screen. 
 
-* Subnet: Set the subnet you what to set to this Windows instance.
+* Subnet: Set the subnet to be used by Rancher for your Windows containers. 
 * Route IP: Set the route IP for this instance. <Describe what is the Route IP> In our AWS EC2 example, the route IP is the IP of `Subnet B`. 
 * Agent IP (Optional): This is the public IP of the instance. 
 
