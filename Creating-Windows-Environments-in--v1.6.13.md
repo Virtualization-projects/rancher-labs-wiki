@@ -84,7 +84,7 @@ get-netroute 169.254.169.250/32
 
 Check the NAT setting and confirm it includes all the physical network adapters being used. 
 
-## Steps to Remove Windows Hosts.
+## Steps to Remove Windows Hosts
 
 1. In the Rancher UI, deactivate and delete the host under **Infrastructure**.
 2. On the Windows host, run following commands to un-register services and stop them.
