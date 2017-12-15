@@ -1,14 +1,17 @@
 ## Windows Host Requirements
 
-* System OS: Windows Server 2016
-* Windows Features: RemoteAccess and Routing - Note: If this is not installed on the machine, steps on how to install are in the directions in Rancher server
+System OS: Windows Server 2016
 
+Required Applications
+* Windows Features: RemoteAccess and Routing - Note: If this is not installed on the machine, steps on how to install are in the directions in Rancher server
+* Docker: Version >= 17.06
+
+AWS Instance Requirements
 * 1 core CPU
 * 2+ GB memory
-* Two NICs with network connected - YUXING - WHY IS THIS REQUIRED?
-* Individual Subnets for each host
-
-* Docker: Version >= 17.06
+* Two NICs with network connected 
+  * One NIC will be for NAT 
+  * One NIC will be used for cross host communication between containers
 
 ## Networking Requirements in AWS
 
@@ -27,7 +30,7 @@ In a Windows environment, each host must be in their own subnet.
 ## Launching AWS EC2 Hosts with Windows and setting Networking up
 
 1. Launch a new AWS EC2 instance that is in `Subnet A` and meets the [Windows hosts requirements](#windows-hosts-requirements).
-2. After the instance is running, log in to the instance using Remote Desktop.  
+2. After the instance is running, log in to the instance using Remote Desktop. The instance will already have a public IP from `Subnet A`. 
 3. Attach the additional network interface to the instance. Select the instance in AWS, click on **Actions** -> **Networking** -> **Attach Network Interface**. Remember, this network interface needs to be in the same availability zone as your instance, but should be in `Subnet B`. 
 4. After attaching the additional network interface, restart the instance.
 5. After you can log back into the instance, there are currently two public IPs on the instance due to the 2 NICS. You can verify that there are two IPs by running `ipconfig`. Since only one public IP can assigned to the instance, we need to set the default route on the interface from `Subnet A` that will have the public IP. 
