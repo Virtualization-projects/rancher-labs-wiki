@@ -37,7 +37,7 @@ AWS Instance Requirements
 
 ```
 $ip=Get-NetIPAddress -ipaddress <subnet-B-ipaddress>
-set-NetIPInterface -ifIndex 20 -AddressFamily ipv4 -Dhcp Disabled
+set-NetIPInterface -ifIndex $ip.ifIndex -AddressFamily $ip.AddressFamily -Dhcp Disabled
 Remove-NetIPAddress -ifIndex $ip.ifIndex -AddressFamily $ip.AddressFamily -Confirm:$false
 $ip | New-NetIPAddress
 ```
