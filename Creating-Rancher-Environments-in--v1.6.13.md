@@ -9,17 +9,14 @@ Required Applications
 AWS Instance Requirements
 * 1 core CPU
 * 2+ GB memory
-* Two NICs with network connected 
-  * One NIC will be for NAT 
-  * One NIC will be used for cross host communication between containers
+* One Subnet will be for NAT and used across Rancher Server and any hosts added
+* For each host, an additional subnet/NIC will be required in order to have an overlay network that allows cross host communication between containers
 
 ## Networking Requirements in AWS
 
 1. Create a VPC
-2. For this example, create 2 Subnets in the VPC. Ensure that these 2 subnets are in the same availability zone. In the rest of these instructions, we will refer to them as `Subnet A` and `Subnet B`.
-3. Create an additional network interface in `Subnet B`. 
-
-In a Windows environment, each host must be in their own subnet. 
+2. For this example of starting Rancher server and adding 1 host, only 2 subnets will be created. One subnet will be used for NAT, and the second will be used for creating the overlay network. For each additional host that will be added, an additional subnet will need to be created for the overlay network. Ceate 2 Subnets in the VPC. Ensure that these 2 subnets are in the same availability zone. In the rest of these instructions, we will refer to them as `Subnet A` and `Subnet B`. `Subnet A` will be used for NAT, while `Subnet B` is used for the overlay network that is established in the `per-host-subnet` service. 
+3. Create an additional network interface in `Subnet B`. For each additional host that is added, a new subnet and network interface will need to be created. 
 
 ## Launching Rancher Server
 
@@ -31,9 +28,9 @@ In a Windows environment, each host must be in their own subnet.
 
 1. Launch a new AWS EC2 instance that is in `Subnet A` and meets the [Windows hosts requirements](#windows-hosts-requirements).
 2. After the instance is running, log in to the instance using Remote Desktop. The instance will already have a public IP from `Subnet A`. 
-3. Attach the additional network interface to the instance. Select the instance in AWS, click on **Actions** -> **Networking** -> **Attach Network Interface**. Remember, this network interface needs to be in the same availability zone as your instance, but should be in `Subnet B`. 
+3. Attach the additional network interface to the instance. Select the instance in AWS, click on **Actions** -> **Networking** -> **Attach Network Interface**. Remember, this network interface needs to be in the same availability zone as your instance, but it should be in `Subnet B`. 
 4. After attaching the additional network interface, restart the instance.
-5. After you can log back into the instance, there are currently two public IPs on the instance due to the 2 NICS. You can verify that there are two IPs by running `ipconfig`. Since only one public IP can assigned to the instance, we need to set the default route on the interface from `Subnet A` that will have the public IP. 
+5. After you can log back into the instance, there are currently two public IPs on the instance due to the 2 NICS. You can verify that there are two IPs by running `ipconfig`. We only want one public IP to be assigned to the instance. We need to set the default route on the interface from `Subnet A` that will have the public IP as this is the subnet for NAT. 
 6. In order to set `Subnet B`'s interface default route, we will need to use `get-netadapter` to determine the interface indices . After determining the indices, we run this command to set `Subnet B`'s interface default route `RouteMetric` greater  than `Subnet A`'s. 
 
 ```
@@ -45,8 +42,8 @@ Set-netroute -DestinationPrefix 0.0.0.0/0 -ifIndex <subnet-B-interface-index> -R
 In Rancher Server, click on **Infrastructure** -> **Add Hosts** in the Windows environment. Follow the instructions on the screen. 
 
 * Subnet: Set the subnet you what to set to this Windows instance.
-* Route IP: Set the route IP for this instance. <Describe what is the Route IP> In our AWS EC2 example, the route IP is the IP of `Subnet B`.  case, you need to set the IP of subnet B.
-* Agent IP (Option): This is the public IP of the instance. 
+* Route IP: Set the route IP for this instance. <Describe what is the Route IP> In our AWS EC2 example, the route IP is the IP of `Subnet B`. 
+* Agent IP (Optional): This is the public IP of the instance. 
 
 After running the custom command to add the hosts, you'll need to wait a couple minutes before the host is up and running in Rancher. There will be a couple infrastructure stacks launched and running on the hosts.
 
