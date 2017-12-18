@@ -24,7 +24,6 @@ AWS Instance Requirements
 
 1. Launch Rancher Server in an AWS EC2 instance that is in `Subnet A`. Ensure the instance meets the [Rancher server requirements](http://rancher.com/docs/rancher/v1.6/en/installing-rancher/installing-server/#requirements). 
 2. In Rancher, create a new Windows environment. 
-> Note: If you decide to add a new Windows environment template, you will need to **Disable** Ipsec before being able to switch container orchestration from Cattle to Windows. 
 
 ## Launching AWS EC2 Hosts with Windows and setting Networking up
 
