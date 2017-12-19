@@ -88,8 +88,8 @@ Check the NAT setting and confirm it includes all the physical network adapters 
 1. In the Rancher UI, deactivate and delete the host under **Infrastructure**.
 2. On the Windows host, run following commands to un-register services and stop them.
 ```
-& "c:\program files\rancher\agent.exe --unregister-service"
-& "c:\program files\rancher\per-host-subnet.exe --unregister-service"
+"c:\program files\rancher\agent.exe --unregister-service"
+"c:\program files\rancher\per-host-subnet.exe --unregister-service"
 stop-service rancher-agent
 stop-service rancher-per-host-subnet
 ```
@@ -101,7 +101,7 @@ docker network rm transparent
 ```
 5. Use devcon.exe to uninstall the virtual NIC 
 ```
-& "c:\program files\rancher\devcon.exe remove *MSLOOP"
+"c:\program files\rancher\devcon.exe remove *MSLOOP"
 ```
 
 6. Remove the folders created by Rancher.
