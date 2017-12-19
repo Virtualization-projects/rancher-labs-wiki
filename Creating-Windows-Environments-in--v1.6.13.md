@@ -30,9 +30,10 @@ AWS Instance Requirements
 1. Launch a new AWS EC2 instance that is in `Subnet A` and meets the [Windows hosts requirements](#windows-hosts-requirements).
 2. After the instance is running, log in to the instance using Remote Desktop. The instance will already have a public IP from `Subnet A`. 
 3. Attach the additional network interface to the instance. Select the instance in AWS, click on **Actions** -> **Networking** -> **Attach Network Interface**. Remember, this network interface needs to be in the same availability zone as your instance, and it should be in `Subnet B`. 
-4. After attaching the additional network interface, restart the AWS EC2 instance.
-5. After you can log back into the instance, there are currently two public IPs on the instance due to the 2 NICs. You can verify that there are two IPs by running `ipconfig`. We only want one public IP to be assigned to the instance. We need to set the default route on the interface from `Subnet A` that will have the public IP as this is the subnet for NAT. 
-6. Set static ip of subnet B instead of DHCP. It will ensure that the route metric of subnet B will be greater than subnet A's. And then, the default route always will be subnet A.
+4. Make sure that the network interface just attached has disabled the **Source/Dest. Check**. In **Network Interfaces** page, select the network interface and click on **Actions** -> **Change Source/Dest. Check** -> select **Disabled**.
+5. After attaching the additional network interface, restart the AWS EC2 instance.
+6. After you can log back into the instance, there are currently two public IPs on the instance due to the 2 NICs. You can verify that there are two IPs by running `ipconfig`. We only want one public IP to be assigned to the instance. We need to set the default route on the interface from `Subnet A` that will have the public IP as this is the subnet for NAT. 
+7. Set static ip of subnet B instead of DHCP. It will ensure that the route metric of subnet B will be greater than subnet A's. And then, the default route always will be subnet A.
 
 ```
 $ip=Get-NetIPAddress -ipaddress <subnet-B-ipaddress>
