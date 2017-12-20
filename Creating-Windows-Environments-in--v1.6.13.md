@@ -39,7 +39,7 @@ AWS Instance Requirements
 $ip=Get-NetIPAddress -ipaddress <subnet-B-ipaddress>
 set-NetIPInterface -ifIndex $ip.ifIndex -AddressFamily $ip.AddressFamily -Dhcp Disabled
 Remove-NetIPAddress -ifIndex $ip.ifIndex -AddressFamily $ip.AddressFamily -Confirm:$false
-$ip | New-NetIPAddress
+New-NetIPAddress -IfIndex $ip.IfIndex -IpAddress $ip.IpAddress -PrefixLength $ip.PrefixLength
 ```
 
 ## Adding Hosts into Rancher
