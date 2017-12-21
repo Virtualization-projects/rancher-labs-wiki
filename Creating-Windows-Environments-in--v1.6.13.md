@@ -1,6 +1,6 @@
 ## Windows Host Requirements
 
-System OS: Windows Server 2016
+System OS: Windows Server 2016 (Standard, Core or Datacenter only. Nano is not supported as the host OS)
 
 Required Applications
 * Windows Features: RemoteAccess and Routing - Note: If this is not installed on the machine, steps on how to install are in the directions in Rancher server
