@@ -1,7 +1,7 @@
 Configuring Rancher
 ==================
 
-The configuration of Rancher is very flexible.  Under the hood it is based on Netflix's [Archaius](https://github.com/Netflix/archaius) which is in turn based on [Apache Commons Configuration](http://commons.apache.org/proper/commons-configuration/) .  The configuration of Rancher is essentially key value based.  The key values pairs will be read from the following sources.  If the configuration is found in the source it will not continue to look for it in further sources.  The order is as below:
+The configuration of Rancher is very flexible.  Under the hood it is based on Netflix's [Archaius](https://github.com/Netflix/archaius) which is in turn based on [Apache Commons Configuration](http://commons.apache.org/proper/commons-configuration/).  The configuration of Rancher is essentially key value based.  The key values pairs will be read from the following sources.  If the configuration is found in the source it will not continue to look for it in further sources.  The order is as below:
 
 1. Environment variables
 2. Java system properties
