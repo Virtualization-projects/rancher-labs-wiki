@@ -1,5 +1,6 @@
 The supported/endorsed IDE for Rancher is Goland. It's the only one that the dev team will document, but (obviously) you can hack on Rancher in whatever editor/IDE you want.
-No Warranty! :-P
+
+*No Warranty!* :-P
 
 ### Steps to debug Rancher using an external k8s in Goland
 1. Create a run/debug configuration from main.go
