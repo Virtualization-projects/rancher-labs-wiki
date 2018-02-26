@@ -6,6 +6,7 @@
 * 2.0-tech-preview
   * [Release v2.0.0-alpha6](https://github.com/rancher/rancher/releases/tag/v2.0.0-alpha6)
   * [Release v2.0.0-alpha12](https://github.com/rancher/rancher/releases/tag/v2.0.0-alpha12)
+  * techpreview3 - Mar 2 2018
 * 2.0-beta - Mid Mar, 2018
 
 # Release Goals
