@@ -16,7 +16,7 @@ Rancher 2.0 will be the most significant release since 1.0 was announced over tw
   * Cloud Providers - Full integrated experience of creating and managing your nodes of your k8s cluster from one of the major cloud providers
     * Google Kubernetes Engine (GKE)
     * Azure Container Service (AKS)
-    * Amazon's Elastic Kubernetes Service (EKS) - EKS is still in preview.
+    * Amazon's Elastic Kubernetes Service (EKS) - Unlikely to be in by GA as EKS is still in preview.
   * Rancher Kubernetes Engine (RKE) - Allow you to create a Rancher supported k8s cluster anywhere, on any cloud or private infrastructure.  You will be able to scale your hosts for your k8s deployment as you see fit through Rancher.
   * Import - Import any existing k8s cluster.  Only v1.8+.
 - **Authentication** - Support for local auth, Github, and AD/LDAP.  After installing Rancher, you will be prompted to change your admin password.
@@ -32,7 +32,6 @@ Rancher 2.0 will be the most significant release since 1.0 was announced over tw
 - **Workload UX** - Rancher is introducing a new Workload UX that will allow users to leverage the simplicity of Rancher Compose to create and manage their k8s workloads.  Supported workload features:
   * Ability to create workloads that will automatically translate into appropriate k8s resources (Pods, StatefulSets, Deployments, DaemonSets, etc.).  Rancher will also automatically create an appropriate k8s service (NodePort, LoadBalance Service, ClusterIP) based on how the user wants to publish their ports.  Rancher does the heavy lifting and translation for you.  You do not need to know or understand k8s constructs before using this.
   * Ability to create and use Ingress.
-  * Ability to create and use k8s volumes through persistent volume claims (PVC)
   * Ability to add authenticated registries
   * Ability to manage k8s secrets
   * Ability to manage your SSL certificates for Ingress.
