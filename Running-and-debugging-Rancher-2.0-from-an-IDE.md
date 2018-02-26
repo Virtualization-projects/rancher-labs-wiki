@@ -13,6 +13,7 @@ Assuming you already have a debug config setup using the above steps, then:
 2. Edit your Run/Debug Configuration
   a. Click "Use all custom build tags"
   b. do NOT set KUBECONFIG env var
+
 Notes:
 - You're compiler will explode the first time. Run it again.
 - To switch back to external revert step 2.  step 1 doesn't matter much
