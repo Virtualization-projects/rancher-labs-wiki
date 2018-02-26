@@ -6,20 +6,19 @@
 * 2.0-tech-preview
   * [Release v2.0.0-alpha6](https://github.com/rancher/rancher/releases/tag/v2.0.0-alpha6)
   * [Release v2.0.0-alpha12](https://github.com/rancher/rancher/releases/tag/v2.0.0-alpha12)
-* 2.0-beta - 2018 End Feb
+* 2.0-beta - March 2 2018
 
 # Release Goals
-Rancher 2.0 will be the most significant release since 1.0 was announced over a year ago. The following describes some of the innovations and improvements we are expecting to launch.  While we are ambitious and confident in what we plan to do, the final feature set can change based on ideas and feedback from our user base.  Unlike 1.x, we do plan to ship regular tech preview builds so that our community has a chance to look at what we are building and help shape the release.
+Rancher 2.0 will be the most significant release since 1.0 was announced over two years ago. The following describes some of the innovations and improvements we are expecting to launch.  While we are ambitious and confident in what we plan to do, the final feature set can change based on ideas and feedback from our user base.  Unlike 1.x, we do plan to ship regular tech preview builds so that our community has a chance to look at what we are building and help shape the release.
 
-- **Clusters and Node Management** - Rancher supports the ability to add your k8s cluster via a cloud provider, Rancher Kubernetes Engine (RKE), or simply by importing an existing cluster.
+- **Clusters and Node Management** - Rancher supports the ability to add your k8s cluster hosted by a cloud provider, create one using Rancher Kubernetes Engine (RKE), or simply by importing an existing cluster of your own.
   * Cloud Providers - Full integrated experience of creating and managing your nodes of your k8s cluster from one of the major cloud providers
-    * Google Kubernetes Engine (GKE) - Supported in tech preview
-    * Azure Container Service (AKS) - Release in Beta.
-    * Amazon's Elastic Kubernetes Service (EKS) - Post 2.0 as EKS is still in preview mode
+    * Google Kubernetes Engine (GKE)
+    * Azure Container Service (AKS)
+    * Amazon's Elastic Kubernetes Service (EKS) - EKS is still in preview.
   * Rancher Kubernetes Engine (RKE) - Allow you to create a Rancher supported k8s cluster anywhere, on any cloud or private infrastructure.  You will be able to scale your hosts for your k8s deployment as you see fit through Rancher.
-    * Cloud Support - Only Digital Ocean and AWS on tech preview, but not mixed cloud providers
-  * Import - Import any existing k8s cluster
-- **Authentication** - In this preview, only local authentication is supported.  You will be prompted to change the password for your default admin account.  By GA, Github, AD, and SAML 2.0 will be added.
+  * Import - Import any existing k8s cluster.  Only v1.8+.
+- **Authentication** - Support for local auth, Github, and AD/LDAP.  After installing Rancher, you will be prompted to change your admin password.
 - **User Management** - Rancher will support two default user types (admin and user) with respective default permissions.  A custom user type will also be supported.
     * Admin - Full global permissions (super admin)
     * Standard User - standard user permissions including:
@@ -27,17 +26,23 @@ Rancher 2.0 will be the most significant release since 1.0 was announced over a 
       * can view catalogs and node drivers, but cannot manage them.
       * cannot create roles but can assign them to users invited to their cluster and/or projects.
     * Custom - custom user type role that you can use to define your own user type
-- **Role Based Access Control (RBAC)** - Rancher allows you to create your own global cluster roles that can be easily assigned to any users to managed k8s clusters and projects.  Rancher includes all out-of-box k8s roles and the ability to your own custom roles.
-- **Project and Namespace Management** - Users can create namespaces and assign them to projects.  Projects are a new Rancher concepts that allows you to group a set of namespaces and assigning a set of user permissions on those namespaces.
-- **Workload UX** - Rancher is introducing a new Workload UX that will make allow users to leverage the simplicity of Rancher Compose to create and manage their k8s workloads.  This is a very experimental for this tech preview but we expect more to come including ingress, dns, volumes, registries, secrets, and certificate management in the following milestone releases.
+- **Role Based Access Control (RBAC)** - Rancher allows you to create your own global cluster roles that can be easily assigned to any users to manage k8s clusters and projects.  Rancher includes all out-of-box k8s roles and the ability to customize your own roles.  Each custom role can be assigned to be assignable at a global, cluster, or project level.
+- **Project and Namespace Management** - Users can create namespaces and assign them to projects.  Projects are a new Rancher concepts that allows you to group a set of namespaces and assign a set of user permissions on those namespaces.
+- **Workload UX** - Rancher is introducing a new Workload UX that will allow users to leverage the simplicity of Rancher Compose to create and manage their k8s workloads.  Supported workload features:
+  * Ability to create workloads that will automatically translate into appropriate k8s resources (Pods, StatefulSets, Deployments, DaemonSets, etc.).  Rancher will also automatically create an appropriate k8s service (NodePort, LoadBalance Service, ClusterIP) based on how the user wants to publish their ports.  Rancher does the heavy lifting and translation for you.  You do not need to know or understand k8s constructs before using this.
+  * Ability to create and use Ingress.
+  * Ability to create and use k8s volumes through persistent volume claims (PVC)
+  * Ability to add authenticated registries
+  * Ability to manage k8s secrets
+  * Ability to manage your SSL certificates for Ingress.
+  * Ability to generate a public endpoint based on ports exposed by NodePort Services, LoadBalancer Services, Ingress, and HostPorts.
 - **Rancher CLI** - CLI support for all Rancher 2.0 feature set.
-- **Dynamic Schema** - This will allow the UI to automatically enable/disable functionality based on user role permissions.
-- **Pod Security Policies** - Allow users to create their own pod security policy or policies that can be applied to roles
-- **Group Support** - Allow you to group one or more users and apply them to a cluster or project.
-- **Custom Node Support** - Ability to add nodes from anywhere similar to how 1.6 custom node management worked.
+- **Pod Security Policies** - Allow users to create their own pod security policy or policies that can be applied to roles.
 - **Catalog Support for Helm** - In addition to Rancher Compose support, Helm charts will also be supported in the updated 2.0 catalog where users can launch and update applications based off of either YAML format. 
 - **HA and SSL support for Rancher server**
-- **Alerts**
+  * Rancher can be installed via `docker run`
+  * Rancher can be installed into an existing k8s cluster.  This option will enable HA support as Rancher HA will be managed by the external k8s cluster.
+- **Alert Management**
   * Disabled by default.  Enabling will install Prometheus AlertManager
   * Support for basic out-of-box alert conditions (final list TBD)
   * Support for following notifiers (Slack, Email, PagerDuty, Webhooks)
