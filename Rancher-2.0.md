@@ -60,7 +60,7 @@ Rancher 2.0 will be the most significant release since 1.0 was announced over tw
   * Support for following Log Targets
     * Rancher embedded logging - Experimental and used for testing 
     * ElasticSearch
-    * Spelunk
+    * Splunk
     * Syslog
     * Kafka
 - **CI/CD Pipelines** - A simple integrated pipeline feature that allows users to create pipelines within projects for CI/CD
