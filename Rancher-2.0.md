@@ -7,8 +7,9 @@
   * [Release v2.0.0-alpha6](https://github.com/rancher/rancher/releases/tag/v2.0.0-alpha6)
   * [Release v2.0.0-alpha12](https://github.com/rancher/rancher/releases/tag/v2.0.0-alpha12)
   * [Release v2.0.0-alpha21](https://github.com/rancher/rancher/releases/tag/v2.0.0-alpha21)
-  * Next Milestone - Mar 23 2018
-* 2.0-beta - End Mar, 2018
+  * [Release v2.0.0-alpha23](https://github.com/rancher/rancher/releases/tag/v2.0.0-alpha23)
+  * [Release v2.0.0-alpha24](https://github.com/rancher/rancher/releases/tag/v2.0.0-alpha24)
+* 2.0-beta - Apr 2nd, 2018
 
 # Release Goals
 Rancher 2.0 will be the most significant release since 1.0 was announced over two years ago. The following describes some of the innovations and improvements we are expecting to launch.  While we are ambitious and confident in what we plan to do, the final feature set can change based on ideas and feedback from our user base.  Unlike 1.x, we do plan to ship regular tech preview builds so that our community has a chance to look at what we are building and help shape the release.
@@ -40,7 +41,7 @@ Rancher 2.0 will be the most significant release since 1.0 was announced over tw
   * Ability to generate a public endpoint based on ports exposed by NodePort Services, LoadBalancer Services, Ingress, and HostPorts.
 - **Rancher CLI** - CLI support for all Rancher 2.0 feature set.
 - **Pod Security Policies** - Allow users to create their own pod security policy or policies that can be applied to roles.
-- **Catalog Support for Helm** - In addition to Rancher Compose support, Helm charts will also be supported in the updated 2.0 catalog where users can launch and update applications based off of either YAML format. 
+- **Catalog Support for Helm** - Helm charts will be supported in the updated 2.0 catalog.
 - **HA and SSL support for Rancher server**
   * Rancher can be installed via `docker run`
   * Rancher can be installed into an existing k8s cluster.  This option will enable HA support as Rancher HA will be managed by the external k8s cluster.
