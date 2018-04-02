@@ -31,7 +31,7 @@ Rancher 2.0 will be the most significant release since 1.0 was announced over tw
     * Custom - custom user type role that you can use to define your own user type
 - **Role Based Access Control (RBAC)** - Rancher allows you to create your own global cluster roles that can be easily assigned to any users to manage k8s clusters and projects.  Rancher includes all out-of-box k8s roles and the ability to customize your own roles.  Each custom role can be assigned to be assignable at a global, cluster, or project level.
 - **Project and Namespace Management** - Users can create namespaces and assign them to projects.  Projects are a new Rancher concepts that allows you to group a set of namespaces and assign a set of user permissions on those namespaces.
-- **Workload UX** - Rancher is introducing a new Workload UX that will allow users to leverage the simplicity of Rancher Compose to create and manage their k8s workloads.  Supported workload features:
+- **Workload UX** - Rancher is introducing a new Workload UX to create and manage their k8s workloads.  Supported workload features:
   * Ability to create workloads that will automatically translate into appropriate k8s resources (Pods, StatefulSets, Deployments, DaemonSets, etc.).  Rancher will also automatically create an appropriate k8s service (NodePort, LoadBalance Service, ClusterIP) based on how the user wants to publish their ports.  Rancher does the heavy lifting and translation for you.  You do not need to know or understand k8s constructs before using this.
   * Ability to create and use Ingress.
   * Ability to generate DNS records for k8s services or external IP addresses.
