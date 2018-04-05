@@ -22,7 +22,7 @@ Rancher 2.0 will be the most significant release since 1.0 was announced over tw
     * Amazon's Elastic Kubernetes Service (EKS) - Unlikely to be in by GA as EKS is still in preview.
   * Rancher Kubernetes Engine (RKE) - Allow you to create a Rancher supported k8s cluster anywhere, on any cloud or private infrastructure.  You will be able to scale your hosts for your k8s deployment as you see fit through Rancher.
   * Import - Import any existing k8s cluster.  Only v1.8+.
-- **Authentication** - Support for local auth, Github, and AD/LDAP.  After installing Rancher, you will be prompted to change your admin password.
+- **Authentication** - Support for local auth, Github, and ActiveDirectory.  After installing Rancher, you will be prompted to change your admin password.
 - **User Management** - Rancher will support two default user types (admin and user) with respective default permissions.  A custom user type will also be supported.
     * Admin - Full global permissions (super admin)
     * Standard User - standard user permissions including:
