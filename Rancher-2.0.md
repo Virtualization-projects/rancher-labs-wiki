@@ -9,7 +9,7 @@
   * [Release v2.0.0-alpha21](https://github.com/rancher/rancher/releases/tag/v2.0.0-alpha21)
   * [Release v2.0.0-alpha23](https://github.com/rancher/rancher/releases/tag/v2.0.0-alpha23)
   * [Release v2.0.0-alpha24](https://github.com/rancher/rancher/releases/tag/v2.0.0-alpha24)
-* 2.0-beta - Apr 6th, 2018
+* 2.0-beta - Apr 4th, 2018
   * [Release v2.0.0-beta1](https://github.com/rancher/rancher/releases/tag/v2.0.0-beta1)
 
 # Release Goals
