@@ -30,7 +30,7 @@ DNS Settings
 
 | Name | Value |
 | ----- | ---- |
-| &lt;rancher_root_domain&gt; | in.rancher.space |
+| &lt;rancher_root_domain&gt; | rancher.cloud |
 | TTL | 1 minute |
 
 <h1>Airgap install</h1>
