@@ -25,9 +25,9 @@ The Rancher DNS server needs to implement the following API:
 | Delete Domain	| /v1/domain/&lt;FQDN&gt;	| DELETE
 
 DNS Settings
-
-| &lt;rancher_root_domain&gt; | in.rancher.space |
+| Name | Value |
 | ----- | ---- |
+| &lt;rancher_root_domain&gt; | in.rancher.space |
 | TTL | 1 minute |
 
 <h1>Airgap install</h1>
