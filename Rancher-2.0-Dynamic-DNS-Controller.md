@@ -24,6 +24,8 @@ The Rancher DNS server needs to implement the following API:
 | Update Domain	| /v1/domain/&lt;FQDN&gt;	| PUT {"member": ["1.1.1.1", "2.2.2.2"]} |
 | Delete Domain	| /v1/domain/&lt;FQDN&gt;	| DELETE
 
+The token received in the create domain call should be passed as a bearer token in all subsequent calls to update and delete. The implementation of the DNS service should leverage something like CoreDNS or PowerDNS.
+
 DNS Settings
 
 | Name | Value |
@@ -33,4 +35,3 @@ DNS Settings
 
 <h1>Airgap install</h1>
 The Dynamic DNS controller can be disabled in airgap installs. In that case, Ingress will revert to the current behavior.
-
