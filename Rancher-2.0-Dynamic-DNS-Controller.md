@@ -8,7 +8,7 @@ The dynamic DNS controller watches all the ingress resources in the cluster and 
 
 <$ingress_name>.<$namespace>.<$cluster_id>.<rancher_root_domain> => [ingress IPs]
 
-Where an ingress resource has more than 10 IPs, only 10 IPs will be returned by DNS.
+When an ingress resource has more than 10 IPs, only 10 IPs will be returned by DNS.
 
 In an RKE cluster, when a node becomes unhealthy and the corresponding nginx ingress resource becomes unavailable, the dynamic DNS controller updates the DNS mapping to remove that node IP from the list.
 
