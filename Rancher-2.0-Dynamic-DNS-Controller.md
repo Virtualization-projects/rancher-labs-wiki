@@ -25,6 +25,7 @@ The Rancher DNS server needs to implement the following API:
 | Delete Domain	| /v1/domain/&lt;FQDN&gt;	| DELETE
 
 DNS Settings
+
 | Name | Value |
 | ----- | ---- |
 | &lt;rancher_root_domain&gt; | in.rancher.space |
