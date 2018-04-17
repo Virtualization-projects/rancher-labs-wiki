@@ -34,7 +34,7 @@ DNS Settings
 | TTL | 1 minute |
 
 <h1>TLS Support</h1>
-For TLS,  cluster configs letsencrypt, requests  `*.clusterid.rancher.cloud`, and send Rancher dynamic DNS service the challenge text record to add for the domain.
+For TLS,  cluster configs letsencrypt, requests  *.clusterid.rancher.cloud, and sends Rancher dynamic DNS service the challenge text record to add for the domain.
 
 <h1>Airgap install</h1>
 The Dynamic DNS controller can be disabled in airgap installs. In that case, Ingress will revert to the current behavior.
