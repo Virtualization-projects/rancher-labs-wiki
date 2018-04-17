@@ -24,7 +24,7 @@ The Rancher DNS server needs to implement the following API:
 | Update Domain	| /v1/domain/&lt;FQDN&gt;	| PUT {"member": ["1.1.1.1", "2.2.2.2"]} |
 | Delete Domain	| /v1/domain/&lt;FQDN&gt;	| DELETE
 
-DNS Setting
+DNS Settings
 
 | &lt;rancher_root_domain&gt; | in.rancher.space |
 | ----- | ---- |
