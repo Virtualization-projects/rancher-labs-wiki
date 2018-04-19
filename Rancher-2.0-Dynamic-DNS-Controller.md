@@ -30,7 +30,7 @@ DNS Settings
 
 | Name | Value |
 | ----- | ---- |
-| &lt;rancher_root_domain&gt; | rancher.cloud |
+| &lt;rancher_root_domain&gt; | lb.rancher.cloud |
 | TTL | 1 minute |
 
 <h1>TLS Support</h1>
