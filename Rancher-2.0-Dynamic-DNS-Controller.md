@@ -21,7 +21,7 @@ The Rancher DNS server needs to implement the following API:
 | Create Domain	| /v1/domain	| POST <br> <br> Payload: {fqdn:"aa.bb.lb.rancher.cloud", "hosts": ["1.1.1.1", "2.2.2.2"]} <br> <br> Returns: {"status":200,"msg":"", "token": "abcfdssadasd", "data":{"fqdn":"11111.lb.rancher.cloud","hosts":["1.1.1.1","2.2.2.2"],"expiration":"2018-04-29T10:08:12.906557355Z"}}|
 | Get Domain	| /v1/domain/&lt;FQDN&gt; | GET <br> <br> Returns: {"status":200,"msg":"","data":{"fqdn":"12345678.lb.rancher.cloud","hosts":["1.1.1.1","2.2.2.2"],"expiration":"2018-04-29T09:46:18.078663181Z"}}
 | Renew Domain	| /v1/domain/&lt;FQDN&gt;/renew	| PUT <br> <br> Returns:  {"status":200,"msg":"","data":{"fqdn":"12345678.lb.rancher.cloud","hosts":["1.1.1.1","2.2.2.2"],"expiration":"2018-05-29T09:46:18.078663181Z"} |
-| Update Domain	| /v1/domain/&lt;FQDN&gt;	| PUT <br> <br> Payload: {"hosts": ["1.1.1.1", "2.2.2.2"]} <br> <br> Returns {"status":200,"msg":"","data":{"fqdn":"12345678.lb.rancher.cloud","hosts":["3.3.3.3","4.4.4.4"],"expiration":"2018-04-30T01:03:40.870506511Z"}} |
+| Update Domain	| /v1/domain/&lt;FQDN&gt;	| PUT <br> <br> Payload: {"hosts": ["3.3.3.3", "4.4.4.4"]} <br> <br> Returns {"status":200,"msg":"","data":{"fqdn":"12345678.lb.rancher.cloud","hosts":["3.3.3.3","4.4.4.4"],"expiration":"2018-04-30T01:03:40.870506511Z"}} |
 | Delete Domain	| /v1/domain/&lt;FQDN&gt;	| DELETE
 
 The token received in the create domain call should be passed as a bearer token in all subsequent calls to update and delete. The implementation of the DNS service should leverage something like CoreDNS or PowerDNS.
