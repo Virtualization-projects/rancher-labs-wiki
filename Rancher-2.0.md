@@ -1,6 +1,6 @@
 # Schedule
 
-* Scheduled: End Apr, 2018
+* Shipped: 5/1/18
 
 # Milestones
 * 2.0-tech-preview
