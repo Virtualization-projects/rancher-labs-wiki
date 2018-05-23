@@ -20,8 +20,8 @@ Default Settings
 
 | Name | Value |
 | ----- | ---- |
-| Default Domain Renew Duration | 24 hour |
 | Default Ingress Resync Duration | 5 minute |
+| Default Domain Renew Duration | 24 hour |
 
 
 <h1>Rancher Dynamic DNS Service</h1>
@@ -44,6 +44,15 @@ DNS Settings
 | ----- | ---- |
 | &lt;rancher_root_domain&gt; | lb.rancher.cloud |
 | TTL | 1 minute |
+
+<h1>Using Dynamic DNS Service in Rancher 2.0</h1>
+
+Configuring the following parameters in the global variable settings.(<$rdns-base-url> can be specified as private service address)
+
+| Name | Value |
+| ----- | ---- |
+| &lt;ingress-ip-domain&gt; | lb.rancher.cloud |
+| &lt;rdns-base-url&gt; | api.lb.rancher.cloud |          
 
 <h1>TLS Support</h1>
 For TLS,  cluster configs letsencrypt, requests  *.clusterid.lb.rancher.cloud, and sends Rancher dynamic DNS service the challenge text record to add for the domain.
