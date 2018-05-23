@@ -47,12 +47,14 @@ DNS Settings
 
 <h1>Using Dynamic DNS Service in Rancher 2.0</h1>
 
-Configuring the following parameters in the global variable settings.(<$rdns-base-url> can be specified as private service address)
+Configuring the following parameters in the global variable settings.
 
 | Name | Value |
 | ----- | ---- |
 | &lt;ingress-ip-domain&gt; | lb.rancher.cloud |
 | &lt;rdns-base-url&gt; | api.lb.rancher.cloud |          
+
+<$rdns-base-url> can be specified as private service address
 
 <h1>TLS Support</h1>
 For TLS,  cluster configs letsencrypt, requests  *.clusterid.lb.rancher.cloud, and sends Rancher dynamic DNS service the challenge text record to add for the domain.
