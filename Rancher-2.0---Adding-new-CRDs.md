@@ -3,7 +3,7 @@ https://github.com/rancher/rancher/blob/master/pkg/api/server/managementstored/s
 `createCRD` is called separately for management schema and project schema
 
 2. Adding a cluster level resource in rancher/types:
-Make sure your CRD has these 2 fields to make it a cluster-level resource: </br>
+Make sure your CRD has these 2 fields to make it a cluster-level resource: <br>
 `types.Namespaced`
 `ClusterName string `json:"clusterName" norman:"type=reference[cluster]"``
 Make sure the norman tag referencing the cluster is present
