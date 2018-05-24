@@ -9,7 +9,7 @@ types.Namespaced
 ClusterName string `json:"clusterName" norman:"type=reference[cluster]"
 ```
 
-Make sure the norman tag referencing the cluster is present
+It should have the norman tag referencing the cluster
 
 3. Adding a project level resource in rancher/types:
 Make sure the CRD has these 2 fields to make it a project-level resource: <br>
@@ -18,4 +18,4 @@ types.Namespaced
 ProjectName string `json:"projectName" norman:"type=reference[project]"
 ```
 
-Make sure the norman tag referencing the project is present
+It should have the norman tag referencing the project
