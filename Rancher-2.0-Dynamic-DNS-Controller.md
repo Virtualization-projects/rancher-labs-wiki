@@ -45,7 +45,7 @@ DNS Settings
 | &lt;rancher_root_domain&gt; | lb.rancher.cloud |
 | TTL | 1 minute |
 
-<h1>Using Dynamic DNS Service in Rancher 2.0</h1>
+<h1>Configuring Dynamic DNS Service</h1>
 
 Configuring the following parameters in the global variable settings.
 
