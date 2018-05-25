@@ -2,6 +2,8 @@ The dynamic DNS controller creates the necessary DNS entries to make the followi
 
 <http/https>://<$ingress_name>.<$namespace>.<$cluster_id>.<rancher_root_domain>/<$path>
 
+[[images/integration-tests/044.png]]
+
 <h1>Dynamic DNS Controller</h1>
 
 The dynamic DNS controller watches all the ingress resources in the cluster and creates the following DNS entries in <rancher_root_domain>:
@@ -14,7 +16,7 @@ In an RKE cluster, when a node becomes unhealthy and the corresponding nginx ing
 
 Every once in a while (default 5m), the dynamic DNS controller will resync nginx ingress resource.
 
-Every once in a while (default 24h), the dynamic DNS controller will renew the domain to update domain_information.
+Every once in a while (default 24h), the dynamic DNS controller will renew the domain to refresh Expiration.
 
 Default Settings
 
