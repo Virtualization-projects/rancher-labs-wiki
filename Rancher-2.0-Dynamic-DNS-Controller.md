@@ -58,7 +58,7 @@ Configuring the following parameters in the global variable settings.
 1.Modify <$ingress-ip-domain> to a specified domain name: `lb.rancher.cloud`
 
 2.Create ingress resource and select the following
-[[images/integration-tests/044.png]]
+[[images/integration-tests/045.png]]
 
 <h1>TLS Support</h1>
 For TLS,  cluster configs letsencrypt, requests  *.clusterid.lb.rancher.cloud, and sends Rancher dynamic DNS service the challenge text record to add for the domain.
