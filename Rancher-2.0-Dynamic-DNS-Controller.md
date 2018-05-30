@@ -55,9 +55,9 @@ Configuring the following parameters in the global variable settings.
 | ----- | ---- |
 | &lt;ingress-ip-domain&gt; | lb.rancher.cloud | 
 
-1.Modify <$ingress-ip-domain> to a specified domain name: `lb.rancher.cloud`
+1.Modify <$ingress-ip-domain> to a specified domain: `lb.rancher.cloud`
 
-2.Create ingress resource and select the following
+2.Create ingress resource and select the following:
 [[images/integration-tests/045.png]]
 
 <h1>TLS Support</h1>
