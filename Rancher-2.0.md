@@ -21,6 +21,7 @@
 * [2.0.3 Release Notes](https://github.com/rancher/rancher/releases/tag/v2.0.3)
 * [2.0.4 Release Notes](https://github.com/rancher/rancher/releases/tag/v2.0.4)
 * [2.0.5 Release Notes](https://github.com/rancher/rancher/releases/tag/v2.0.5)
+* [2.0.6 Release Notes](https://github.com/rancher/rancher/releases/tag/v2.0.5)
 
 # Release Goals
 Rancher 2.0 will be the most significant release since 1.0 was announced over two years ago. The following describes some of the innovations and improvements we are expecting to launch.  While we are ambitious and confident in what we plan to do, the final feature set can change based on ideas and feedback from our user base.  Unlike 1.x, we do plan to ship regular tech preview builds so that our community has a chance to look at what we are building and help shape the release.
