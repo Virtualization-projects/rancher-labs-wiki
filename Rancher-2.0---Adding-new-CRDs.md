@@ -19,3 +19,5 @@ ProjectName string `json:"projectName" norman:"type=reference[project]"
 ```
 
 It should have the norman tag referencing the project
+
+Any instance you create for this CRD will be created in the management plane. The controller for this CRD can be added in management, or under user package within controllers. This can be decided based on whether CRUDing this resource, causes a controller to CRUD a resource in the cluster.
