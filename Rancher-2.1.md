@@ -8,7 +8,6 @@
 
 # Release Goals
 Rancher 2.1 will be primarily focused on adding tools and guides to assist in migrating Rancher 1.6 users onto the new Rancher 2.0 platform.  The current planned items include the following and will be updated as necessary:
-* A tool to convert current Rancher and Docker Compose file to a corresponding Kubernetes YAML equivalent.  
 * A guide that maps current 1.6 Compose YAML format to a Kubernetes YAML format.
 
 The following are a list of features that we are also planning to add for 2.1, subject to change.  We plan on shipping a few minor releases before 2.1 and it can include some of the features below as they are completed.
