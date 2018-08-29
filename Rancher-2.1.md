@@ -13,7 +13,6 @@ Rancher 2.1 will be primarily focused on adding tools and guides to assist in mi
 The following are a list of features that we are also planning to add for 2.1, subject to change.  We plan on shipping a few minor releases before 2.1 and it can include some of the features below as they are completed.
 
 * **Project Quota** - Resources quota will now be supported at a project level.  The planned support will be identical to the ones currently supported at the [namespace level](https://kubernetes.io/docs/concepts/policy/resource-quotas/).
-* **Cluster and Project level Catalogs** - The current Helm Catalog can only be enabled/disabled at a global level.  Support for cluster and project level catalogs will now be supported.
 * **Audit Logs** - Support to push all audit logs to a centralized log store.
 * **More Authentication Providers** - SAML, OpenLDAP, and AzureAD will be supported.
 * **Pipeline Enhancements**
