@@ -20,6 +20,7 @@ The following are a list of features that we are also planning to add for 2.1, s
   * Adding support for more pipeline plugins
   * Adding support for Continuous Deployment (CD) in the form of deploying and updating k8s workloads.
 * **Rancher CLI support for K8s cluster import/export** - Support the ability to export an entire k8s cluster managed by Rancher as a configuration file.  Also, support the ability to import a configuration file describe your k8s cluster into Rancher.
+* **Windows Support - Experimental** - Add ability to create/import a Kubernetes Windows cluster.
 
 
   
