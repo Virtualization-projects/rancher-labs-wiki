@@ -219,64 +219,6 @@ function cowhand_clone {
 ```
 Just a shorthand way of cloning rancher repos into the prescribed folder structure
 
-### cd hook
-```sh
-function cowhand_env_hook {
-  curdir=`pwd`
-  regex="$RANCHER_DEV_ROOT_DIR/([a-z]+).*"
-
-  if [[ $curdir =~ $regex ]]; then
-    if [ "$VIRTUAL_ENV" != "$RANCHER_VENV_DIR" ]; then
-      echo activating rancher virtualenv
-      cowhand activate
-    fi
-
-    eval "theMatch=\"\${$MATCHVAR}\""
-    newGoPath="$RANCHER_DEV_ROOT_DIR/$theMatch"
-    if [ "$GOPATH" != "$newGoPath" ]; then
-      echo "setting GOPATH"
-      GOPATH="$newGoPath"
-    fi
-  else
-    if [[ $GOPATH =~ $regex ]]; then
-      echo "unsetting GOPATH"
-      unset GOPATH;
-    fi
-    if [ "$VIRTUAL_ENV" = "$RANCHER_VENV_DIR" ]; then
-      echo deactivating rancher virtualenv
-      cowhand deactivate
-    fi
-  fi
-}
-```
-
-This is a hook you can tie in to your shell to automatically adjust your rancher virtual environment and gopath when you are moving around. Note that if you have a different GOPATH setup, this will likely cause trouble. This has only been tested in zsh and bash, but might work (or should be easily adjustible to work) in other shells
-
-To tie it in to your shell, add the following to your .bashrc or similar file
-```sh
-thisShell="$(ps -ef | grep " $$ " | grep -v grep | awk '{print $NF}')"
-case "${thisShell##*$'\n'}" in
-  "zsh" | "-zsh")
-    autoload -U add-zsh-hook
-    add-zsh-hook chpwd cowhand_env_hook
-    MATCHVAR="match"
-    ;;
-
-  "bash")
-    cd() {
-      builtin cd "$1"
-      cowhand_env_hook
-    }
-    cowhand_env_hook
-    MATCHVAR="BASH_REMATCH[1]"
-    ;;
-  *)
-    MATCHVAR="match"
-    echo "Don't know how to deal with shell $thisShell, can't auto-attach cd hook.
-    echo "Pattern matching var is also unknown, manual use of hook may be invalid
-    ;;
-esac
-```
 
 ### Tying it all together
 If you'd like to consolidate these all to one command, here is the function to do so
@@ -316,3 +258,110 @@ function cowhand {
 }
 ```
 e.g. to run `cowhand_link types` run `cowhand l types`.
+
+### CD Hook
+
+To tie into your shell, you can use this cd hook.
+This looks for a .gopath file up the tree from a given directory, and if it has contents uses those as gopath, or if it is empty, just sets it's containing dir as gopath. Similarly, if it finds a .venv file, it will use the env specified within.
+```
+
+findGopath () {
+  cdir=$PWD
+  while [ "$cdir" != "/" ]; do
+    if [ -e "$cdir/.gopath" ]; then
+      if [ "$cdir" == "$HOME" ]; then
+        _locality="global"
+      else
+        _locality="local"
+      fi
+
+      _gopath=$(cat $cdir/.gopath)
+      if [ -n "$_gopath" ]; then
+        _type="explicitly set"
+      else
+        _type="inferred"
+        _gopath=$cdir
+      fi
+
+      if [ "$_locality" == "global" ] && [ "$_type" == "inferred" ]; then
+        _gopath=""
+      fi
+
+      _found="1"
+
+      break
+    fi
+    cdir=$(dirname "$cdir")
+  done
+
+  if [ -z "$_found" ] && [ -e "$HOME/.gopath" ]; then
+    _gopath=$(cat $HOME/.gopath)
+    _locality="global"
+    if [ -n "$_gopath" ]; then
+      _type="explicitly set"
+    else
+      _type="inferred"
+      _gopath=$HOME
+    fi
+
+    if [ "$_locality" == "global" ] && [ "$_type" == "inferred" ]; then
+        _gopath=""
+      fi
+
+      _found="1"
+  fi
+  if [ "$_gopath" != "$GOPATH" ]; then
+    if [ -n "_gopath" ]; then
+      export GOPATH=$_gopath
+      echo "Found $_locality .gopath, exporting $_type $_gopath"
+    else
+      echo "no .gopath found, unsetting GOPATH"
+      unset GOPATH
+    fi
+  fi
+  unset cdir
+  unset _found
+  unset _gopath
+  unset _type
+  unset _locality
+}
+
+findVenv () {
+  cdir=$PWD
+  while [ "$cdir" != "/" ]; do
+    if [ "$cdir" != "$HOME" ] && [ -e "$cdir/.venv" ]; then
+      _venv=$(cat "$cdir/.venv")
+      if [ -n "$_venv" ]; then
+        _found="1"
+        if [ -n "$VIRTUAL_ENV" ]; then
+          _current=$(basename $VIRTUAL_ENV)
+        fi
+
+        if [ "$_current" != "$_venv" ]; then
+          source "$HOME/.venv/$_venv/bin/activate"
+          echo ".venv file found, activating environment \"$_venv\""
+        fi
+      fi
+      break
+    fi
+
+    cdir=$(dirname "$cdir")
+  done
+
+  if [ -z "$_found" ] && [ "$(type -w deactivate)" == "deactivate: function" ]; then
+    echo "no .venv found, deactivating"
+    deactivate
+  fi
+  unset cdir
+  unset _found
+  unset _venv
+  unset _current
+}
+
+
+cd () {
+  builtin cd "$@"
+  findGopath
+  findVenv
+}
+```
