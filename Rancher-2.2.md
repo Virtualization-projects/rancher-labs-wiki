@@ -17,7 +17,6 @@ The following is the list of features that we are also planning to add for 2.2, 
   * Users can specify either an external DNS or Load Balancer to workload mapping to allow easier access to applications.  Any changes to workload deployments will also be automatically reflected in the external DNS/Load Balancer.
   * Route53 will be the default DNS implementation but Rancher will allow other DNS and Load Balancer providers to be configured.
 * **Multi-tenant Catalog Support** - Rancher will allow catalogs to be configured and managed at both a cluster and project level.  This will allow admins more flexibility to specifying catalogs that users have access to deploy from.  
-* **Enhanced Node Templates** - Node templates created be users can now be shared and usable by other users.
 * **Cloud Key Management** - Cloud keys used by either node templates or hosted cloud providers will now be now properly stored as Kubernetes secrets, and can be reused by existing Rancher features or any future Rancher integration with cloud providers such as AWS, Google, DigitalOcean, and Azure.
 * **Etcd Backup/Restore** - Add capabilities to RKE clusters to support both backup and restore from the UI and using S3.
 * **Improved Rancher Scaling** - Improve Rancher scaling for both cluster, nodes, and workloads.
