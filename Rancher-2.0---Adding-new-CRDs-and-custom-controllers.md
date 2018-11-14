@@ -29,7 +29,7 @@ There are two packages under rancher/pkg/controllers, management and user.
 1. If your controller needs to CRUD any resources from the user cluster, then you should add your controller in the user package. This does not mean your controller is actually running in the user cluster. It is still running in management plane, but one instance of your controller is running for each cluster.
 2. If your controller does not need to CRUD any user cluster resources, add it to the management controllers package.  
 
-Both types of controllers described above run in the management plane. If you want your controller running in each user cluster, be sure that it does not need any of the management plane resources. (For example, ones registered in the function `RegisterUserOnly` in pkg/controller/user/controller.go
+Both types of controllers described above run in the management plane. If you want your controller running in each user cluster, be sure that it does not need any of the management plane resources. (For example, ones registered in the function `RegisterUserOnly` in pkg/controller/user/controller.go)
 
 ### AddHandler vs AddClusterScopedHandler vs AddLifecycle
 
