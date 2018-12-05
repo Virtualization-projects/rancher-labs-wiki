@@ -6,6 +6,13 @@
 
 * [2.1 Milestone](https://github.com/rancher/rancher/milestone/121)
 
+# Release Notes
+
+* [2.1.3 Release Notes](https://github.com/rancher/rancher/releases/tag/v2.1.3)
+* [2.1.2 Release Notes](https://github.com/rancher/rancher/releases/tag/v2.1.2)
+* [2.1.1 Release Notes](https://github.com/rancher/rancher/releases/tag/v2.1.1)
+* [2.1.0 Release Notes](https://github.com/rancher/rancher/releases/tag/v2.1.0)
+
 # Release Goals
 Rancher 2.1 will be primarily focused on adding tools and guides to assist in migrating Rancher 1.6 users onto the new Rancher 2.0 platform.  The current planned items include the following and will be updated as necessary:
 * A guide that maps current 1.6 Compose YAML format to a Kubernetes YAML format.
