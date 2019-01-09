@@ -68,10 +68,10 @@ The GOPATH for a given project should be one step up from the `src` folder
 Start the build in GoLand. The service will be available at http://localhost:8080. Ignore the scary cert warning (or use ngrok as a way around.
 
 ### Changing the password
-You have the option here to change the password (from the default of `admin`). If you are running rancher on AWS or any other external hosting, or it in any way is available to the outside world, you _must_ change this, or you will have an _extremely_ bad and expensive time, with many large unwanted nodes and workloads spun up in short order. Note, however, that the tests expect the default username/password combo of `admin`/`admin`, and so if you are running in a way that the instance is not available to the outside word and does not have any production keys, you can simply re-enter the password as `admin`
+You have the option here to change the password (from the default of `admin`). If you are running rancher on AWS or any other external hosting, or it in any way is available to the outside world, you _must_ change this, or you will have an _extremely_ bad and expensive time, with many large unwanted nodes and workloads spun up in short order. Note, however, that the tests expect the default username/password combo of `admin`/`admin`, and so if you are running in a way that the instance is not available to the outside world and does not have any production keys, you can simply re-enter the password as `admin`
 
 ### Preventing exposure of API Keys and other sensitive information
-[git-secrets](https://github.com/awslabs/git-secrets#git-secrets) is useful for preventing accidental exposure of sensitive information. On MacOS run 
+[git-secrets](https://github.com/awslabs/git-secrets#git-secrets) is useful for preventing accidental exposure of sensitive information when committing code. On MacOS run 
 ``` brew install git-secrets ```
 Then add hooks to the repo
 ```
