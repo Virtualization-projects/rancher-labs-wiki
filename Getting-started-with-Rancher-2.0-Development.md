@@ -58,7 +58,7 @@ The GOPATH for a given project should be one step up from the `src` folder
 ### Set up the build target
   Attach the build go main.go in the root of the project
   - add environment variable `KUBECONFIG` set to `{homedirectory}/.kube/config` (on mac `users/maxkorp/.kube/config`)
-  - change go tool arguments to `-i -gcflages="-N -l"`
+  - change go tool arguments to `-i -gcflags="-N -l"`
   - change program arguments to `--add-local=true`
 
 ![](https://i.imgur.com/1lzSadD.png)
