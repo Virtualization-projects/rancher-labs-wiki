@@ -100,7 +100,7 @@ Once changes to `rancher/types` have landed, you must edit the sha in the `vendo
 
 ## Install Dependencies
 - ### Install Python 3.7
-  On mac it can also be installed via homebrew. See [here](https://docs.python-guide.org/starting/install3/osx/)
+  On mac it can also be installed via homebrew. See [here](https://docs.python-guide.org/starting/install3/osx/). Just running `brew install python` should get you there.
 - ### Upgrade pip
   ```sh
   sudo pip3 install --upgrade pip
