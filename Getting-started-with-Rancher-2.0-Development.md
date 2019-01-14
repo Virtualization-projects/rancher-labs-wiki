@@ -99,8 +99,8 @@ Once changes to `rancher/types` have landed, you must edit the sha in the `vendo
 # Setting up and running the Tests
 
 ## Install Dependencies
-- ### Install Python 3.6
-  Not 2.x, not 3.5 or 3.7, python 3.6. Available here: https://www.python.org/downloads/release/python-366/. On mac it can also be installed via homebrew with the command `brew https://raw.githubusercontent.com/Homebrew/homebrew-core/f2a764ef944b1080be64bd88dca9a1d80130c558/Formula/python.rb`, although it is worth noting that this installs 3.6.5, as 3.6.6 is not published on homebrew.
+- ### Install Python 3.7
+  On mac it can also be installed via homebrew. See [here](https://docs.python-guide.org/starting/install3/osx/)
 - ### Upgrade pip
   ```sh
   sudo pip3 install --upgrade pip
