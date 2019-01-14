@@ -14,4 +14,4 @@ Welcome to the Rancher wiki!
 
 [QA Onboarding](https://github.com/rancherlabs/the-ranch/wiki/QA-Onboarding) (internal-only)
 
-[Adding custom CRDs and controllers](https://github.com/rancher/rancher/wiki/Rancher-2.0---Adding-new-CRDs-and-custom-controllers)
+[Adding new CRDs and custom controllers](https://github.com/rancher/rancher/wiki/Rancher-2.0---Adding-new-CRDs-and-custom-controllers)
