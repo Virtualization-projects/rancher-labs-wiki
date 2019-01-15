@@ -1,6 +1,6 @@
 # Schedule
 
-* Shipping: End Feb
+* Shipping: End Mar
 # Milestones
 
 * [2.2 Milestone](https://github.com/rancher/rancher/milestone/140)
