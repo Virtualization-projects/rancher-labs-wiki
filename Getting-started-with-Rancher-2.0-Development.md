@@ -99,6 +99,11 @@ Once changes to `rancher/types` have landed, you must edit the sha in the `vendo
 # Setting up and running the Tests
 
 ## Install Dependencies
+- ### Install helm
+  - Clone https://github.com/rancher/helm into go/src/k8s.io
+  - change to rancher branch
+  - run `make bootstrap build`
+  - copy bin/tiller & bin/helm to /urs/local/bin and chmod u+x
 - ### Install Python 3.7
   On mac it can also be installed via homebrew. See [here](https://docs.python-guide.org/starting/install3/osx/). Just running `brew install python` should get you there.
 - ### Upgrade pip
@@ -126,11 +131,6 @@ Once changes to `rancher/types` have landed, you must edit the sha in the `vendo
   ```sh
   pip install tox
   ```
-- ### Install helm
-  - Clone https://github.com/rancher/helm into go/src/k8s.io
-  - change to rancher branch
-  - run `make bootstrap build`
-  - cp bin/tiller bin/helm to /urs/local/bin and chmod u+x
 - ### Run the tests
   ```python
   tox
