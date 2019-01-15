@@ -101,9 +101,13 @@ Once changes to `rancher/types` have landed, you must edit the sha in the `vendo
 ## Install Dependencies
 - ### Install helm
   - Clone https://github.com/rancher/helm into go/src/k8s.io
-  - change to rancher branch
-  - run `make bootstrap build`
-  - copy bin/tiller & bin/helm to /urs/local/bin and chmod u+x
+  - Change to rancher branch
+  - Run `make bootstrap build`
+  - Copy bin/tiller & bin/helm to /urs/local/bin and chmod u+x
+- ### Install docker-machine
+  - Clone https://github.com/rancher/machine into go/src/github.com/docker
+  - In cmd/docker-machine run `go build`
+  - Copy docker-machine to /urs/local/bin
 - ### Install Python 3.7
   On mac it can also be installed via homebrew. See [here](https://docs.python-guide.org/starting/install3/osx/). Just running `brew install python` should get you there.
 - ### Upgrade pip
