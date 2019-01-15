@@ -126,6 +126,11 @@ Once changes to `rancher/types` have landed, you must edit the sha in the `vendo
   ```sh
   pip install tox
   ```
+- ### Install helm
+  - Clone https://github.com/rancher/helm into go/src/k8s.io
+  - change to rancher branch
+  - run `make bootstrap build`
+  - cp bin/tiller bin/helm to /urs/local/bin and chmod u+x
 - ### Run the tests
   ```python
   tox
