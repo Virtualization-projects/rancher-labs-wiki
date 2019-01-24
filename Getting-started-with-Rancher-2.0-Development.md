@@ -49,7 +49,7 @@ RANCHER_DEV_ROOT_DIR
 This assumes all of your rancher projects are stored in one single parent rancher directory (referenced as RANCHER_DEV_ROOT_DIR, but the name is unimportant). Notice that these directories (below the src directories) mirror the structure within rancher/rancher's vendor directory
 To start, you will likely need at minimum [rancher/rancher](https://github.com/rancher/rancher) and [rancher/types](https://github.com/rancher/types) cloned.
 
-- ## Setting up remotes
+- ### Setting up remotes
 In order to avoid accidentally creating a branch in the rancher/rancher repo please set your remote accordingly with your fork. 
 ```
 origin    git@github.com:AwesomeContributor/rancher.git (fetch)
