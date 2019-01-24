@@ -22,7 +22,7 @@ This page will go over setting up your environment for development work on the c
   - [VS Code + vscode-go](https://github.com/Microsoft/vscode-go)
   - [Atom + go-plus](https://atom.io/packages/go-plus)
 - ### Trash
-  Trash is a dependency management tool written by Rancher for use with rancher. You'll only need this if you're making changes to other rancher packages that rancher/rancher lists as dependencies. It is available for download here: https://github.com/rancher/trash/releases. Note that sometimes, you may have to run it twice, if for example you get lots of unexpected changes after the first pass.
+  Trash is a dependency management tool written by Rancher for use with rancher. You'll only need this if you're making changes to other rancher packages that rancher/rancher lists as dependencies. It is available for download here: https://github.com/rancher/trash/releases. Note that sometimes, you may have to run it twice, if for example, you get lots of unexpected changes after the first pass.
 - ### ngrok
   ngrok allows you to forward an external url to your local webservers. It is available here: https://ngrok.com. On MacOS it can be installed via homebrew with the command `brew cask install ngrok`
 
@@ -48,6 +48,19 @@ RANCHER_DEV_ROOT_DIR
 ```
 This assumes all of your rancher projects are stored in one single parent rancher directory (referenced as RANCHER_DEV_ROOT_DIR, but the name is unimportant). Notice that these directories (below the src directories) mirror the structure within rancher/rancher's vendor directory
 To start, you will likely need at minimum [rancher/rancher](https://github.com/rancher/rancher) and [rancher/types](https://github.com/rancher/types) cloned.
+
+- ## Setting up remotes
+In order to avoid accidentally creating a branch in the rancher/rancher repo please set your remote accordingly with your fork. 
+```
+origin    git@github.com:AwesomeContributor/rancher.git (fetch)
+origin    git@github.com:AwesomeContributor/rancher.git (push)
+upstream    https://github.com/rancher/rancher.git (fetch)
+upstream    https://github.com/rancher/rancher.git (push)
+```
+HTTPS urls allow for unauthencitcated cloning and pulling. Futhermore, you have 2-factor auth set up (**right?**) and https pushing will fail. 
+To get the most up-to-date version run:
+
+ `git fetch upstream`
 
 ## Set up GoLand
 As discussed above, we primarily use GoLand for development. There are a few things to do here
