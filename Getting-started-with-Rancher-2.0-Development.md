@@ -396,3 +396,7 @@ cd () {
   findVenv
 }
 ```
+
+# Gotchas
+`panic: creating CRD store customresourcedefinitions.apiextensions.k8s.io is forbidden: User "system:anonymous" cannot list customresourcedefinitions.apiextensions.k8s.io at the cluster scope`
+Check your kubectl context
