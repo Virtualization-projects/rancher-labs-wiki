@@ -35,6 +35,12 @@ When issues go backwards (ie, back to working from review or testing), status la
 
 Some projects require us to make a release before an issue can be tested. These include: cli, helm/tiller (our fork), and RKE. Coordinate with a tech lead accordingly.
 
+We currently track issues in three places:
+* rancher/rancher
+* rancher/rke
+* our internal security issue tracker
+Please be aware of all three
+
 ## Issue categorization
 To track the type of work we have in the pipeline, we categorize issues using `kind/*` labels. Here are the main "kinds" you should be working with:
 * `kind/feature` - Issues that represent larger new pieces of functionality, not enhancements to existing functionality
