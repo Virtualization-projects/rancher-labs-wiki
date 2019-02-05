@@ -48,6 +48,6 @@ To track the type of work we have in the pipeline, we categorize issues using `k
 * `kind/enhancement` - Issues that improve or augment existing functionality
 * `kind/performance` - Issues related directly to performance improvements
 * `kind/bug` - Issues that are defects reported by users or that we know have reached a real release
-* `kind/bug-qa` - Bug reported by Rancher QA for issues that have not yet hit a real release. In other words, bugs found while testing a new feature or enhancement
+* `kind/bug-qa` - Issues that have not yet hit a real release. In other words, bugs introduced by a new feature or enhancement that have not yet hit a real release.
 * `kind/task` - Issues that represent work that needs to be done, but don't involve a code change
 * `kind/question` - Issues that just require an answer. No code change needd
