@@ -3,6 +3,7 @@
 * Scheduled: 2017-5-4
 
 # Release Notes
+* [1.6.26 Release Notes](https://github.com/rancher/rancher/releases/tag/v1.6.26)
 * [1.6.25 Release Notes](https://github.com/rancher/rancher/releases/tag/v1.6.25)
 * [1.6.24 Release Notes](https://github.com/rancher/rancher/releases/tag/v1.6.24)
 * [1.6.23 Release Notes](https://github.com/rancher/rancher/releases/tag/v1.6.23)
