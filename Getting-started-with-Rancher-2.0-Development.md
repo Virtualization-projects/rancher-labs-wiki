@@ -24,7 +24,8 @@ This page will go over setting up your environment for development work on the c
 - ### Trash
   Trash is a dependency management tool written by Rancher for use with rancher. You'll only need this if you're making changes to other rancher packages that rancher/rancher lists as dependencies. It is available for download here: https://github.com/rancher/trash/releases. Note that sometimes, you may have to run it twice, if for example, you get lots of unexpected changes after the first pass.
 - ### ngrok
-  ngrok allows you to forward an external url to your local webservers. It is available here: https://ngrok.com. On MacOS it can be installed via homebrew with the command `brew cask install ngrok`
+  ngrok allows you to forward an external url to your local webservers. It is available here: https://ngrok.com. On MacOS it can be installed via homebrew with the command `brew cask install ngrok`. ngrok removes some of the difficulty of container networking. If you do not use ngrok, you will need to ensure you set up container port forwarding in order to be able to use kubectl to manange clusters underneath rancher (like the local dev cluster).
+
 
 ## Clone repo and set up project structure
 There are many ways you can set up your gopath and folder structure, but the cleanest way for rancher is as follows (also included are the [rancher/types](https://github.com/rancher/types) project and [rancher/norman](https://github.com/rancher/norman) projects, for example purposes)
