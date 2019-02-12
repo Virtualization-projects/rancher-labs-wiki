@@ -39,7 +39,8 @@ We currently track issues in three places:
 * rancher/rancher
 * rancher/rke
 * our internal security issue tracker
-Please be aware of all three
+
+Please be aware of all three!
 
 ## Issue categorization
 To track the type of work we have in the pipeline, we categorize issues using `kind/*` labels. Here are the main "kinds" you should be working with:
