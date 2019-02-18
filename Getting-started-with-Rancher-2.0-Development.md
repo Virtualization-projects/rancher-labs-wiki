@@ -401,3 +401,16 @@ cd () {
 # Gotchas
 `panic: creating CRD store customresourcedefinitions.apiextensions.k8s.io is forbidden: User "system:anonymous" cannot list customresourcedefinitions.apiextensions.k8s.io at the cluster scope`
 Check your kubectl context
+
+# Learning Resources
+
+
+
+Rancher 2.x has been built using Kubernetes with heavy use of [Custom Resources](https://kubernetes.io/docs/concepts/extend-kubernetes/api-extension/custom-resources/). The following videos might be helpful to get started with CRDs.
+
+* [Writing Kubernetes Controllers for CRDs: Challenges, Approaches and Solutions - Alena Prokharchyk](https://www.youtube.com/watch?v=7wdUa4Ulwxg)
+* [Extending Kubernetes 101](https://www.youtube.com/watch?v=yn04ERW0SbI)
+* [Kubernetes Feature Prototyping with External Controllers and Custom Resource Definitions](https://www.youtube.com/watch?v=fnSNPgwXcUc)
+* [Extending the Kubernetes API: What the Docs Don't Tell You](https://www.youtube.com/watch?v=PYLFZVv68lM)
+* [client-go: The Good, The Bad and The Ugly](https://www.youtube.com/watch?v=Q88kI8X5R48)
+* [Extending Kubernetes: Our Journey & Roadmap](https://www.youtube.com/watch?v=KVEKkr7-IJI)
