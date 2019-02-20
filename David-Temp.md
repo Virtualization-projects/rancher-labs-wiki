@@ -1,6 +1,6 @@
 # TEMP PAGE - Example ideal PR template
 
-> Screenshots are very helpful especially for any UI-related issues. On a Mac you can easily create a screenshot in a few seconday via:
+> Screenshots are very helpful especially for any UI-related issues. On a Mac you can easily create a screenshot in a few seconds via:
 
 > Screenshot snippet to clipboard: CMD + CTRL + Shift + 4 and paste in the issue where you want the screenshot snippet to be.
 
