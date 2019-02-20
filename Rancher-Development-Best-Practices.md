@@ -1,3 +1,5 @@
+**DeepCopy for modifications**
+
 When retrieving an object from a K8S cache (ie a lister or a custom index) you MUST deepCopy that object if you are going to modify it. If you don't you are corrupting the cached copy and negatively impacting other handlers/api components that use it. Example:
 ```
 func (h *Handler) updateProjectPSPTID(request *types.APIContext, podSecurityPolicyTemplateName string (*v3.Project, error) {
@@ -12,6 +14,8 @@ func (h *Handler) updateProjectPSPTID(request *types.APIContext, podSecurityPoli
 	return h.Projects.Update(project)
 }
 ```
+---
+**Good commit messages**
 
 Commit message subject lines should be 50 characters or less. Commit body lines should be 72 characters or shorter. Have meaningful commit messages that explain the problem and the solution. Use this as a guide: https://chris.beams.io/posts/git-commit/
 
