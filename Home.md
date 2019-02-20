@@ -10,6 +10,8 @@ Welcome to the Rancher wiki!
 
 [[Rancher SDLC and github issue flow]]
 
+[[Rancher Development Best Practices]]
+
 [API spec](https://github.com/rancherio/api-spec)
 
 [QA Onboarding](https://github.com/rancherlabs/the-ranch/wiki/QA-Onboarding) (internal-only)
