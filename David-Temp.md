@@ -19,7 +19,9 @@ https://github.com/rancher/rancher/issues/18081
 
 ## How To Test
 > If this adds or modifies functionality and the issue(s) do not clearly state how to test please describe below.
-- Notice the new prompt for a cloud key when creating a node template. Simply follow the flow to test this area. - Ensure you can edit/clone/delete cloud keys from the Cloud Keys page under the user nave menu. Ensure node templates are still working correctly.
+- Notice the new prompt for a cloud key when creating a node template. Simply follow the flow to test this area. 
+
+- Ensure you can edit/clone/delete cloud keys from the Cloud Keys page under the user nave menu. Ensure node templates are still working correctly.
 
 ## Further Comments
 Add any other additional comments here. Gotchas / things to look out for / etc.
