@@ -17,6 +17,13 @@ func (h *Handler) updateProjectPSPTID(request *types.APIContext, podSecurityPoli
 	return h.Projects.Update(project)
 }
 ```
+
+==Debug for update loops==
+When developing, periodically turn on debug logs via `--debug=true` and watch for repeating patterns of handlers running and updating. This will allow you to find logic flaws that are causing endless update loops in your handlers.
+
+==Be Mindful of ERROR logging==
+Users alert on rancher logs that are at ERROR level. Only log something at error if you expect a user to take action on it
+
 ==Good commit messages==
 
 Commit message subject lines should be 50 characters or less. Commit body lines should be 72 characters or shorter. Have meaningful commit messages that explain the problem and the solution. Use this as a guide: https://chris.beams.io/posts/git-commit/
