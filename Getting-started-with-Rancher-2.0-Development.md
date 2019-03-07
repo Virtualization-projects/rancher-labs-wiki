@@ -246,11 +246,29 @@ The opposite of link, to go back to a normal state. For example to unlink local 
 function cowhand_clone {
   newDir=$RANCHER_DEV_ROOT_DIR/$1/src/github.com/rancher/$1
   mkdir -p $newDir
-  git clone "git@github.com:rancher/$1" $newDir
+  git clone "https://github.com/rancher/$1.git" $newDir
 }
 ```
 Just a shorthand way of cloning rancher repos into the prescribed folder structure
 
+### remote
+```sh
+function cowhand_remote {
+  git remote add upstream https://github.com/rancher/$1.git
+  git remote set-url origin git@github.com:<YOUR USERNAME>/$1.git
+  git remote -vv
+}
+```
+You need to modify this one but it will correctly set up your remotes assuming you have forked the repository.
+`git pull upstream master` to refresh your local copy. 
+
+### clean
+```sh
+function cowhand_clean {
+  git clean -xdff
+}
+```
+Helpful for removing state between dev builds
 
 ### Tying it all together
 If you'd like to consolidate these all to one command, here is the function to do so
@@ -282,6 +300,12 @@ function cowhand {
       ;;
     "clone" | "c")
       cowhand_clone $@
+      ;;
+    "clean" )
+      cowhand_clean $@
+      ;;
+    "remote" )
+      cowhand_remote $@
       ;;
     *)
       echo "You have failed to specify what to do correctly."
