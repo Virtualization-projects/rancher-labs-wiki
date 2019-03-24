@@ -1,9 +1,9 @@
 __TOC__  
 
-==Never change the name of a Lifecycle handler==
+==Never change the name of a lifecycle handler==
 When you register a lifecycle with a piece of code like this:
 ```
-projects.AddClusterScopedLifecycle(ctx, "project-precan-alert-controller", cluster.ClusterName, projectLifecycle)
+projects.AddClusterScopedLifecycle(ctx, "project-foobar-controller", cluster.ClusterName, projectLifecycle)
 ```
 the name you supply is used to generate a finalizer on resources. If you change that name, then after a user upgrades Rancher, the controller will not match the finalizer for resources from before the upgrade and they will not be delete-able.
 
