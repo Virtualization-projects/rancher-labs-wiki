@@ -5,6 +5,10 @@
 
 * [2.2 Milestone](https://github.com/rancher/rancher/milestone/140)
 
+# Release Notes
+
+* [2.1.0 Release Notes](https://github.com/rancher/rancher/releases/tag/v2.2.0)
+
 # Release Goals
 Rancher 2.2 will be primarily focused on improving Rancher scalability, and adding new features to assist with the operation of your Kubernetes clusters.
 
