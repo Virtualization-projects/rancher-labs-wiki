@@ -154,8 +154,9 @@ Once changes to `rancher/types` have landed, you must edit the sha in the `vendo
   tox
   ```
 - ### Writing tests
-You can refer this README from client-python for steps on using create/update/delete/list calls and other actions on resources in tests  
-https://github.com/rancher/client-python/blob/master/README.md
+  You can refer this README from client-python for steps on using create/update/delete/list calls and other 
+  actions on resources in tests  
+  https://github.com/rancher/client-python/blob/master/README.md
 
 
 # Helpful Scripts
