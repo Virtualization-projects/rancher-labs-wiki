@@ -1,6 +1,7 @@
 # Schedule
 
-* Shipping: End Mar
+* Shipped: Mar 26, 2019
+
 # Milestones
 
 * [2.2 Milestone](https://github.com/rancher/rancher/milestone/140)
