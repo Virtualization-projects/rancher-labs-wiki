@@ -1,3 +1,17 @@
+[Setting up for Rancher development](#setting-up-for-rancher-development)
+
+[Set up GoLand](#set-up-goland)
+
+[Setting up and running the Tests](#setting-up-and-running-the-tests)
+
+[Helpful Scripts](#helpful-scripts)
+
+[Gotchas](#gotchas)
+
+[Learning Resources](#learning-resources)
+
+
+
 # Setting up for Rancher development
 This page will go over setting up your environment for development work on the current version of rancher. This is primarily built on the premise of setting up in a MacOS environment, but most of it should carry over to linux as well.
 
