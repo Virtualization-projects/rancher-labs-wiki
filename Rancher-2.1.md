@@ -1,6 +1,6 @@
 # Schedule
 
-* Shipping: End Q3 2018
+* Shipped: Oct 5, 2018
 
 # Milestones
 
