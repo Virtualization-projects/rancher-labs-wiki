@@ -24,5 +24,6 @@ Here is a list of proposed features for 2.3 Windows GA Support:
 
 ## Additional Features
 ### Self-healing Nodes
-For RKE clusters, users will be able to define a minimum number of nodes required. If the number of worker nodes goes below this threshold, we can start a new node with same settings. Admin may be able to define a maximum number of nodes as well. If a new node is added to this cluster and it exceeds the total allowed nodes, the node creation will fail and an error message will be displayed. We will never kill an already running node automatically
+In Rancher 2.3, users will be able to create node groups. We will integrate with our cloud providers to support the self-healing process of adding nodes which will let users define a minimum number of nodes. If the number of worker nodes goes below this threshold,  a new node could be started without manual intervention. Users may be able to define a maximum number of nodes as well. If a new node is added and it exceeds the total allowed nodes, the node creation will fail and an error message will be displayed (we will never kill an already running node automatically).
+We may also add a webhook mechanism to support non-standard cloud provider API (the ones we don’t support out of the box) and/or bare-metal on-premise datacenter. 
 
