@@ -1,6 +1,6 @@
 Identity API & Rancher Authentication
 ------------
-####Purpose: To provide a generic way to interact with the identity (user/group/org/team) within Rancher.
+#### Purpose: To provide a generic way to interact with the identity (user/group/org/team) within Rancher.
 
 Rancher uses Identities and the Identity API as a way to allow the UI / API UX of Rancher to be consistent across Github,
  LDAP, and other authentication providers. What this means is that when you get a JWT from `/v1/token` you have a set of
@@ -9,7 +9,7 @@ Rancher uses Identities and the Identity API as a way to allow the UI / API UX o
  
  See: [Access control](http://docs.rancher.com/rancher/configuration/access-control/) and [Environment](http://docs.rancher.com/rancher/concepts/#environments)
 
-##Identity Object
+## Identity Object
 
 An Identity is composed of several fields:
 
@@ -31,7 +31,7 @@ An Identity is composed of several fields:
     * If there is a URL that can be utilized for users to investigate and Identity further, this field will contain that URL.
     * EX: a Github user's profile link.
 
-###Example Identity
+### Example Identity
 The user `joesmith84` on Github might look like this:
 
 **kind** `github_user`
@@ -50,7 +50,7 @@ The Identities that Cattle creates and returns in its API allow the UI to easily
 in a generic way without needing to know anything about LDAP, Github or any other backing authentication framework since
 it has a generic set of information that it can display and use if present. 
 
-##Authentication and Identities
+## Authentication and Identities
 
 When a user logs into Rancher using the UI a JWT is created by posting to `/v1/token` with the correct information for
 the configured authentication provider. This JWT contains all of the Identities that the user has. This list of Identities
