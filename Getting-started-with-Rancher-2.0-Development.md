@@ -88,6 +88,8 @@ The GOPATH for a given project should be one step up from the `src` folder
   - add environment variable `KUBECONFIG` set to `{homedirectory}/.kube/config` (on mac `users/maxkorp/.kube/config`)
   - change go tool arguments to `-i -gcflags="-N -l"`
   - change program arguments to `--add-local=true`
+  - add env variable `CATTLE_DEV_MODE` set to `30` (avoids losing cattle election in local dev env)
+
 
 ![](https://i.imgur.com/1lzSadD.png)
 
