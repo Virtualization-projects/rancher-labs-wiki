@@ -24,7 +24,7 @@ This page will go over setting up your environment for development work on the c
   export PATH=${GOPATH//://bin:}/bin:$PATH
   ```
 - ### Kubernetes
-  The local Rancher instance will be hosted in a local installation of kubernetes. Kubernetes can be downloaded from here: https://kubernetes.io/docs/setup/pick-right-solution/#local-machine-solutions
+  The local Rancher instance will be hosted in a local installation of kubernetes, which can be setup in a variety of ways: https://kubernetes.io/docs/setup/#learning-environment
   - Docker for Mac
     On MacOS, the easiest way to set up kubernetes is through Docker for Mac, available here: https://docs.docker.com/install/#supported-platforms. Once Docker is installed, open the settings, switch to the kubernetes tab, and make sure kubernetes is enabled (and that actual kubernetes is selected, rather than swarm).
 
@@ -84,7 +84,8 @@ As discussed above, we primarily use GoLand for development. There are a few thi
 The GOPATH for a given project should be one step up from the `src` folder
 
 ### Set up the build target
-  Attach the build go main.go in the root of the project
+  Click the `Run` menu option and select `Edit Configurations`. Click the + to add a template and select `Go Build`
+  - In files select the main.go file
   - add environment variable `KUBECONFIG` set to `{homedirectory}/.kube/config` (on mac `users/maxkorp/.kube/config`)
   - change go tool arguments to `-i -gcflags="-N -l"`
   - change program arguments to `--add-local=true`
@@ -124,20 +125,20 @@ After making any code changes, run `go generate`, and then rerun the linking pro
 
 #### Note: This linking process is the same for other subprojects, e.g. `rancher/norman`
 
-Once changes to `rancher/types` have landed, you must edit the sha in the `vendor.conf` file in the root of `rancher/rancher`, and then run `trash`. Remember, as mentioned above, you may need to run trash more than once, if you see changes in the `vendor` directory for other modules you did not change.
+Once changes to `rancher/types` have been committed, you must edit the sha in the `vendor.conf` file in the root of `rancher/rancher` to match your new sha, and then run `trash`. Remember, as mentioned above, you may need to run trash more than once, if you see changes in the `vendor` directory for other modules you did not change.
 
 # Setting up and running the Tests
 
 ## Install Dependencies
 - ### Install helm
-  - Clone https://github.com/rancher/helm into go/src/k8s.io
+  - Clone https://github.com/rancher/helm into $GOPATH/src/k8s.io
   - Change to rancher branch
   - Run `make bootstrap build`
-  - Copy bin/tiller & bin/helm to /urs/local/bin and chmod u+x
+  - Copy bin/tiller & bin/helm to /usr/local/bin and chmod u+x
 - ### Install docker-machine
-  - Clone https://github.com/rancher/machine into go/src/github.com/docker
+  - Clone https://github.com/rancher/machine into $GOPATH/src/github.com/docker
   - In cmd/docker-machine run `go build`
-  - Copy docker-machine to /urs/local/bin
+  - Copy docker-machine to /usr/local/bin
 - ### Install Python 3.7
   On mac it can also be installed via homebrew. See [here](https://docs.python-guide.org/starting/install3/osx/). Just running `brew install python` should get you there.
 - ### Upgrade pip
@@ -166,7 +167,8 @@ Once changes to `rancher/types` have landed, you must edit the sha in the `vendo
   pip install tox
   ```
 - ### Run the tests
-  ```python
+  ```sh
+  cd tests/integration/
   tox
   ```
 - ### Writing tests
