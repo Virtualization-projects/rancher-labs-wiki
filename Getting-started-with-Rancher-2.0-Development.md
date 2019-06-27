@@ -8,6 +8,8 @@
 
 [Gotchas](#gotchas)
 
+[Next Steps](#next-steps)
+
 [Learning Resources](#learning-resources)
 
 
@@ -449,8 +451,27 @@ cd () {
 `panic: creating CRD store customresourcedefinitions.apiextensions.k8s.io is forbidden: User "system:anonymous" cannot list customresourcedefinitions.apiextensions.k8s.io at the cluster scope`
 Check your kubectl context
 
-# Learning Resources
 
+# Next Steps
+
+After you have a locally running cluster, you can use it to provision a cluster in a cloud provider such as GKE or Digital Ocean. See the following documentation: https://rancher.com/docs/rancher/v2.x/en/cluster-provisioning/
+
+### Local setup
+
+Since you are working with a local instance, you need to setup ngrok which will allow non-local resources to access it: `ngrok http https://localhost:8443`, then view the printed link in your browser as https: `https://xyz.ngrok.io/` and make sure you can login. Finally go to `settings -> server-url` and add that url there.
+
+### Linode
+
+Linode follows the same track as other Rancher launched providers such as Digital Ocean, however it needs an updated driver. Click `Tools` -> `Drivers` and then `Node Drivers`. Deactivate (or delete) the existing Linode driver and click `Add Node Driver`, then input the following: 
+
+* Download-URL: https://github.com/linode/docker-machine-driver-linode/releases/download/v0.1.8/docker-machine-driver-linode_darwin-amd64.zip
+* Custom-UI-URL: https://linode.github.io/rancher-ui-driver-linode/releases/v0.2.0/component.js
+* Whitelist-Domains: linode.github.io
+
+Click Create, then go back to Global -> Clusters and hit `Add Cluster`. You should see Linode now. If you have any more problems try deactivating/activating again to get it to register. 
+
+
+# Learning Resources
 
 
 Rancher 2.x has been built using Kubernetes with heavy use of [Custom Resources](https://kubernetes.io/docs/concepts/extend-kubernetes/api-extension/custom-resources/). The following videos might be helpful to get started with CRDs.
