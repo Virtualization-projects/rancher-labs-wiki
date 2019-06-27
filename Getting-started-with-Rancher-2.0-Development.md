@@ -454,7 +454,7 @@ Check your kubectl context
 
 # Next Steps
 
-After you have a locally running cluster, you can use it to provision a cluster in a cloud provider such as GKE or Digital Ocean. See the following documentation: https://rancher.com/docs/rancher/v2.x/en/cluster-provisioning/
+After you have a locally running Rancher instance, you can use it to provision a cluster in a cloud provider such as GKE or Digital Ocean. See the following documentation: https://rancher.com/docs/rancher/v2.x/en/cluster-provisioning/
 
 ### Local setup
 
