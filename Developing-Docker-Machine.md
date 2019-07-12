@@ -19,7 +19,7 @@ If you are developing docker-machine and would like rancher to run your version,
 
 2. Copy the resulting binary (docker-machine) to the path that was returned by `which docker-machine`. This path is likely /usr/local/bin.
 
-Now, rancher should user your version of docker-machine.
+Now, rancher should use your version of docker-machine.
 
 # Dynamically generated driver schemas
 
