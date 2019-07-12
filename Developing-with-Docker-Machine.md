@@ -26,10 +26,10 @@ A field can be added to the azureConfig schemas by adding a flag. For example, i
 `FallbackImage  string`
 
 4. add statement for initializing field from flags in SetConfigFromFlag function:
-### if required field and string value (under required string flags comment):
+_if required field and string value (under required string flags comment):_
 `{&d.FallbackImage, flAzureFallbackImage}`
 
-### if optional field or non-string value (under optional flags comment:
+_if optional field or non-string value (under optional flags comment:_
 `&d.FallbackImage, flAzureFallbackImage`
 
 5. use field:
