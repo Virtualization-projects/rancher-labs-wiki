@@ -1,3 +1,13 @@
+# About docker machine
+
+### what do we use it for?
+
+We use docker machine for provisioning nodes for RKE clusters.
+
+### why not contribute to upstream docker machine?
+
+the original docker machine is not maintained, and any PRs for it will likely not be accepted
+
 # Running docker machine on rancher locally
 
 When running rancher locally from an IDE, rancher will use whichever docker-machine binary is available to it.
