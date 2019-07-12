@@ -42,3 +42,16 @@ _if optional field or non-string value (under optional flags comment:_
 
 5. use field:
 in this example, I would probably want to use my new field during the VM creation process. Navigating to the Create function, I can see that a CreateVirtualMachine function (found in azureutil.go) is used. That is where one could add the logic for using the fallback image.
+
+
+## Updating docker-machine in Rancher master
+
+NOTE: Before your version of docker-machine is ready to be added to Rancher, you must have had your PR merged into Rancher's fork of docker machine AND a release must have been made that includes your commits.
+
+Open rancher/package/Dockerfile
+
+There will be a line that reads as follows:
+
+`ENV CATTLE_MACHINE_VERSION v.x.x-rancherx-x` (actual version name may vary)
+
+Replace version, in this case v.x.x-rancherx-x, with the release made after your commit to docker machine.
