@@ -19,9 +19,19 @@ I made a CRD called DownloadURL. If a DownloadURL is created I want rancher to t
 
 This is done using a Controller. Every CRD has a controller which can add logic that will be executed whenever a CRD is has been created, removed, etc..
 
-Read more about CRDS: https://kubernetes.io/docs/tasks/access-kubernetes-api/custom-resources/custom-resource-definitions/
+Kubernetes CRD Doc:
+* [Read more about CRDS](https://kubernetes.io/docs/tasks/access-kubernetes-api/custom-resources/custom-resource-definitions/)
 
-How to add CRDs and Custom Controllers: https://github.com/rancher/rancher/wiki/Rancher-2.0---Adding-new-CRDs-and-custom-controllers
+CRDs with Rancher:
+* [How to add CRDs and Custom Controllers](https://github.com/rancher/rancher/wiki/Rancher-2.0---Adding-new-CRDs-and-custom-controllers)
+
+Additional Resources:
+* [Writing Kubernetes Controllers for CRDs: Challenges, Approaches and Solutions - Alena Prokharchyk](https://www.youtube.com/watch?v=7wdUa4Ulwxg)
+* [Extending Kubernetes 101](https://www.youtube.com/watch?v=yn04ERW0SbI)
+* [Kubernetes Feature Prototyping with External Controllers and Custom Resource Definitions](https://www.youtube.com/watch?v=fnSNPgwXcUc)
+* [Extending the Kubernetes API: What the Docs Don't Tell You](https://www.youtube.com/watch?v=PYLFZVv68lM)
+* [client-go: The Good, The Bad and The Ugly](https://www.youtube.com/watch?v=Q88kI8X5R48)
+* [Extending Kubernetes: Our Journey & Roadmap](https://www.youtube.com/watch?v=KVEKkr7-IJI)
 
 ### API Pathing
 
