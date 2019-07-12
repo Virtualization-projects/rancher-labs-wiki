@@ -115,5 +115,9 @@ Some rancher dependencies are used as binaries, while others are imported and us
 
 Binary dependencies, such as docker-machine, can be used by rancher locally by simply building the binary for the dependency you are working on and putting it into your path. Once your commits have been merged into master, a release has to be build for them. The release will contain the library and must be created by someone with admin privileges. Once the release is created, a PR must be made for the Rancher repository that sets the binary version to the new one that contains your changes. This is usually set in package/Dockerfile.
 
+### Go Libraries
+
+
+# Writing Tests
 
 
