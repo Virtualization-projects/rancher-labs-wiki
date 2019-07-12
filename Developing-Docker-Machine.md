@@ -13,9 +13,11 @@ the original docker machine is not maintained, and any PRs for it will likely no
 When running rancher locally from an IDE, rancher will use whichever docker-machine binary is available to it.
 To check where this is, one can run `which docker-machine`.
 
-If you are developing docker-machine and would like rancher to run your version, you must first make the binary.
-This can be done by navigating to your docker-machine/cmd folder and running `make build`.
-Then copy the resulting binary (docker-machine) to the path that was returned by `which docker-machine`. This path is likely /usr/local/bin.
+If you are developing docker-machine and would like rancher to run your version, you must first make the binary:
+
+1. Navigate to your docker-machine/cmd folder and running `make build`.
+
+2. Copy the resulting binary (docker-machine) to the path that was returned by `which docker-machine`. This path is likely /usr/local/bin.
 
 Now, rancher should user your version of docker-machine.
 
