@@ -8,6 +8,8 @@ Welcome to the Rancher wiki!
 
 [[Setting Up Rancher 2.0 Development Environment]]
 
+[[Rancher 2.x Development Overview]]
+
 [[Rancher SDLC and github issue flow]]
 
 [[Rancher Development Best Practices]]
