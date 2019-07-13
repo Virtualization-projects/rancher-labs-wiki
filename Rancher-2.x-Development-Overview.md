@@ -118,6 +118,7 @@ repo: https://github.com/rancher/norman
 
 docker-machine: ranchers fork of dockers docker-machine. Responsible for node proivisioning (VMs)
 repo: https://github.com/rancher/machine
+docs: https://github.com/rancher/rancher/wiki/Developing-Docker-Machine
 
 ## Binaries vs Libraries
 
