@@ -6,7 +6,7 @@ Welcome to the Rancher wiki!
 
 ## Dev resources:
 
-[[Getting started with Rancher 2.0 Development]]
+[[Setting Up Rancher 2.0 Development Environment]]
 
 [[Rancher SDLC and github issue flow]]
 
