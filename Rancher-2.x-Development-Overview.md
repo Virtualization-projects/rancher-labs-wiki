@@ -9,6 +9,8 @@ Goal: kickstart development by explaining heavily used rancher concepts/componen
 
 # Developing the Rancher API
 
+General API Docs: https://github.com/rancher/api-spec/blob/master/specification.md
+
 ### Understanding CRDs
 
 Much of the Rancher API works by forwarding requests to and from the Kubernetes API. Most objects in the Rancher API map to Kubernetes objects. Kubernetes comes with some of these objects out of the box. Others were added by creating CRDs. CRDs (custom resource definitions) are a means of extending the Kubernetes API by creating custom objects. Rancher creates CRDs by defining them in Types, then instantiating them on startup. Types will also create the schema that is used to add the object to the rancher API. 
