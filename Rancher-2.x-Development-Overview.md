@@ -130,4 +130,13 @@ Binary dependencies, such as docker-machine, can be used by rancher locally by s
 
 # Writing Tests
 
+There are two types of tests that concern most developers: unit tests and integration tests.
+
+## Unit Tests
+
+Unit tests are written in go and should have the a file name that is ends with "_test.go", like so "catalog_test.go"
+
+## Integration Tests
+
+Integration tests are written in python using Rancher's Python client.
 
