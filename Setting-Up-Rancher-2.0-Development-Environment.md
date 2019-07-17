@@ -83,7 +83,7 @@ To get the most up-to-date version run:
 As discussed above, we primarily use GoLand for development. There are a few things to do here
 
 ### Set up project GOPATH
-The GOPATH for a given project should be one step up from the `src` folder
+The GOPATH for a given project should be one step up from the `src` folder. Set this in `preferences -> Go -> GOPATH -> Project GOPATH`. 
 
 ### Set up the build target
   Click the `Run` menu option and select `Edit Configurations`. Click the + to add a template and select `Go Build`
