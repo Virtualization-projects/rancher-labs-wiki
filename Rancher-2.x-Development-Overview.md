@@ -1,5 +1,5 @@
 # Setting up rancher for development
-see: https://github.com/rancher/rancher/wiki/Getting-started-with-Rancher-2.0-Development
+see: https://github.com/rancher/rancher/wiki/Setting-Up-Rancher-2.0-Development-Environment
 
 # Intention of Document
 
