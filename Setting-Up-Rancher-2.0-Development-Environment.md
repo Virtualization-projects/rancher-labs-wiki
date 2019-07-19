@@ -454,6 +454,8 @@ Check your kubectl context
 
 # Next Steps
 
+## Provisioning a cluster
+
 After you have a locally running Rancher instance, you can use it to provision a cluster in a cloud provider such as GKE or Digital Ocean. See the following documentation: https://rancher.com/docs/rancher/v2.x/en/cluster-provisioning/
 
 ### Local setup
@@ -470,9 +472,13 @@ Linode follows the same track as other Rancher launched providers such as Digita
 
 Click Create, then go back to Global -> Clusters and hit `Add Cluster`. You should see Linode now. If you have any more problems try deactivating/activating again to get it to register. 
 
+## Rancher Development Overview
+
+https://github.com/rancher/rancher/wiki/Rancher-2.x-Development-Overview
 
 # Learning Resources
 
+The best place to learn about 
 
 Rancher 2.x has been built using Kubernetes with heavy use of [Custom Resources](https://kubernetes.io/docs/concepts/extend-kubernetes/api-extension/custom-resources/). The following videos might be helpful to get started with CRDs.
 
