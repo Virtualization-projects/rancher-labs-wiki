@@ -42,37 +42,40 @@ Additional Resources:
 
 If you want to check the input of an API request before it is forwarded to Kubernetes, then you probably want to use a validator. Another use of a validator is to block a type of request. It is worth mentioning that validators are only applied to Post and Put requests. Validators are assigned to a schema in one of two setup.go files. Files containing validators are found in the /pkg/api/customization/ folder. An example of the NodeTemplate validator found in /pkg/api/customization/nodetemplate/validation.go:
 
-`package nodetemplate`
+```golang
+package nodetemplate
 
-`import (`
-	`"github.com/rancher/norman/httperror"`
-	`"github.com/rancher/norman/types"`
-	`"github.com/rancher/rancher/pkg/configfield"`
-`)`
+import (
+	"github.com/rancher/norman/httperror"
+	"github.com/rancher/norman/types"
+	"github.com/rancher/rancher/pkg/configfield"
+)
 
-`const (`
-	`Amazonec2driver    = "amazonec2"`
-	`Azuredriver        = "azure"`
-	`Vmwaredriver       = "vmwarevsphere"`
-	`DigitalOceandriver = "digitalocean"`
-`)`
+const (
+	Amazonec2driver    = "amazonec2"
+	Azuredriver        = "azure"
+	Vmwaredriver       = "vmwarevsphere"
+	DigitalOceandriver = "digitalocean"
+)
 
-`func Validator(request *types.APIContext, schema *types.Schema, data map[string]interface{}) error {`
-	`driver := configfield.GetDriver(data)`
-	`if driver == "" {`
-		`return httperror.NewAPIError(httperror.MissingRequired, "a Config field must be set")`
-	`}`
-	`if data != nil {`
-		`data["driver"] = driver`
-	`}`
-	`return nil`
-`}`
+func Validator(request *types.APIContext, schema *types.Schema, data map[string]interface{}) error {
+	driver := configfield.GetDriver(data)
+	if driver == "" {
+		return httperror.NewAPIError(httperror.MissingRequired, "a Config field must be set")
+	}
+	if data != nil {
+		data["driver"] = driver
+	}
+	return nil
+}
+```
 
 The above example checks if the input data map contained a field, and returned an error if it did not. If it did, it assigned a value derived from the field onto a separate field of the input map - this is another capability of a validator.
 
 Assigning the validator to the NodeTemplate schema in the setup.go file:
 
-`func NodeTemplates(schemas *types.Schemas, management *config.ScaledContext) {
+```golang
+func NodeTemplates(schemas *types.Schemas, management *config.ScaledContext) {
 	schema := schemas.Schema(&managementschema.Version, client.NodeTemplateType)
 	npl := management.Management.NodePools("").Controller().Lister()
 	f := nodetemplate.Formatter{
@@ -86,8 +89,8 @@ Assigning the validator to the NodeTemplate schema in the setup.go file:
 	}
 	schema.Store = s
 	schema.Validator = nodetemplate.Validator
-}`
-
+}
+```
 
 ### Formatters
 
