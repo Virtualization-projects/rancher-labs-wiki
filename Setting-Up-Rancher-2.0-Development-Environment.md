@@ -88,7 +88,7 @@ The GOPATH for a given project should be one step up from the `src` folder. Set 
 ### Set up the build target
   Click the `Run` menu option and select `Edit Configurations`. Click the + to add a template and select `Go Build`
   - In files select the main.go file
-  - add environment variable `KUBECONFIG` set to `{homedirectory}/.kube/config` (on mac `users/maxkorp/.kube/config`)
+  - add environment variable `KUBECONFIG` set to `{homedirectory}/.kube/config` (on mac `/Users/<username>/.kube/config`)
   - change go tool arguments to `-i -gcflags="-N -l"`
   - change program arguments to `--add-local=true`
   - add env variable `CATTLE_DEV_MODE` set to `30` (avoids losing cattle election in local dev env)
