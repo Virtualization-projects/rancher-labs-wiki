@@ -19,6 +19,16 @@ Here is a list of proposed features for 2.3 Windows GA Support:
 * Networking - Using Rancher UI, users can add Flannel as a network provider. 
 * Node scheduler - Kubernetes 1.14 does not support auto-scheduling of Windows pods on Windows nodes. Rancher may solve this problem by tying workloads to specific nodes. This capability will also work with self-healing nodes (discussed later)
 
+## Istio Support
+In 2.3, Rancher will support Istio v1.2+ as a Service Mesh solution.  By leverage Istio, users will be able to take advantage of the following:
+* Automatic load balancing for HTTP, gRPC, WebSocket, and TCP traffic.
+* Fine-grained control of traffic behavior with rich routing rules, retries, failovers, and fault injection.
+* A pluggable policy layer and configuration API supporting access controls, rate limits and quotas.
+* Automatic metrics, logs, and traces for all traffic within a cluster, including cluster ingress and egress.
+* Secure service-to-service communication in a cluster with strong identity-based authentication and authorization.
+
+Rancher will also provide a simplified way of installing and configuring Istio that also comes with an in-built Kiali dashboard for traffic and telemetry visualization, Jaegar for tracing, and Prometheus/Grafana for observability.
+
 ## Additional Features
 ### Self-healing Nodes
 In Rancher 2.3, users will be able to create node groups. We will integrate with our cloud providers to support the self-healing process of adding nodes which will let users define a minimum number of nodes. If the number of worker nodes goes below this threshold,  a new node could be started without manual intervention. Users may be able to define a maximum number of nodes as well. If a new node is added and it exceeds the total allowed nodes, the node creation will fail and an error message will be displayed (we will never kill an already running node automatically).
