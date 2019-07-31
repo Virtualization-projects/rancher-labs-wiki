@@ -11,9 +11,6 @@ To provide enhanced security in Kubernetes, Rancher 2.3 may include the followin
     * Users are free to update other settings 
     * Deviation from template may trigger notifications for the admin
     * Out of the box (best practices) templates may be shipped by Rancher
-* **Security Scans** - Scan all existing clusters and check settings against the template that was applied. If deviation is uncovered, either shut down or notify (or both) the admin. Periodic scans may be scheduled  and reports will be mailed/uploaded for the admin. Users may also validate their clusters against industry  benchmarks (CIS/NIST)
-* **Private Registry** - Using  Rancher 2.3 UI or CLI Users may choose to deploy Harbor on-premise or in the cloud. 
-* **Image Scanning** - Clair will be integrated as an out of the box image scanning tool 
 
 ## Windows GA Support
 In 2.3, Rancher will make support for Windows containers on Kubernetes generally available. This will mean that using Rancher 2.3, customer will be able to add Windows worker nodes to their new or existing clusters. We may also add new capabilities to solve issues that Windows GA support in Kubernetes 1.14 doesn’t fully address. 
