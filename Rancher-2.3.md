@@ -1,15 +1,14 @@
 # Release Goals
 
-Rancher 2.3 will have two major focus areas (themes) - Enhanced Security and support for Windows containers. We may also consider other usability enhancements.  
+Rancher 2.3 will have three major focus areas (themes) - Enhanced Security, support for Windows containers, and Istio. We may also consider other usability enhancements.  
 
 ## Enhanced Security:
 To provide enhanced security in Kubernetes, Rancher 2.3 may include the following features: 
-* **Cluster Templates** - Users will be able to configure Kubernetes clusters to make them more secure. These configurations will be stored as templates.  Kubernetes Pod Security Policies, Network Policies, Master components settings, Kubernetes version, default roles and users, projects and even apps may be defined in the template. IT Operators could enforce enterprise wide security policies as follows:
+* **Cluster Templates** - Users will be able to configure Kubernetes clusters to make them more secure. These configurations will be stored as templates.  Kubernetes Pod Security Policies, Network Policies, Master components settings, and Kubernetes version. IT Operators could enforce enterprise wide security policies as follows:
     * Create template by choosing the appropriate Kubernetes and/or Rancher settings
     * Enforce template for cluster creation (when a new cluster is created, user will be asked to choose a template or default template will be applied)
     * Users may not change the settings inherited from the template (for example, Kubernetes version, network plugin and API server settings will be visible but not updatable)
     * Users are free to update other settings 
-    * Deviation from template may trigger notifications for the admin
     * Out of the box (best practices) templates may be shipped by Rancher
 
 ## Windows GA Support
