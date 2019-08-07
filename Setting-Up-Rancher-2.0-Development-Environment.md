@@ -26,11 +26,12 @@ This page will go over setting up your environment for development work on the c
   export PATH=${GOPATH//://bin:}/bin:$PATH
   ```
 - ### Kubernetes
-  The local Rancher instance will be hosted in a local installation of kubernetes, which can be setup in a variety of ways: https://kubernetes.io/docs/setup/#learning-environment
-  - Docker for Mac
-    On MacOS, the easiest way to set up kubernetes is through Docker for Mac, available here: https://docs.docker.com/install/#supported-platforms. Once Docker is installed, open the settings, switch to the kubernetes tab, and make sure kubernetes is enabled (and that actual kubernetes is selected, rather than swarm).
+  The local Rancher instance will be hosted in a local installation of kubernetes, which can be setup in a variety of ways: https://kubernetes.io/docs/setup/#learning-environment. The easiest 2 ways on a Mac are Docker-for-Mac and k3d. 
+  - [k3d](https://github.com/rancher/k3d)
+    - The big advantage of k3d, besides the speed of k3s, is that you can create a multi-cluster setup locally. The downside is that you won't have the full K8's feature set, see the [k3s repo](https://github.com/rancher/k3s) for more info on that. The readme has install instructions, note that you'll have to point Rancher at the custom kube config since it lives in a non-standard location. 
+  - [Docker for Mac](https://docs.docker.com/install/#supported-platforms)
+    - Once Docker is installed, open the settings, switch to the kubernetes tab, and make sure kubernetes is enabled (and that actual kubernetes is selected, rather than swarm). ![](https://i.imgur.com/RfmuSj7.png)
 
-![](https://i.imgur.com/RfmuSj7.png)
 - ### IDE
   Most of us at Rancher labs use GoLand, and the rest of this document will be written assuming you are as well, but there are several options
   - [GoLand](https://www.jetbrains.com/go/)
