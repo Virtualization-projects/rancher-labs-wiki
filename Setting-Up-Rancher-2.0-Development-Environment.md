@@ -144,6 +144,8 @@ Once changes to `rancher/types` have been committed, you must edit the sha in th
   - Copy docker-machine to /usr/local/bin
 - ### Install Python 3.7
   On mac it can also be installed via homebrew. See [here](https://docs.python-guide.org/starting/install3/osx/). Just running `brew install python` should get you there.
+  If pip or pip3 isn't available after installing via homebrew, try running `brew postinstall python`.
+
 - ### Upgrade pip
   ```sh
   sudo pip3 install --upgrade pip
