@@ -27,6 +27,6 @@ Restore local k3s using backup
 
 3. Substitute container id <container-id> in following steps 
 
-4. Copy sqllite state files from backup folder to k3s container: docker cp <folder-name>/.  <container-id>:/var/lib/rancher/k3s/server/db/ 
+4. Copy sqllite state files from backup folder to k3s container: `docker cp <folder-name>/.  <container-id>:/var/lib/rancher/k3s/server/db/ `
 
  
