@@ -17,7 +17,7 @@ Simulating rollbacks or plan on doing possibly destructive things
 
 6. Copy sqllite state files to folder made in mkdir: `docker cp a4e6be43503b:/var/lib/rancher/k3s/server/db/ <folder-name>/`
 
-7. (Optional) you can zip/tarball backup for prosterity: `tar zcvf /backup/rancher-data-backup-<RANCHER_VERSION>-<DATE>.tar.gz <backup-directory>`
+7. (Optional) you can zip/tarball backup for posterity: `tar zcvf /backup/rancher-data-backup-<RANCHER_VERSION>-<DATE>.tar.gz <backup-directory>`
 
 Restore local k3s using backup 
 
