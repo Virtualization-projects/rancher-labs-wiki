@@ -1,11 +1,10 @@
-# Backing up local k3s rancher dev server: 
-
 ### Who this is for
 You are developing rancher locally AND using k3s(k3d) for your local kubernetes AND want to back up your data
 
 ### Why backup dev data
 Simulating rollbacks or plan on doing possibly destructive things
 
+### Hoow
 1. list docker containers: `docker ps`
 
 2. Find running container using image rancher/k3s:v* 
