@@ -11,13 +11,11 @@ Simulating rollbacks or plan on doing possibly destructive things
 
 3. Substitute container id <container-id> in following steps 
 
-4. Shell into k3s container: `docker exec -it <container-id> /bin/sh `
+4. Create folder for backup on local: `mkdir <folder-name>` 
 
-5. Create folder for backup on local: `mkdir <folder-name>` 
+5. Copy sqllite state files to folder made in mkdir: `docker cp a4e6be43503b:/var/lib/rancher/k3s/server/db/ <folder-name>/`
 
-6. Copy sqllite state files to folder made in mkdir: `docker cp a4e6be43503b:/var/lib/rancher/k3s/server/db/ <folder-name>/`
-
-7. (Optional) you can zip/tarball backup for posterity: `tar zcvf /backup/rancher-data-backup-<RANCHER_VERSION>-<DATE>.tar.gz <backup-directory>`
+6. (Optional) you can zip/tarball backup for posterity: `tar zcvf /backup/rancher-data-backup-<RANCHER_VERSION>-<DATE>.tar.gz <backup-directory>`
 
 Restore local k3s using backup 
 
