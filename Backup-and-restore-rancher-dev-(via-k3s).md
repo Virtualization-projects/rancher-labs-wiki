@@ -13,7 +13,7 @@ Simulating rollbacks or plan on doing possibly destructive things
 
 4. Create folder for backup on local: `mkdir <folder-name>` 
 
-5. Copy sqllite state files to folder made in mkdir: `docker cp a4e6be43503b:/var/lib/rancher/k3s/server/db/ <folder-name>/`
+5. Copy sqllite state files to folder made in mkdir: `docker cp <container-id>:/var/lib/rancher/k3s/server/db/ <folder-name>/`
 
 6. (Optional) you can zip/tarball backup for posterity: `tar zcvf /backup/rancher-data-backup-<RANCHER_VERSION>-<DATE>.tar.gz <backup-directory>`
 
