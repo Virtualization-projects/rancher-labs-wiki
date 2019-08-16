@@ -103,6 +103,8 @@ Action handlers are user when the API needs to be capable of an action that is n
 
 
 ### Stores
+Stores can transform and filter requests, similar to formatters and validators. Unlike validators, stores can be used for Delete, Watch, List, and ByID, in addition to Create and Update.
+
 
 # Rancher Owned Dependencies
 
