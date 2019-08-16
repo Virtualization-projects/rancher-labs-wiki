@@ -37,7 +37,8 @@ Additional Resources:
 
 ### API Pathing
 
-
+## Handling requests with validators, formatters, and stores
+![](https://user-images.githubusercontent.com/19376037/63188494-63f00a80-c016-11e9-97db-f65f4e3fc628.png)
 ### Validators
 
 If you want to check the input of an API request before it is forwarded to Kubernetes, then you probably want to use a validator. Another use of a validator is to block a type of request. It is worth mentioning that validators are only applied to Post and Put requests. Validators are assigned to a schema in one of two setup.go files. Files containing validators are found in the /pkg/api/customization/ folder. An example of the NodeTemplate validator found in /pkg/api/customization/nodetemplate/validation.go:
