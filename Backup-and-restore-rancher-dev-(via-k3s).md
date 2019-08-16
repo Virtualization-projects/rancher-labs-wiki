@@ -4,7 +4,7 @@ You are developing rancher locally AND using k3s(k3d) for your local kubernetes 
 ### Why backup dev data
 Simulating rollbacks or plan on doing possibly destructive things
 
-### Hoow
+### How
 1. list docker containers: `docker ps`
 
 2. Find running container using image rancher/k3s:v* 
