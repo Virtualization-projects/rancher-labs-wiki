@@ -39,7 +39,7 @@ Additional Resources:
 
 ## Handling requests with validators, formatters, and stores
 ![](https://user-images.githubusercontent.com/19376037/63188494-63f00a80-c016-11e9-97db-f65f4e3fc628.png)
-Validators, formatters, and stores are used to handle requests. By using these three components, we can return errors, transform a request, and redact information from a response.
+Validators, formatters, and stores are used to handle requests. By using these three components, we can return errors, transform a request, and redact information from a response. Data passes through these components in the order shown aboves: first the validator, then the store, and finally the formatter.
 
 ### Validators
 
@@ -97,7 +97,7 @@ func NodeTemplates(schemas *types.Schemas, management *config.ScaledContext) {
 
 ### Formatters
 
-If you want to change the output for a schema in the API, you would probably want to use a formatter. Formatters are created and assigned similarly to validators.
+If you want to change the output for a schema in the API, you would probably want to use a formatter. Formatters are created and assigned similarly to validators. A formatter is the only place where links can be redacted from 
 
 
 ### Action Handlers
