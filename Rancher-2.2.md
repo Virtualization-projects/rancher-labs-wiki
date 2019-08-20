@@ -8,6 +8,14 @@
 
 # Release Notes
 
+* [2.2.8 Release Notes](https://github.com/rancher/rancher/releases/tag/v2.2.8)
+* [2.2.7 Release Notes](https://github.com/rancher/rancher/releases/tag/v2.2.7)
+* [2.2.6 Release Notes](https://github.com/rancher/rancher/releases/tag/v2.2.6)
+* [2.2.5 Release Notes](https://github.com/rancher/rancher/releases/tag/v2.2.5)
+* [2.2.4 Release Notes](https://github.com/rancher/rancher/releases/tag/v2.2.4)
+* [2.2.3 Release Notes](https://github.com/rancher/rancher/releases/tag/v2.2.3)
+* [2.2.2 Release Notes](https://github.com/rancher/rancher/releases/tag/v2.2.2)
+* [2.2.1 Release Notes](https://github.com/rancher/rancher/releases/tag/v2.2.1)
 * [2.2.0 Release Notes](https://github.com/rancher/rancher/releases/tag/v2.2.0)
 
 # Release Goals
