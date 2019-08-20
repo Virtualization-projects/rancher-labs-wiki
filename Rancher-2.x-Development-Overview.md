@@ -1,9 +1,12 @@
-# Setting up rancher for development
-see: https://github.com/rancher/rancher/wiki/Setting-Up-Rancher-2.0-Development-Environment
+##### Table of Contents  
+* [Developing the API](#developing-the-rancher-api)
+* [Rancher Owned Dependencies](#rancher-owned-dependencies)
+* [Contexts in rancher](#contexts-in-rancher)
+* [Writing Tests](#writing-tests)
 
 # Intention of Document
 
-Intended audience: developers new to working on rancher or developers not familiar with certain components of rancher. This should be the next step after reading "Getting Start with Rancher".
+Intended audience: developers new to working on rancher or developers not familiar with certain components of rancher. This should be the next step after reading ["Getting Start with Rancher"](https://github.com/rancher/rancher/wiki/Setting-Up-Rancher-2.0-Development-Environment).
 
 Goal: kickstart development by explaining heavily used rancher concepts/components/constructs.
 
@@ -139,20 +142,25 @@ Binary dependencies, such as docker-machine, can be used by rancher locally by s
 ### Go Libraries
 
 # Contexts in rancher
+
 Controllers in rancher run in one of three contexts. The three contexts are scaled, management, and user. In an HA setup there are:
 * **one** scaledContext per **management server** (3)
 * **one** managementContext per **management server master** (1)
 * **one** userContext per **cluster**
 
+
 # Writing Tests
 
-There are two types of tests that concern most developers: unit tests and integration tests.
+There are three types of tests that concern most developers: unit, integration, and validation.
 
 ## Unit Tests
 
-Unit tests are written in go and should have the a file name that is ends with "_test.go", like so "catalog_test.go"
+Unit tests are written in go and handle code-level functionality such as testing single functions. They should have the a file name that is ends with "_test.go", like "catalog_test.go". 
 
 ## Integration Tests
 
-Integration tests are written in python using Rancher's Python client.
+Integration tests are written in python using Rancher's Python client. They mainly interact with the API the same way the UI or CLI would, in order to test high-level functionality. [See the readme for more info](https://github.com/rancher/rancher/blob/master/tests/integration/README.md). 
 
+## Validation Tests
+
+Validation tests are also written in python using Rancher's Python client, and are used for more complex use-cases such as multi-cluster tests, as well as ensuring stability across cloud providers. They are not run on every PR via CI, but rather on a set schedule against different cloud environments. [See the readme for more info](https://github.com/rancher/rancher/blob/master/tests/validation/readme.md). 
