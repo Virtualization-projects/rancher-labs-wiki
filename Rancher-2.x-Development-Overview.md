@@ -6,7 +6,7 @@
 
 # Intention of Document
 
-Intended audience: developers new to working on rancher or developers not familiar with certain components of rancher. This should be the next step after reading ["Getting Start with Rancher"](https://github.com/rancher/rancher/wiki/Setting-Up-Rancher-2.0-Development-Environment).
+Intended audience: developers new to working on rancher or developers not familiar with certain components and concepts of rancher. This should be the next step after reading ["Getting Start with Rancher"](https://github.com/rancher/rancher/wiki/Setting-Up-Rancher-2.0-Development-Environment).
 
 Goal: kickstart development by explaining heavily used rancher concepts/components/constructs.
 
@@ -144,10 +144,19 @@ Binary dependencies, such as docker-machine, can be used by rancher locally by s
 # Contexts in rancher
 
 Controllers in rancher run in one of three contexts. The three contexts are scaled, management, and user. In an HA setup there are:
-* **one** scaledContext per **management server** (3)
-* **one** managementContext per **management server master** (1)
-* **one** userContext per **cluster**
+* **one** ScaledContext per **management server** (3)
+* **one** ManagementContext per **management server master** (1)
+* **one** UserContext per **cluster**
 
+When referring to contexts a 'user' means a single downstream cluster. 
+
+## Controllers and contexts
+
+There are two general sets of controllers, as you can see in `pkg/controllers`, management and user. The management controllers use the ManagementContext, and the user controllers use the UserContext.
+
+In many cases there will be two different controllers dealing with the same resources. For instance there are two controllers dealing with PRTB's (project-role-template-binding):
+* [a management controller](https://github.com/rancher/rancher/blob/master/pkg/controllers/management/auth/prtb_handler.go) which handles any global changes, like sending cluster-scoped RBAC privileges to downstream clusters
+* [a user controller](https://github.com/rancher/rancher/blob/master/pkg/controllers/user/rbac/prtb_handler.go) which handles any operations in the downstream clusters, like updating a local clusterRole to match any roleTemplate changes
 
 # Writing Tests
 
