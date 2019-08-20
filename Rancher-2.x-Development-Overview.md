@@ -138,6 +138,11 @@ Binary dependencies, such as docker-machine, can be used by rancher locally by s
 
 ### Go Libraries
 
+# Contexts in rancher
+Controllers in rancher run in one of three contexts. The three contexts are scaled, management, and user. In an HA setup there are:
+* one scaledContext per management server (3)
+* one managementContext per management server master (1)
+* one userConext per **cluster**
 
 # Writing Tests
 
