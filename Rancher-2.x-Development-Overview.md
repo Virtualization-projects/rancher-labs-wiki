@@ -1,4 +1,5 @@
 ##### Table of Contents  
+* [Intention of Document](#intention-of-Document)
 * [Developing the API](#developing-the-rancher-api)
 * [Rancher Owned Dependencies](#rancher-owned-dependencies)
 * [Contexts in rancher](#contexts-in-rancher)
@@ -9,6 +10,8 @@
 Intended audience: developers new to working on rancher or developers not familiar with certain components and concepts of rancher. This should be the next step after reading ["Getting Start with Rancher"](https://github.com/rancher/rancher/wiki/Setting-Up-Rancher-2.0-Development-Environment).
 
 Goal: kickstart development by explaining heavily used rancher concepts/components/constructs.
+
+Alternate Resources: The [primary rancher docs](https://rancher.com/docs/rancher/v2.x/en/overview/) explain many overarching concepts not mentioned here. 
 
 # Developing the Rancher API
 
