@@ -11,7 +11,7 @@ Intended audience: developers new to working on rancher or developers not famili
 
 Goal: kickstart development by explaining heavily used rancher concepts/components/constructs.
 
-Alternate Resources: The [primary rancher docs](https://rancher.com/docs/rancher/v2.x/en/overview/) explain many overarching concepts not mentioned here. 
+Alternate Resources: The [primary docs](https://rancher.com/docs/rancher/v2.x/en/overview/) and [our blog](https://rancher.com/blog) both explain many concepts not mentioned here.
 
 # Developing the Rancher API
 
