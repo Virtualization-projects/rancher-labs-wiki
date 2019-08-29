@@ -21,3 +21,5 @@ Welcome to the Rancher wiki!
 [Adding new CRDs and custom controllers](https://github.com/rancher/rancher/wiki/Rancher-2.0---Adding-new-CRDs-and-custom-controllers)
 
 [[Developing Docker Machine]]
+
+[[Dev guide to deploying Rancher via Helm]]
