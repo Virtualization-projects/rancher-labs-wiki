@@ -1,4 +1,4 @@
-_This is not an official install guide and should be used for dev only, __not production services__._
+_This is not an official install guide. It should only be used for development purposes, __not production__._
 
 This is a guide for deploying Rancher via helm either on your local machine or to a cloud provider. You may want to do this for QA purposes, or to test development code changes (for which you'll need to deploy locally),
 or to test changes to our helm chart. 
