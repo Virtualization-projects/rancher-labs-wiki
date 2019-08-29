@@ -45,7 +45,7 @@ Additional Resources:
 
 ## Handling requests with validators, formatters, and stores
 ![](https://user-images.githubusercontent.com/19376037/63188494-63f00a80-c016-11e9-97db-f65f4e3fc628.png)
-Validators, formatters, and stores are used to handle requests. By using these three components, we can return errors, transform a request, and redact information from a response. Data passes through these components in the order shown aboves: first the validator, then the store, and finally the formatter.
+Validators, formatters, and stores are used to handle requests. By using these three components, we can return errors, transform a request, and redact information from a response. Data passes through these components in the order shown above: first the validator, then the store, and finally the formatter.
 
 ### Validators
 
@@ -117,7 +117,7 @@ Stores can transform and filter requests, similar to formatters and validators. 
 
 # Rancher Owned Dependencies
 
-Rancher has many dependencies, some of which are owned/maintained by rancher. Some functionalities for rancher will need to be modified or added by updating the Rancher dependency in its own repository, than importing the new version into rancher.
+Rancher has many dependencies, some of which are owned/maintained by rancher. Some functionalities for rancher will need to be modified or added by updating the Rancher dependency in its own repository, then importing the new version into rancher.
 
 Some rancher maintained dependencies and what they do:
 
