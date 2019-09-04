@@ -39,6 +39,8 @@ This page will go over setting up your environment for development work on the c
   - [VS Code + vscode-go](https://github.com/Microsoft/vscode-go)
   - [Atom + go-plus](https://atom.io/packages/go-plus)
 - ### Trash
+  *As of Rancher 2.3 we are moving away from Trash and towards go modules. If a repo you are working on has a go.mod file, use that workflow instead.* 
+
   Trash is a dependency management tool written by Rancher for use with rancher. You'll only need this if you're making changes to other rancher packages that rancher/rancher lists as dependencies. It is available for download here: https://github.com/rancher/trash/releases. Note that sometimes, you may have to run it twice, if for example, you get lots of unexpected changes after the first pass.
 - ### ngrok
   ngrok allows you to forward an external url to your local webservers. It is available here: https://ngrok.com. On MacOS it can be installed via homebrew with the command `brew cask install ngrok`. ngrok removes some of the difficulty of container networking. If you do not use ngrok, you will need to ensure you set up container port forwarding in order to be able to use kubectl to manange clusters underneath rancher (like the local dev cluster). Make sure to _create an account_ in order to have the full functionality. 
@@ -128,7 +130,7 @@ After making any code changes, run `go generate`, and then rerun the linking pro
 
 #### Note: This linking process is the same for other subprojects, e.g. `rancher/norman`
 
-Once changes to `rancher/types` have been committed, you must edit the sha in the `vendor.conf` file in the root of `rancher/rancher` to match your new sha, and then run `trash`. Remember, as mentioned above, you may need to run trash more than once, if you see changes in the `vendor` directory for other modules you did not change.
+Once changes to `rancher/types` have been committed, you must upgrade types in the go.mod file in the root of `rancher/rancher`.
 
 # Setting up and running the Tests
 
