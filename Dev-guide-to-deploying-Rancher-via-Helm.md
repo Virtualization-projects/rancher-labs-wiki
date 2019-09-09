@@ -5,7 +5,7 @@ or to test changes to our helm chart.
 
 ### Setup
 
-* Make sure you are using the official helm, not Rancher's fork of helm. Below I am using `helmr` to differentiate.
+* Make sure you are using the official helm, not Rancher's fork of helm.
 * To run locally you can use docker desktop's Kubernetes or [K3s](https://github.com/rancher/k3s) (untested).
 * If using docker desktop you should bump up your CPU's and memory.
 * If using a cloud provider like Linode, you'll need to provision K8's first. You can use [RKE](https://rancher.com/docs/rke/latest/en/installation/) for that.
@@ -23,23 +23,23 @@ If you have made local code changes that you wish to deploy locally:
 
 The below guide will roughly follow [the HA install doc](https://rancher.com/docs/rancher/v2.x/en/installation/ha/helm-rancher/).
 
-If something goes wrong you can start over with: `helmr del --purge rancher`
+If something goes wrong you can start over with: `helm del --purge rancher`
 
 Create a new kube cluster and setup kubectl with it. Then init tiller and make sure it is running: 
 
-    helmr init
+    helm init
     kubectl get pod --namespace kube-system | grep tiller
 
 Now install cert-manager. See troubleshooting section for errors encountered here.
 
 
-    helmr install stable/cert-manager  --name cert-manager  --namespace kube-system  --version v0.5.2
+    helm install stable/cert-manager  --name cert-manager  --namespace kube-system  --version v0.5.2
     kubectl -n kube-system rollout status deploy/cert-manager
 
 From your rancher dir, change versions and appVersion in rancher/chart/chart.yaml to `"dev"`, then:
 
-    helmr install --dry-run ./chart -n rancher
-    helmr install ./chart -n rancher --namespace cattle-system --set hostname=localhost
+    helm install --dry-run ./chart -n rancher
+    helm install ./chart -n rancher --namespace cattle-system --set hostname=localhost
     kubectl -n cattle-system rollout status deploy/rancher
     # Wait for this to complete...
 
