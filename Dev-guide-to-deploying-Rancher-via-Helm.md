@@ -16,7 +16,8 @@ If you have made local code changes that you wish to deploy locally:
 
 * Go to scripts/ci and comment out `./test` to make things faster
 * Run `make ci`, this will take a while and build a `rancher/rancher:dev` image
-* Now if you deploy locally it can pull that docker image
+  * If you deploy locally it will automatically pull that docker image
+  * If you want to deploy in the cloud you'll need to push that up to your own docker hub and update the `rancherImage` in values.yaml to match, and set `rancherImagePullPolicy: "Always"`.
 * Any subsequent code changes will require a rebuild of the docker image
 
 ### Helm deployment
@@ -27,16 +28,18 @@ If something goes wrong you can start over with: `helm del --purge rancher`
 
 Create a new kube cluster and setup kubectl with it. Then init tiller and make sure it is running: 
 
-    helm init
+    kubectl create serviceaccount --namespace kube-system tiller
+    kubectl create clusterrolebinding tiller-cluster-rule --clusterrole=cluster-admin --serviceaccount=kube-system:tiller
+    helm init --service-account tiller
     kubectl get pod --namespace kube-system | grep tiller
 
-Now install cert-manager. See troubleshooting section for errors encountered here.
+Now install cert-manager
 
 
     helm install stable/cert-manager  --name cert-manager  --namespace kube-system  --version v0.5.2
     kubectl -n kube-system rollout status deploy/cert-manager
 
-From your rancher dir, change versions and appVersion in rancher/chart/chart.yaml to `"dev"`, then:
+From your rancher dir, change versions in rancher/chart/chart.yaml to `"dev"` and `appVersion` to your custom image tag ('latest' is default) then:
 
     helm install --dry-run ./chart -n rancher
     helm install ./chart -n rancher --namespace cattle-system --set hostname=localhost
@@ -54,15 +57,4 @@ For a cloud host like Linode you can use nodeport:
     kubectl -n cattle-system expose deployment rancher --name=np443 --port 443 --target-port=443 --type=NodePort
     kubectl -n cattle-system get services np443
     # Now you can hit the service by hitting the node's IP address and node port the last command output, something like 11.22.33.44:30615
-
-### Troubleshooting
-
-**Helm Error: namespaces "kube-system" is forbidden**
-
-You'll need to create a service account for tiller, see: https://github.com/fnproject/fn-helm/issues/21
-
-	kubectl create serviceaccount --namespace kube-system tiller
-	kubectl create clusterrolebinding tiller-cluster-rule --clusterrole=cluster-admin --serviceaccount=kube-system:tiller
-	kubectl patch deploy --namespace kube-system tiller-deploy -p '{"spec":{"template":{"spec":{"serviceAccount":"tiller"}}}}'
-	# wait till tiller reloads
 
