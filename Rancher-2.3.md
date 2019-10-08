@@ -1,3 +1,14 @@
+# Schedule
+* Shipped: Oct 8, 2019
+
+# Milestones
+
+* [2.3 Milestone](https://github.com/rancher/rancher/milestone/153)
+
+# Release Notes
+
+* [2.3.0 Release Notes](https://github.com/rancher/rancher/releases/tag/v2.3.0)
+
 # Release Goals
 
 Rancher 2.3 will have three major focus areas (themes) - Enhanced Security, support for Windows containers, and Istio. We may also consider other usability enhancements.  
