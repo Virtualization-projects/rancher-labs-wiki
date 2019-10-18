@@ -21,7 +21,7 @@ Rancher supports 2 primary image tags for Rancher server.
 Milestone |  Target Date | Release Plan |
 ---|---|---
 2.4 | End of Mar, 2020 | [Rancher 2.4](https://github.com/rancher/rancher/wiki/Rancher-2.4)
-2.3 | Oct 7, 2019 | [Rancher 2.3](https://github.com/rancher/rancher/wiki/Rancher-2.3)
+2.3 | Oct 8, 2019 | [Rancher 2.3](https://github.com/rancher/rancher/wiki/Rancher-2.3)
 2.2 | Mar 26, 2019 | [Rancher 2.2](https://github.com/rancher/rancher/wiki/Rancher-2.2)
 2.1 | Oct 5 2018 | [Rancher 2.1](https://github.com/rancher/rancher/wiki/Rancher-2.1)
 2.0 | May 1, 2018 | [Rancher 2.0](https://github.com/rancher/rancher/wiki/Rancher-2.0)
