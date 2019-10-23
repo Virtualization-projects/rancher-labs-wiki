@@ -136,11 +136,12 @@ Once changes to `rancher/types` have been committed, you must upgrade types in t
 # Setting up and running the Tests
 
 ## Install Dependencies
-- ### Install helm
+- ### Install rancher-helm
   - Clone https://github.com/rancher/helm into $GOPATH/src/k8s.io
   - Change to rancher branch
   - Run `make bootstrap build`
-  - Copy bin/tiller & bin/helm to /usr/local/bin and chmod u+x
+  - Rename bin/tiller & bin/helm to bin/rancher-tiller & bin/rancher-helm
+  - Copy bin/rancher-tiller & bin/rancher-helm to /usr/local/bin and chmod u+x
 - ### Install docker-machine
   - Clone https://github.com/rancher/machine into $GOPATH/src/github.com/docker
   - In cmd/docker-machine run `go build`
