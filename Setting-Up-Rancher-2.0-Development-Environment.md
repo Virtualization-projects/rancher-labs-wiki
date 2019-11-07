@@ -180,6 +180,8 @@ Once changes to `rancher/types` have been committed, you must upgrade types in t
   cd tests/integration/
   tox
   ```
+**hints**: make sure the password for `admin` is also `admin`
+
 - ### Writing tests
   You can refer this README from client-python for steps on using create/update/delete/list calls and other 
   actions on resources in tests  
