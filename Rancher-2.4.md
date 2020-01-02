@@ -4,7 +4,7 @@ Rancher 2.4 continues the journey of bringing multi-cluster management and a con
 
 ## Improved Rancher Scalability. 
 
-The proliferation of Kubernetes clusters from branch, data center, cloud and edge.  Rancher 2.4 aims to manage 10,000 clusters and 100,000 nodes attached to a single control plane. 
+The proliferation of Kubernetes clusters from branch, data center, cloud and edge.  Rancher 2.4 aims to manage 1,000+ clusters and 100,000 nodes attached to a single control plane. 
 
 ## Rancher HA simplification
 
