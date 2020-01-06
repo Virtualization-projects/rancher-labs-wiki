@@ -142,10 +142,10 @@ Once changes to `rancher/types` have been committed, you must upgrade types in t
   - Run `make bootstrap build`
   - Rename bin/tiller & bin/helm to bin/rancher-tiller & bin/rancher-helm
   - Copy bin/rancher-tiller & bin/rancher-helm to /usr/local/bin and chmod u+x
-- ### Install docker-machine
+- ### Install rancher-machine
   - Clone https://github.com/rancher/machine into $GOPATH/src/github.com/docker
-  - In cmd/docker-machine run `go build`
-  - Copy docker-machine to /usr/local/bin
+  - In cmd/rancher-machine run `go build`
+  - Copy rancher-machine to /usr/local/bin
 - ### Install Python 3.7
   On mac it can also be installed via homebrew. See [here](https://docs.python-guide.org/starting/install3/osx/). Just running `brew install python` should get you there.
   If pip or pip3 isn't available after installing via homebrew, try running `brew postinstall python`.
