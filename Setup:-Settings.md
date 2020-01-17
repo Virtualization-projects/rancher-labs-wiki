@@ -1,3 +1,6 @@
+This applies to Rancher 1.6 only!
+===
+
 Configuring Rancher
 ==================
 
