@@ -1,6 +1,6 @@
 ### This applies to Rancher 1.6 only!
 
-By default Rancher.io launches using an embedded H2 database.  This is for simplicity as this approach is sufficient for small deployments of Rancher.  To switch to MySQL the following [[Settings|Settings.md]] must be set.
+By default Rancher.io launches using an embedded H2 database.  This is for simplicity as this approach is sufficient for small deployments of Rancher.  To switch to MySQL the following [[Settings|https://github.com/rancher/rancher/wiki/Setup:-Settings]] must be set.
 
 ```
 db.cattle.database=mysql
